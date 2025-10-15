@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="9line.dev designs, develops, and deploys cutting-edge web applications that drive results. From concept to launch, we bring your digital vision to life with precision and style.">
+    <meta name="keywords" content="web development, SaaS platform, custom software, React, Next.js, full-stack development">
+    <meta name="author" content="9Line Agency">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://9line.dev">
+    <meta property="og:title" content="9Line - Web Development Agency & SaaS Platform">
+    <meta property="og:description" content="Premium web development services and SaaS solutions for modern businesses">
+    <meta property="og:image" content="https://9line.dev/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://9line.dev">
+    <meta property="twitter:title" content="9Line - Web Development Agency & SaaS Platform">
+    <meta property="twitter:description" content="Premium web development services and SaaS solutions for modern businesses">
+    <meta property="twitter:image" content="https://9line.dev/og-image.jpg">
+
+    <title>9line.dev - Web Design & Development Agency | Modern Web Applications</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="design-tokens.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#" class="nav-logo">
+                    <span class="nav-logo-text">9line.dev</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#expertise" class="nav-link">Expertise</a>
+                <a href="#case-studies" class="nav-link">Work</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#" class="nav-cta">Get Started</a>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="hero-grid"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badges">
+                    <span class="badge badge-tech">⚡ Web Development</span>
+                    <span class="badge badge-saas">🚀 SaaS Platform</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    We Design, Develop & Deploy <span class="hero-gradient-text">Cutting-Edge Web Applications</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    From concept to launch, we bring your digital vision to life with precision and style. 
+                    Modern web applications that drive real results for your business.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary btn-lg">Start Your Project</a>
+                    <a href="#services" class="btn btn-secondary btn-lg">View Our Services</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime SLA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">
+                    Comprehensive solutions for modern businesses, from concept to deployment
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card service-card-web">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16,18 22,12 16,6"></polyline>
+                            <polyline points="8,6 2,12 8,18"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Custom Web Development</h3>
+                    <p class="service-description">
+                        100% hand-coded websites that load 3x faster than WordPress. No bloated templates or plugins - 
+                        just clean, optimized code that converts visitors into customers.
+                    </p>
+                    <ul class="service-features">
+                        <li>Google PageSpeed 95+ guaranteed</li>
+                        <li>Mobile-first responsive design</li>
+                        <li>Built-in SEO optimization</li>
+                        <li>99.9% uptime hosting included</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Start Project →</a>
+                </div>
+                
+                <div class="service-card service-card-saas">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Business Automation Platform</h3>
+                    <p class="service-description">
+                        Transform your manual processes into automated workflows. Custom dashboards, reporting, 
+                        and integrations that save you 20+ hours per week.
+                    </p>
+                    <ul class="service-features">
+                        <li>Custom workflow automation</li>
+                        <li>Real-time reporting dashboards</li>
+                        <li>Third-party API integrations</li>
+                        <li>Bank-level security protocols</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Learn More →</a>
+                </div>
+                
+                <div class="service-card service-card-consulting">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1m15.5-3.5L19 8.5m-14 7l2.5-2.5m0-7L5.5 8.5M18.5 15.5L16 13"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Technical Consulting</h3>
+                    <p class="service-description">
+                        Strategic technology guidance, architecture reviews, and digital transformation consulting for growing teams.
+                    </p>
+                    <ul class="service-features">
+                        <li>Architecture design</li>
+                        <li>Technology audits</li>
+                        <li>Team mentoring</li>
+                        <li>Process optimization</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Schedule Call →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- From Outdated to Outstanding -->
+    <section class="transformation" id="transformation">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">From Outdated to Outstanding</h2>
+                <p class="section-subtitle">
+                    Your website is often the first impression customers have of your business. 
+                    Don't let an outdated site cost you customers and revenue.
+                </p>
+            </div>
+            
+            <div class="transformation-comparison">
+                <div class="comparison-side before-side">
+                    <h3 class="comparison-title">Before: The Problem</h3>
+                    <div class="comparison-card">
+                        <div class="comparison-mockup before-mockup">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="mockup-url">yoursite.com</div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="old-nav">
+                                    <div class="old-logo">COMPANY</div>
+                                    <div class="old-menu">Home About Services Contact</div>
+                                </div>
+                                <div class="old-hero">
+                                    <h1>Welcome to Our Website</h1>
+                                    <p>We are a company that does things...</p>
+                                    <button class="old-button">Learn More</button>
+                                </div>
+                                <div class="old-content">
+                                    <div class="old-sidebar">
+                                        <h3>Latest News</h3>
+                                        <div class="old-post">Post from 2019...</div>
+                                    </div>
+                                    <div class="old-main">
+                                        <h2>About Us</h2>
+                                        <p>Lorem ipsum dolor sit amet...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comparison-issues">
+                            <div class="issue-item">
+                                <span class="issue-icon">🐌</span>
+                                <span class="issue-text">Page loads in 8+ seconds</span>
+                            </div>
+                            <div class="issue-item">
+                                <span class="issue-icon">📱</span>
+                                <span class="issue-text">Not mobile responsive</span>
+                            </div>
+                            <div class="issue-item">
+                                <span class="issue-icon">🔍</span>
+                                <span class="issue-text">Poor SEO ranking</span>
+                            </div>
+                            <div class="issue-item">
+                                <span class="issue-icon">💔</span>
+                                <span class="issue-text">High bounce rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-arrow">
+                    <div class="arrow-circle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="comparison-side after-side">
+                    <h3 class="comparison-title">After: The Solution</h3>
+                    <div class="comparison-card">
+                        <div class="comparison-mockup after-mockup">
+                            <div class="mockup-header">
+                                <div class="mockup-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="mockup-url">yoursite.com</div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="new-nav">
+                                    <div class="new-logo">YourBrand</div>
+                                    <div class="new-menu">
+                                        <span>Home</span>
+                                        <span>Services</span>
+                                        <span>About</span>
+                                        <span class="new-cta">Get Started</span>
+                                    </div>
+                                </div>
+                                <div class="new-hero">
+                                    <h1>Transform Your Business Online</h1>
+                                    <p>Results-driven solutions that convert visitors into customers</p>
+                                    <div class="new-buttons">
+                                        <button class="new-button-primary">Start Free Consultation</button>
+                                        <button class="new-button-secondary">View Our Work</button>
+                                    </div>
+                                </div>
+                                <div class="new-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-num">250%</div>
+                                        <div class="stat-label">More Leads</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-num">95+</div>
+                                        <div class="stat-label">PageSpeed</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-num">3x</div>
+                                        <div class="stat-label">Conversion</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comparison-benefits">
+                            <div class="benefit-item">
+                                <span class="benefit-icon">⚡</span>
+                                <span class="benefit-text">Loads in under 2 seconds</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">📱</span>
+                                <span class="benefit-text">Perfect on all devices</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">🎯</span>
+                                <span class="benefit-text">Top Google rankings</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span class="benefit-icon">💰</span>
+                                <span class="benefit-text">Higher conversion rates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="audit-cta">
+                <div class="audit-card">
+                    <div class="audit-content">
+                        <h3 class="audit-title">Free Website Performance Audit</h3>
+                        <p class="audit-description">
+                            Get a comprehensive analysis of your current website's performance, SEO, and conversion potential. 
+                            We'll identify exactly what's holding your site back and how to fix it.
+                        </p>
+                        <ul class="audit-includes">
+                            <li>Page speed and performance analysis</li>
+                            <li>Mobile responsiveness review</li>
+                            <li>SEO optimization opportunities</li>
+                            <li>Conversion rate improvement suggestions</li>
+                            <li>Detailed report with actionable insights</li>
+                        </ul>
+                    </div>
+                    <div class="audit-form">
+                        <h4>Get Your Free Audit</h4>
+                        <form class="quick-audit-form" id="audit-form">
+                            <input type="url" placeholder="Enter your website URL" class="audit-input" required>
+                            <input type="email" placeholder="Your email address" class="audit-input" required>
+                            <button type="submit" class="btn btn-primary btn-full">Get Free Audit Report</button>
+                        </form>
+                        <p class="audit-disclaimer">No spam, ever. Results delivered within 24 hours.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Showcase -->
+    <section class="tech-stack" id="expertise">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Tech Stack</h2>
+                <p class="section-subtitle">
+                    Modern tools and frameworks for building exceptional digital experiences
+                </p>
+            </div>
+            
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Frontend</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">React</span>
+                        <span class="tech-item">Next.js</span>
+                        <span class="tech-item">TypeScript</span>
+                        <span class="tech-item">Tailwind CSS</span>
+                        <span class="tech-item">Framer Motion</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Backend</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">Node.js</span>
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">PostgreSQL</span>
+                        <span class="tech-item">Redis</span>
+                        <span class="tech-item">GraphQL</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Cloud & DevOps</h3>
+                    <div class="tech-items">
+                        <span class="tech-item">AWS</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">Kubernetes</span>
+                        <span class="tech-item">Vercel</span>
+                        <span class="tech-item">GitHub Actions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Preview -->
+    <section class="case-studies" id="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">
+                    Real projects, real results. See how we've helped businesses scale and innovate.
+                </p>
+            </div>
+            
+            <div class="case-studies-grid">
+                <article class="case-study">
+                    <div class="case-study-image">
+                        <div class="case-study-placeholder">
+                            <span class="case-study-icon">📊</span>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3 class="case-study-title">Analytics SaaS Platform</h3>
+                        <p class="case-study-description">
+                            Built a real-time analytics platform processing 1M+ events per day with custom dashboards and API integrations.
+                        </p>
+                        <div class="case-study-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="case-study">
+                    <div class="case-study-image">
+                        <div class="case-study-placeholder">
+                            <span class="case-study-icon">🛒</span>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3 class="case-study-title">E-commerce Platform</h3>
+                        <p class="case-study-description">
+                            Developed a high-performance e-commerce solution with advanced inventory management and payment processing.
+                        </p>
+                        <div class="case-study-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Stripe</span>
+                            <span class="tag">AWS</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="case-study">
+                    <div class="case-study-image">
+                        <div class="case-study-placeholder">
+                            <span class="case-study-icon">🏥</span>
+                        </div>
+                    </div>
+                    <div class="case-study-content">
+                        <h3 class="case-study-title">Healthcare Management</h3>
+                        <p class="case-study-description">
+                            Created a HIPAA-compliant patient management system with telemedicine capabilities and secure data handling.
+                        </p>
+                        <div class="case-study-tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Security</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="contact-title">Ready to Build Something Amazing?</h2>
+                    <p class="contact-subtitle">
+                        Let's discuss your project and explore how we can help you achieve your goals.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-method-icon">📧</div>
+                            <div class="contact-method-content">
+                                <div class="contact-method-label">Email</div>
+                                <div class="contact-method-value">hello@9line.dev</div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-method-icon">💬</div>
+                            <div class="contact-method-content">
+                                <div class="contact-method-label">Schedule</div>
+                                <div class="contact-method-value">Book a consultation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company" class="form-label">Company</label>
+                        <input type="text" id="company" name="company" class="form-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service" class="form-label">Service Interest</label>
+                        <select id="service" name="service" class="form-input">
+                            <option value="">Select a service</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="saas-platform">SaaS Platform</option>
+                            <option value="consulting">Technical Consulting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Project Details</label>
+                        <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">9line.dev</div>
+                    <p class="footer-tagline">Building the future of web experiences</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Services</h4>
+                        <a href="#" class="footer-link">Web Development</a>
+                        <a href="#" class="footer-link">SaaS Platform</a>
+                        <a href="#" class="footer-link">Technical Consulting</a>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Company</h4>
+                        <a href="#" class="footer-link">About</a>
+                        <a href="#" class="footer-link">Work</a>
+                        <a href="#" class="footer-link">Contact</a>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4 class="footer-section-title">Connect</h4>
+                        <a href="#" class="footer-link">LinkedIn</a>
+                        <a href="#" class="footer-link">GitHub</a>
+                        <a href="#" class="footer-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 9Line Agency. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="footer-legal-link">Privacy Policy</a>
+                    <a href="#" class="footer-legal-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
