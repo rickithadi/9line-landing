@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.style.boxShadow = 'none';
         }
         
-        // Hide/show nav on scroll (optional enhancement)
+        // Stable nav visibility on scroll
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
-            nav.style.transform = 'translateY(-100%)';
+            nav.style.opacity = '0.95';
         } else {
-            nav.style.transform = 'translateY(0)';
+            nav.style.opacity = '1';
         }
         
         lastScrollY = currentScrollY;
@@ -78,6 +78,54 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateNavOnScroll);
     
+    // Hero Audit Form Handling
+    const heroAuditForm = document.getElementById('hero-audit-form');
+    if (heroAuditForm) {
+        heroAuditForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(heroAuditForm);
+            const url = heroAuditForm.querySelector('input[type="url"]').value;
+            const email = heroAuditForm.querySelector('input[type="email"]').value;
+            
+            // Basic validation
+            if (!url || !email) {
+                showNotification('Please fill in all fields.', 'error');
+                return;
+            }
+            
+            // URL validation
+            try {
+                new URL(url);
+            } catch (e) {
+                showNotification('Please enter a valid website URL.', 'error');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNotification('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = heroAuditForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+            
+            // Simulate audit request (replace with actual endpoint)
+            setTimeout(() => {
+                showNotification('🎉 Audit request received! Check your email for your personalized roadmap.', 'success');
+                heroAuditForm.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+    }
+
     // Audit Form Handling
     const auditForm = document.getElementById('audit-form');
     if (auditForm) {
@@ -198,6 +246,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Code Tab Switching
+    const codeTabs = document.querySelectorAll('.code-tab');
+    const codeContents = document.querySelectorAll('.code-content');
+    
+    codeTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            
+            // Remove active class from all tabs
+            codeTabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Hide all code contents
+            codeContents.forEach(content => content.classList.add('hidden'));
+            // Show target content
+            const targetContent = document.getElementById(targetTab + '-tab');
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+            }
+        });
+    });
+    
     // Service Card Interactions
     const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach(card => {
@@ -256,26 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
         statsObserver.observe(statsSection);
     }
     
-    // Typing Effect for Hero Title (optional enhancement)
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle && window.innerWidth > 768) {
-        const titleText = heroTitle.innerHTML;
-        heroTitle.innerHTML = '';
-        
-        let charIndex = 0;
-        const typeSpeed = 50;
-        
-        function typeWriter() {
-            if (charIndex < titleText.length) {
-                heroTitle.innerHTML += titleText.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeWriter, typeSpeed);
-            }
-        }
-        
-        // Start typing effect after a short delay
-        setTimeout(typeWriter, 1000);
-    }
+    // Removed typing effect to prevent layout jumping
     
     // Progressive Enhancement for Modern Browsers
     if ('IntersectionObserver' in window) {

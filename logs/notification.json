@@ -19,5 +19,19 @@
     "cwd": "/Users/hadi.rickit/dev/9line",
     "hook_event_name": "Notification",
     "message": "Claude needs your permission to use "
+  },
+  {
+    "session_id": "3651203b-2f8d-479f-b134-933aea48551e",
+    "transcript_path": "/Users/hadi.rickit/.claude/projects/-Users-hadi-rickit-dev-9line/3651203b-2f8d-479f-b134-933aea48551e.jsonl",
+    "cwd": "/Users/hadi.rickit/dev/9line",
+    "hook_event_name": "Notification",
+    "message": "Claude needs your permission to use "
+  },
+  {
+    "session_id": "3651203b-2f8d-479f-b134-933aea48551e",
+    "transcript_path": "/Users/hadi.rickit/.claude/projects/-Users-hadi-rickit-dev-9line/3651203b-2f8d-479f-b134-933aea48551e.jsonl",
+    "cwd": "/Users/hadi.rickit/dev/9line",
+    "hook_event_name": "Notification",
+    "message": "Claude is waiting for your input"
   }
 ]

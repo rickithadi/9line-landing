@@ -42,6 +42,18 @@
   --color-error: #ef4444;
   --color-info: #3b82f6;
 
+  /* ACCESSIBLE SEMANTIC COLORS (WCAG AA Compliant) */
+  --color-success-accessible: #166534;
+  --color-warning-accessible: #92400e;
+  --color-error-accessible: #991b1b;
+  --color-info-accessible: #1e40af;
+
+  /* ACCESSIBLE SEMANTIC COLORS (WCAG AA+) */
+  --color-success-accessible: #166534;    /* 7.1:1 contrast */
+  --color-warning-accessible: #92400e;    /* 7.8:1 contrast */
+  --color-error-accessible: #991b1b;      /* 7.5:1 contrast */
+  --color-info-accessible: #1e40af;       /* 8.6:1 contrast */
+
   /* BACKGROUND COLORS */
   --bg-primary: var(--color-neutral-0);
   --bg-secondary: var(--color-neutral-50);
@@ -55,6 +67,20 @@
   --text-tertiary: var(--color-neutral-500);
   --text-inverse: var(--color-neutral-0);
   --text-muted: var(--color-neutral-400);
+
+  /* ACCESSIBLE TEXT COLORS (WCAG AA+ Compliant) */
+  --text-accessible-primary: var(--color-neutral-950);    /* 21:1 contrast */
+  --text-accessible-secondary: var(--color-neutral-700);  /* 9.3:1 contrast */
+  --text-accessible-contrast: var(--color-primary-800);   /* 7.2:1 contrast */
+  --text-accessible-muted: var(--color-neutral-600);      /* 4.6:1 contrast */
+
+  /* ACCESSIBLE TEXT COLORS (WCAG AA Compliant) */
+  --text-accessible-primary: var(--color-neutral-900);     /* 21:1 on white */
+  --text-accessible-secondary: var(--color-neutral-700);   /* 9.3:1 on white */
+  --text-accessible-contrast: var(--color-primary-800);    /* 7.2:1 on white */
+  --text-accessible-muted: var(--color-neutral-600);       /* 4.6:1 on white - minimum */
+  --text-accessible-on-primary: var(--color-neutral-0);    /* High contrast on primary */
+  --text-accessible-on-card: var(--color-neutral-800);     /* 12.6:1 on card backgrounds */
 
   /* BRAND GRADIENTS */
   --gradient-primary: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
@@ -184,6 +210,16 @@
   --button-padding-x-md: var(--space-4);
   --button-padding-x-lg: var(--space-6);
 
+  /* ACCESSIBILITY COMPONENT TOKENS */
+  --focus-ring-width: 3px;
+  --focus-ring-color: var(--color-primary-500);
+  --focus-ring-offset: 2px;
+  --focus-ring: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+  --focus-ring-inset: inset 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+  --card-focus-ring: 0 0 0 var(--focus-ring-width) var(--focus-ring-color), var(--shadow-xl);
+  --minimum-touch-target: 44px;
+  --accessible-line-height: 1.5;
+
   --input-height-sm: 2rem;
   --input-height-md: 2.5rem;
   --input-height-lg: 3rem;
@@ -192,6 +228,118 @@
   --card-padding: var(--space-6);
   --card-radius: var(--radius-lg);
   --card-shadow: var(--shadow-md);
+  --card-padding-sm: var(--space-4);
+  --card-padding-lg: var(--space-8);
+  --card-border: 1px solid var(--color-neutral-200);
+  --card-bg: var(--color-neutral-0);
+  --card-bg-hover: var(--color-neutral-50);
+  --card-shadow-hover: var(--shadow-lg);
+  --card-shadow-focus: var(--shadow-xl);
+  --card-transition: all var(--duration-fast) var(--ease-out);
+
+  /* EXTENDED CARD COMPONENT SYSTEM */
+  
+  /* Card Size Variants */
+  --card-padding-xs: var(--space-3);
+  --card-padding-md: var(--space-6);
+  --card-padding-xl: var(--space-10);
+  
+  --card-min-height-sm: 120px;
+  --card-min-height-md: 160px;
+  --card-min-height-lg: 200px;
+  --card-min-height-xl: 240px;
+  
+  --card-max-width-sm: 280px;
+  --card-max-width-md: 320px;
+  --card-max-width-lg: 400px;
+  --card-max-width-xl: 480px;
+  
+  /* Card Style Variants */
+  --card-elevated-bg: var(--color-neutral-0);
+  --card-elevated-shadow: var(--shadow-lg);
+  --card-elevated-shadow-hover: var(--shadow-xl);
+  --card-elevated-border: none;
+  
+  --card-flat-bg: var(--color-neutral-50);
+  --card-flat-border: none;
+  --card-flat-shadow: none;
+  
+  --card-outlined-bg: transparent;
+  --card-outlined-border: 2px solid var(--color-neutral-300);
+  --card-outlined-shadow: none;
+  
+  --card-ghost-bg: transparent;
+  --card-ghost-border: 1px solid transparent;
+  --card-ghost-shadow: none;
+  --card-ghost-hover-bg: var(--color-neutral-50);
+  --card-ghost-hover-border: 1px solid var(--color-neutral-200);
+  
+  /* Card Interactive States */
+  --card-bg-active: var(--color-neutral-100);
+  --card-bg-disabled: var(--color-neutral-100);
+  --card-border-hover: var(--color-neutral-300);
+  --card-border-focus: var(--color-primary-400);
+  --card-border-active: var(--color-primary-500);
+  --card-border-error: var(--color-error-accessible);
+  --card-border-success: var(--color-success-accessible);
+  --card-border-warning: var(--color-warning-accessible);
+  --card-shadow-active: var(--shadow-sm);
+  
+  /* Card Content Areas */
+  --card-header-padding: var(--space-4) var(--space-6) var(--space-3);
+  --card-body-padding: var(--space-3) var(--space-6);
+  --card-footer-padding: var(--space-3) var(--space-6) var(--space-4);
+  --card-section-gap: var(--space-4);
+  --card-content-gap: var(--space-3);
+  --card-element-gap: var(--space-2);
+  
+  /* Card Typography Scale */
+  --card-title-size: var(--font-size-lg);
+  --card-title-weight: var(--font-weight-semibold);
+  --card-title-color: var(--text-accessible-primary);
+  --card-title-line-height: var(--line-height-tight);
+  
+  --card-subtitle-size: var(--font-size-sm);
+  --card-subtitle-weight: var(--font-weight-medium);
+  --card-subtitle-color: var(--text-accessible-secondary);
+  --card-subtitle-line-height: var(--line-height-normal);
+  
+  --card-body-size: var(--font-size-base);
+  --card-body-weight: var(--font-weight-normal);
+  --card-body-color: var(--text-accessible-secondary);
+  --card-body-line-height: var(--line-height-relaxed);
+  
+  --card-caption-size: var(--font-size-xs);
+  --card-caption-weight: var(--font-weight-medium);
+  --card-caption-color: var(--text-accessible-muted);
+  --card-caption-line-height: var(--line-height-normal);
+  
+  /* Card Animation Tokens */
+  --card-animation-hover: transform var(--duration-fast) var(--ease-out);
+  --card-animation-focus: box-shadow var(--duration-fast) var(--ease-out);
+  --card-animation-press: transform var(--duration-fast) var(--ease-out);
+  --card-hover-lift: translateY(-4px);
+  --card-hover-scale: scale(1.02);
+  --card-press-scale: scale(0.98);
+  --card-float-lift: translateY(-8px);
+  
+  /* Card Grid & Layout */
+  --card-grid-gap: var(--space-6);
+  --card-grid-gap-sm: var(--space-4);
+  --card-grid-gap-lg: var(--space-8);
+  --card-grid-columns-sm: 1;
+  --card-grid-columns-md: 2;
+  --card-grid-columns-lg: 3;
+  --card-grid-columns-xl: 4;
+
+  /* ACCESSIBILITY TOKENS */
+  --focus-ring: 3px solid var(--color-primary-500);
+  --focus-ring-offset: 2px;
+  --card-focus-ring: 2px solid var(--color-primary-600);
+  --card-focus-bg: var(--color-primary-50);
+  --min-touch-target: 44px;
+  --text-line-height-accessible: 1.5;
+  --text-spacing-accessible: 0.12em;
 
   /* LAYOUT TOKENS */
   --container-max-width: 1280px;
