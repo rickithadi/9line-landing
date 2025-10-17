@@ -1,14 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Shield, Code2, ArrowRight, Check, Eye, X, Zap, Search, Megaphone } from 'lucide-react';
+import { Code2, Check, X, Search, Megaphone } from 'lucide-react';
 
 export default function WebAgencyLanding() {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
