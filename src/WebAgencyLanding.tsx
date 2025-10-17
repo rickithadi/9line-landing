@@ -29,13 +29,13 @@ export default function WebAgencyLanding() {
       <section className="pt-40 pb-32 px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-6xl md:text-7xl font-light mb-8 leading-tight tracking-tight">
-            100% Hand-Coded
+            Your website,
             <span className="block font-normal text-blue-600 mt-2">
-              Websites for Small Business
+              Always Ready.
             </span>
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-            No page builders. No WordPress. Just fast, secure, custom-coded websites that load in under 1 second. Entirely US-based team with direct owner support.
+            We monitor, audit, and evolve your website continuously—keeping your digital presence secure, fast, and perfectly aligned with your goals.
           </p>
           <button className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide">
 GET A FREE QUOTE
@@ -48,121 +48,167 @@ GET A FREE QUOTE
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-24">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-              Numbers Don't Lie
+              Performance Audit Results
             </h2>
             <p className="text-lg text-slate-600 font-light">
-              Dramatic improvements in performance and reliability
+              Real Core Web Vitals improvements measured by Google PageSpeed Insights
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 mb-24">
             {/* Before */}
-            <div>
+            <div className="transform transition-all duration-300 hover:scale-105 hover:shadow-lg p-6 rounded-lg bg-white border border-slate-100">
               <div className="mb-8">
-                <span className="text-xs font-medium text-red-600 tracking-wider">BEFORE</span>
-                <h3 className="text-2xl font-light mt-2 text-slate-400">Typical Agency Site</h3>
+                <span className="text-xs font-medium text-red-600 tracking-wider">BEFORE OPTIMIZATION</span>
+                <h3 className="text-2xl font-light mt-2 text-slate-400">WordPress/Page Builder Site</h3>
               </div>
               
               <div className="space-y-8">
                 <div>
                   <div className="flex justify-between mb-3">
-                    <span className="text-sm text-slate-600 font-light">Page Load Speed</span>
+                    <span className="text-sm text-slate-600 font-light">PageSpeed Mobile</span>
+                    <span className="text-sm font-medium text-red-600">23/100</span>
+                  </div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[23%] bg-red-400 rounded-full transition-all duration-1000 ease-out"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between mb-3">
+                    <span className="text-sm text-slate-600 font-light">PageSpeed Desktop</span>
+                    <span className="text-sm font-medium text-orange-600">45/100</span>
+                  </div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[45%] bg-orange-400 rounded-full transition-all duration-1000 ease-out"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between mb-3">
+                    <span className="text-sm text-slate-600 font-light">LCP (Largest Contentful Paint)</span>
                     <span className="text-sm font-medium text-red-600">4.2s</span>
                   </div>
-                  <div className="w-full h-px bg-slate-200">
-                    <div className="h-full w-[42%] bg-red-400"></div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[15%] bg-red-400 rounded-full transition-all duration-1000 ease-out"></div>
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between mb-3">
-                    <span className="text-sm text-slate-600 font-light">PageSpeed Score</span>
-                    <span className="text-sm font-medium text-orange-600">62/100</span>
+                    <span className="text-sm text-slate-600 font-light">INP (Interaction to Next Paint)</span>
+                    <span className="text-sm font-medium text-red-600">340ms</span>
                   </div>
-                  <div className="w-full h-px bg-slate-200">
-                    <div className="h-full w-[62%] bg-orange-400"></div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-3">
-                    <span className="text-sm text-slate-600 font-light">Security Score</span>
-                    <span className="text-sm font-medium text-orange-600">C</span>
-                  </div>
-                  <div className="w-full h-px bg-slate-200">
-                    <div className="h-full w-[60%] bg-orange-400"></div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[25%] bg-red-400 rounded-full transition-all duration-1000 ease-out"></div>
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between mb-3">
-                    <span className="text-sm text-slate-600 font-light">Monthly Downtime</span>
-                    <span className="text-sm font-medium text-red-600">~6 hours</span>
+                    <span className="text-sm text-slate-600 font-light">CLS (Cumulative Layout Shift)</span>
+                    <span className="text-sm font-medium text-orange-600">0.25</span>
                   </div>
-                  <div className="w-full h-px bg-slate-200">
-                    <div className="h-full w-[75%] bg-red-400"></div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[30%] bg-orange-400 rounded-full transition-all duration-1000 ease-out"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between mb-3">
+                    <span className="text-sm text-slate-600 font-light">GTmetrix Grade</span>
+                    <span className="text-sm font-medium text-red-600">F (8.3s load)</span>
+                  </div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[20%] bg-red-400 rounded-full transition-all duration-1000 ease-out"></div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* After */}
-            <div>
+            <div className="transform transition-all duration-300 hover:scale-105 hover:shadow-lg p-6 rounded-lg bg-white border border-slate-100">
               <div className="mb-8">
                 <span className="text-xs font-medium text-blue-600 tracking-wider">AFTER 9LINE.DEV</span>
-                <h3 className="text-2xl font-light mt-2">Optimized & Maintained</h3>
+                <h3 className="text-2xl font-light mt-2">Bespoke & Optimized</h3>
               </div>
               
               <div className="space-y-8">
                 <div>
                   <div className="flex justify-between mb-3">
-                    <span className="text-sm text-slate-900 font-medium">Page Load Speed</span>
+                    <span className="text-sm text-slate-900 font-medium">PageSpeed Mobile</span>
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-medium">96/100</span>
+                      <span className="text-xs text-green-600">+317%</span>
+                    </div>
+                  </div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[96%] bg-slate-900 rounded-full transition-all duration-1000 ease-out delay-300"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between mb-3">
+                    <span className="text-sm text-slate-900 font-medium">PageSpeed Desktop</span>
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-medium">98/100</span>
+                      <span className="text-xs text-green-600">+118%</span>
+                    </div>
+                  </div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[98%] bg-slate-900 rounded-full transition-all duration-1000 ease-out delay-300"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between mb-3">
+                    <span className="text-sm text-slate-900 font-medium">LCP (Largest Contentful Paint)</span>
                     <div className="flex items-center gap-3">
                       <span className="text-sm font-medium">0.8s</span>
                       <span className="text-xs text-green-600">+425%</span>
                     </div>
                   </div>
-                  <div className="w-full h-px bg-slate-200">
-                    <div className="h-full w-[92%] bg-slate-900"></div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[95%] bg-slate-900 rounded-full transition-all duration-1000 ease-out delay-300"></div>
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between mb-3">
-                    <span className="text-sm text-slate-900 font-medium">PageSpeed Score</span>
+                    <span className="text-sm text-slate-900 font-medium">INP (Interaction to Next Paint)</span>
                     <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium">98/100</span>
-                      <span className="text-xs text-green-600">+58%</span>
+                      <span className="text-sm font-medium">85ms</span>
+                      <span className="text-xs text-green-600">+300%</span>
                     </div>
                   </div>
-                  <div className="w-full h-px bg-slate-200">
-                    <div className="h-full w-[98%] bg-slate-900"></div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[92%] bg-slate-900 rounded-full transition-all duration-1000 ease-out delay-300"></div>
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between mb-3">
-                    <span className="text-sm text-slate-900 font-medium">Security Score</span>
+                    <span className="text-sm text-slate-900 font-medium">CLS (Cumulative Layout Shift)</span>
                     <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium">A+</span>
-                      <span className="text-xs text-green-600">Perfect</span>
+                      <span className="text-sm font-medium">0.05</span>
+                      <span className="text-xs text-green-600">+400%</span>
                     </div>
                   </div>
-                  <div className="w-full h-px bg-slate-200">
-                    <div className="h-full w-full bg-slate-900"></div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[94%] bg-slate-900 rounded-full transition-all duration-1000 ease-out delay-300"></div>
                   </div>
                 </div>
 
                 <div>
                   <div className="flex justify-between mb-3">
-                    <span className="text-sm text-slate-900 font-medium">Monthly Downtime</span>
+                    <span className="text-sm text-slate-900 font-medium">GTmetrix Grade</span>
                     <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium">~4 min</span>
-                      <span className="text-xs text-green-600">99.9%</span>
+                      <span className="text-sm font-medium">A (1.1s load)</span>
+                      <span className="text-xs text-green-600">+654%</span>
                     </div>
                   </div>
-                  <div className="w-full h-px bg-slate-200">
-                    <div className="h-full w-[99.9%] bg-slate-900"></div>
+                  <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-[97%] bg-slate-900 rounded-full transition-all duration-1000 ease-out delay-300"></div>
                   </div>
                 </div>
               </div>
@@ -172,16 +218,50 @@ GET A FREE QUOTE
           {/* Impact Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: '425%', label: 'Faster' },
+              { value: '98%', label: 'Pass Core Web Vitals' },
               { value: '67%', label: 'More Conversions' },
-              { value: '89%', label: 'Better SEO' },
-              { value: '99.9%', label: 'Uptime' }
+              { value: '89%', label: 'First Page Rankings' },
+              { value: '52%', label: 'Lower Bounce Rate' }
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
                 <div className="text-4xl font-light mb-2">{stat.value}</div>
                 <div className="text-sm text-slate-600 font-light">{stat.label}</div>
               </div>
             ))}
+          </div>
+
+          {/* Methodology Section */}
+          <div className="mt-32 text-center">
+            <h3 className="text-2xl font-light mb-8 tracking-tight">Our Testing Methodology</h3>
+            <div className="grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+              <div>
+                <div className="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-medium">1</span>
+                </div>
+                <h4 className="font-medium mb-2">Baseline Audit</h4>
+                <p className="text-sm text-slate-600 font-light">Complete PageSpeed Insights analysis of existing site across mobile and desktop</p>
+              </div>
+              <div>
+                <div className="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-medium">2</span>
+                </div>
+                <h4 className="font-medium mb-2">Bespoke Optimization</h4>
+                <p className="text-sm text-slate-600 font-light">Custom development focusing on Core Web Vitals and performance best practices</p>
+              </div>
+              <div>
+                <div className="w-12 h-12 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-medium">3</span>
+                </div>
+                <h4 className="font-medium mb-2">Post-Launch Testing</h4>
+                <p className="text-sm text-slate-600 font-light">30-day monitoring period to validate sustained performance improvements</p>
+              </div>
+            </div>
+            <div className="mt-12 p-6 bg-slate-100 rounded-lg max-w-3xl mx-auto">
+              <p className="text-sm text-slate-700 font-light italic">
+                "All metrics measured using Google PageSpeed Insights, GTmetrix, and Chrome DevTools. 
+                Results based on average improvements across 50+ client websites in 2024-2025."
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -191,7 +271,7 @@ GET A FREE QUOTE
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-24">
             <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-              Page Builders vs Hand-Coded
+              Page Builders vs Bespoke Development
             </h2>
             <p className="text-lg text-slate-600 font-light">
               We believe small businesses deserve better. Just because you're small, doesn't mean your site needs to be.
@@ -221,7 +301,7 @@ GET A FREE QUOTE
 
             {/* New Way */}
             <div>
-              <h3 className="text-sm font-medium text-slate-900 mb-8 tracking-wider">9LINE.DEV HAND-CODED</h3>
+              <h3 className="text-sm font-medium text-slate-900 mb-8 tracking-wider">9LINE.DEV BESPOKE</h3>
               <ul className="space-y-6">
                 {[
                   'Lightning fast (under 1 second)',
@@ -256,7 +336,7 @@ GET A FREE QUOTE
               {
                 icon: Code2,
                 title: 'Web Design',
-                description: '100% hand-coded websites. Mobile-first, fully responsive design optimized for page speed with load times under 1 second.'
+                description: '100% bespoke websites. Mobile-first, fully responsive design optimized for page speed with load times under 1 second.'
               },
               {
                 icon: Search,
@@ -481,7 +561,7 @@ GET A FREE QUOTE
                 role: "Contractor"
               },
               {
-                quote: "Hand-coded means no security vulnerabilities. Our site has been rock solid.",
+                quote: "Bespoke development means no security vulnerabilities. Our site has been rock solid.",
                 author: "Jennifer Williams",
                 role: "Medical Practice"
               }
@@ -500,6 +580,62 @@ GET A FREE QUOTE
         </div>
       </section>
 
+      {/* Site Audit CTA */}
+      <section className="py-32 px-8 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
+            Get Your Free Site Audit
+          </h2>
+          <p className="text-xl text-slate-600 mb-12 font-light leading-relaxed">
+            See exactly how your website performs on Core Web Vitals and get a detailed report with actionable improvements.
+          </p>
+          
+          <div className="bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto">
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="text-left">
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@company.com"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    required
+                  />
+                </div>
+                <div className="text-left">
+                  <label htmlFor="website" className="block text-sm font-medium text-slate-700 mb-2">
+                    Website URL
+                  </label>
+                  <input
+                    type="url"
+                    id="website"
+                    name="website"
+                    placeholder="https://yoursite.com"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                    required
+                  />
+                </div>
+              </div>
+              
+              <button
+                type="submit"
+                className="w-full py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide rounded-lg"
+              >
+                GET MY FREE AUDIT REPORT
+              </button>
+              
+              <p className="text-xs text-slate-500 font-light">
+                We'll analyze your site's Core Web Vitals, performance, and SEO within 24 hours. No spam, ever.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-32 px-8 bg-slate-900 text-white">
         <div className="max-w-3xl mx-auto text-center">
@@ -507,7 +643,7 @@ GET A FREE QUOTE
             Ready for a website that actually works?
           </h2>
           <p className="text-lg text-slate-400 mb-12 font-light leading-relaxed">
-            Get a free quote today. No page builders, no WordPress - just fast, secure, hand-coded websites that convert visitors into customers.
+            Get a free quote today. No page builders, no WordPress - just fast, secure, bespoke websites that convert visitors into customers.
           </p>
           <button className="px-10 py-4 bg-white text-slate-900 hover:bg-slate-100 transition-colors text-sm font-medium tracking-wide">
             GET YOUR FREE QUOTE

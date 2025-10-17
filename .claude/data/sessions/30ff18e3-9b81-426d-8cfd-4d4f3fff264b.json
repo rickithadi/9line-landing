@@ -3,6 +3,10 @@
   "prompts": [
     "Integrate the TSX file, use that to start a landing site. Use Vite.",
     "while maintaining styling, ensure information parity with https://oakharborwebdesigns.com/",
-    "iterate on the audit and compare. page score improvements angle. keep the styling and design direction"
+    "iterate on the audit and compare. page score improvements angle. keep the styling and design direction",
+    "do all but the technical deep dive",
+    "update hero to use the following copy\n\nYour website,\nAlways Ready.\nWe monitor, audit, and evolve your website continuously\u2014keeping your digital presence secure, fast, and perfectly aligned with your goals.",
+    "add a CTA for a site audit. collect email contact and website URL",
+    "remove all logs from git tree. add the dir to gitignore"
   ]
 }
