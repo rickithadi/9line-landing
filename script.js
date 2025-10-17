@@ -327,6 +327,290 @@ document.addEventListener('DOMContentLoaded', function() {
         statsObserver.observe(statsSection);
     }
     
+    // Trigger animation for audit preview
+    const auditPreview = document.querySelector('.audit-preview');
+    if (auditPreview) {
+        const auditObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Trigger all audit preview animations
+                    const auditHeader = entry.target.querySelector('.audit-header');
+                    const beforeSection = entry.target.querySelector('.before-section');
+                    const afterSection = entry.target.querySelector('.after-section');
+                    const comparisonDivider = entry.target.querySelector('.comparison-divider');
+                    const categoryCards = entry.target.querySelectorAll('.category-card');
+                    const testimonial = entry.target.querySelector('.audit-testimonial');
+                    const actions = entry.target.querySelector('.audit-actions');
+                    const metricRows = entry.target.querySelectorAll('.metric-row');
+                    
+                    // Animation sequence timing
+                    const timings = {
+                        header: 0,
+                        beforeSection: 0.3,
+                        divider: 0.6,
+                        afterSection: 0.9,
+                        categories: 1.4,
+                        testimonial: 2.2,
+                        actions: 2.6
+                    };
+                    
+                    // Header animation
+                    if (auditHeader) {
+                        auditHeader.style.opacity = '0';
+                        auditHeader.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            auditHeader.style.transition = 'all 0.8s ease-out';
+                            auditHeader.style.opacity = '1';
+                            auditHeader.style.transform = 'translateY(0)';
+                        }, timings.header * 1000);
+                    }
+                    
+                    // Before section animation
+                    if (beforeSection) {
+                        beforeSection.style.opacity = '0';
+                        beforeSection.style.transform = 'translateX(-50px)';
+                        setTimeout(() => {
+                            beforeSection.style.transition = 'all 0.8s ease-out';
+                            beforeSection.style.opacity = '1';
+                            beforeSection.style.transform = 'translateX(0)';
+                        }, timings.beforeSection * 1000);
+                    }
+                    
+                    // Divider animation
+                    if (comparisonDivider) {
+                        comparisonDivider.style.opacity = '0';
+                        comparisonDivider.style.transform = 'scale(0.5)';
+                        setTimeout(() => {
+                            comparisonDivider.style.transition = 'all 0.6s ease-out';
+                            comparisonDivider.style.opacity = '1';
+                            comparisonDivider.style.transform = 'scale(1)';
+                        }, timings.divider * 1000);
+                    }
+                    
+                    // After section animation
+                    if (afterSection) {
+                        afterSection.style.opacity = '0';
+                        afterSection.style.transform = 'translateX(50px)';
+                        setTimeout(() => {
+                            afterSection.style.transition = 'all 0.8s ease-out';
+                            afterSection.style.opacity = '1';
+                            afterSection.style.transform = 'translateX(0)';
+                        }, timings.afterSection * 1000);
+                    }
+                    
+                    // Metric rows animation (staggered within sections)
+                    metricRows.forEach((row, index) => {
+                        row.style.opacity = '0';
+                        row.style.transform = 'translateY(20px)';
+                        const delay = (index < 4 ? timings.beforeSection + 0.4 : timings.afterSection + 0.4) + (index % 4) * 0.1;
+                        setTimeout(() => {
+                            row.style.transition = 'all 0.6s ease-out';
+                            row.style.opacity = '1';
+                            row.style.transform = 'translateY(0)';
+                        }, delay * 1000);
+                    });
+                    
+                    // Category cards animation
+                    categoryCards.forEach((card, index) => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(30px)';
+                        setTimeout(() => {
+                            card.style.transition = 'all 0.6s ease-out';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, (timings.categories + index * 0.1) * 1000);
+                    });
+                    
+                    // Testimonial animation
+                    if (testimonial) {
+                        testimonial.style.opacity = '0';
+                        testimonial.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            testimonial.style.transition = 'all 0.8s ease-out';
+                            testimonial.style.opacity = '1';
+                            testimonial.style.transform = 'translateY(0)';
+                        }, timings.testimonial * 1000);
+                    }
+                    
+                    // Actions animation
+                    if (actions) {
+                        actions.style.opacity = '0';
+                        actions.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            actions.style.transition = 'all 0.8s ease-out';
+                            actions.style.opacity = '1';
+                            actions.style.transform = 'translateY(0)';
+                        }, timings.actions * 1000);
+                    }
+                    
+                    auditObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        auditObserver.observe(auditPreview);
+    }
+    
+    // Interactive Audit Category Cards
+    const categoryCards = document.querySelectorAll('.category-card');
+    categoryCards.forEach(card => {
+        const categoryType = card.getAttribute('data-category');
+        
+        // Add hover tooltips with detailed information
+        const tooltipData = {
+            performance: {
+                title: 'Performance Issues',
+                details: [
+                    'Large image files slowing load times',
+                    'Unused CSS and JavaScript',
+                    'Poor server response times',
+                    'Unoptimized fonts and resources'
+                ]
+            },
+            mobile: {
+                title: 'Mobile Experience Problems',
+                details: [
+                    'Text too small to read',
+                    'Touch targets too small',
+                    'Content wider than screen',
+                    'Poor mobile navigation'
+                ]
+            },
+            seo: {
+                title: 'SEO Optimization Gaps',
+                details: [
+                    'Missing meta descriptions',
+                    'Poor heading structure',
+                    'No structured data markup',
+                    'Broken internal links'
+                ]
+            },
+            conversion: {
+                title: 'Conversion Blockers',
+                details: [
+                    'Confusing call-to-action buttons',
+                    'Long, complex forms',
+                    'Unclear value proposition',
+                    'Poor trust signals'
+                ]
+            }
+        };
+        
+        // Create tooltip element
+        const tooltip = document.createElement('div');
+        tooltip.className = 'category-tooltip';
+        tooltip.innerHTML = `
+            <div class="tooltip-title">${tooltipData[categoryType].title}</div>
+            <ul class="tooltip-list">
+                ${tooltipData[categoryType].details.map(detail => `<li>${detail}</li>`).join('')}
+            </ul>
+        `;
+        
+        // Add tooltip styles and interactions
+        card.addEventListener('mouseenter', function() {
+            document.body.appendChild(tooltip);
+            const rect = this.getBoundingClientRect();
+            tooltip.style.position = 'fixed';
+            tooltip.style.top = `${rect.bottom + 10}px`;
+            tooltip.style.left = `${rect.left + (rect.width / 2)}px`;
+            tooltip.style.transform = 'translateX(-50%)';
+            tooltip.style.zIndex = '1000';
+            tooltip.style.opacity = '0';
+            tooltip.style.transition = 'opacity 0.3s ease';
+            
+            // Trigger tooltip appearance
+            setTimeout(() => {
+                tooltip.style.opacity = '1';
+            }, 10);
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            if (tooltip.parentNode) {
+                tooltip.style.opacity = '0';
+                setTimeout(() => {
+                    if (tooltip.parentNode) {
+                        document.body.removeChild(tooltip);
+                    }
+                }, 300);
+            }
+        });
+        
+        // Add click interaction for mobile
+        card.addEventListener('click', function() {
+            // Toggle expanded state
+            this.classList.toggle('expanded');
+            
+            // Add expanded content if not exists
+            let expandedContent = this.querySelector('.category-expanded');
+            if (!expandedContent) {
+                expandedContent = document.createElement('div');
+                expandedContent.className = 'category-expanded';
+                expandedContent.innerHTML = `
+                    <div class="expanded-title">Common Issues Found:</div>
+                    <ul class="expanded-list">
+                        ${tooltipData[categoryType].details.map(detail => `<li>${detail}</li>`).join('')}
+                    </ul>
+                `;
+                this.appendChild(expandedContent);
+            }
+        });
+    });
+    
+    // Enhanced Tooltip and Expandable Content Interactions
+    const expandableCards = document.querySelectorAll('.expandable-card');
+    expandableCards.forEach(card => {
+        // Add click to expand functionality for mobile/touch devices
+        card.addEventListener('click', function(e) {
+            // Don't interfere with other clickable elements
+            if (e.target.closest('button, a, input, select, textarea')) return;
+            
+            this.classList.toggle('expanded');
+            
+            // Update ARIA attributes for accessibility
+            const isExpanded = this.classList.contains('expanded');
+            this.setAttribute('aria-expanded', isExpanded);
+        });
+        
+        // Keyboard support
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.classList.toggle('expanded');
+                const isExpanded = this.classList.contains('expanded');
+                this.setAttribute('aria-expanded', isExpanded);
+            }
+        });
+        
+        // Initialize ARIA attributes
+        card.setAttribute('aria-expanded', 'false');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', card.getAttribute('aria-label') + ' - Click to expand for more details');
+    });
+    
+    // Enhanced tooltip positioning for edge cases
+    const tooltipElements = document.querySelectorAll('[data-tooltip]');
+    tooltipElements.forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            // Dynamic positioning to prevent tooltips from going off-screen
+            const rect = this.getBoundingClientRect();
+            const tooltipWidth = 250; // approximate max width
+            
+            if (rect.left + tooltipWidth/2 > window.innerWidth) {
+                this.style.setProperty('--tooltip-offset', 'translateX(-80%)');
+            } else if (rect.left - tooltipWidth/2 < 0) {
+                this.style.setProperty('--tooltip-offset', 'translateX(-20%)');
+            } else {
+                this.style.setProperty('--tooltip-offset', 'translateX(-50%)');
+            }
+        });
+    });
+    
+    // Add subtle animation delays for staggered reveals
+    const cards = document.querySelectorAll('.card-grid .card');
+    cards.forEach((card, index) => {
+        card.style.setProperty('--card-delay', `${index * 0.1}s`);
+    });
+    
     // Removed typing effect to prevent layout jumping
     
     // Progressive Enhancement for Modern Browsers

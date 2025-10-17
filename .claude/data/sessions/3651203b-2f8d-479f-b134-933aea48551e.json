@@ -20,6 +20,22 @@
     "fix jumping in hero section",
     "/var/folders/gy/574p89h16mj752hpgdk6_q880000gn/T/TemporaryItems/NSIRD_screencaptureui_9Gwb7J/Screenshot\\ 2025-10-15\\ at\\ 5.56.05\u202fPM.png [I\n\n@agent-ui-designer-agent critical fixes and iterate on design token system. There are problems with accesibilit, especially the cards",
     "next step",
-    "expand on the card components in the design token system"
+    "expand on the card components in the design token system",
+    "keep going",
+    "show me where to view these",
+    "implement these cards into the landing site. replace existing cards with them",
+    "fix the hero section, the top half seems to be cut off",
+    "i really like the real results cta. @agent-ui-designer-agent provide suggestions to improve ",
+    "use the cards from the design system. this is ugly",
+    "[Image #1]",
+    "rethink the right hand side component",
+    "the card needs a background colour. it is not readable",
+    "conduct comprehensive design qa @agent-qa-tester-agent ",
+    "[Image #1]\nthe right hand side card has text that cannot be read",
+    "rethink the  \ud83d\udcca Live Results Dashboard Real-time  component. give me some suggestions",
+    "focus on site audits and before/after",
+    "come up with implementation plan",
+    "code .",
+    "[Image #1]\n\nbuild a react landing site with this [Image #2]"
   ]
 }
