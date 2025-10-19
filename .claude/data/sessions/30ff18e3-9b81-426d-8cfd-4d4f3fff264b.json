@@ -9,6 +9,8 @@
     "add a CTA for a site audit. collect email contact and website URL",
     "remove all logs from git tree. add the dir to gitignore",
     "configure vercel for this codebase",
-    "ensure seo tags and meta tags are all up to date. ensure responsiveness"
+    "ensure seo tags and meta tags are all up to date. ensure responsiveness",
+    "provide suggestions to iterate on the  \"the transformation\" section",
+    "phase 1 and 2 please. @agent-web-dev-agent "
   ]
 }

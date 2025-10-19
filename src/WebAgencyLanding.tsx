@@ -1,9 +1,21 @@
-import { ArrowRight, ChevronLeft, ChevronRight, Code2, Eye, Shield } from 'lucide-react';
-import React, { useRef } from 'react';
+import { ArrowRight, ChevronLeft, ChevronRight, Code2, Eye, Shield, Info, Monitor, Smartphone, Clock, TrendingUp, Zap, Lock, Trophy } from 'lucide-react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 
 export default function WebAgencyLanding() {
   const testimonialsRef = useRef(null);
   const pricingRef = useRef(null);
+  
+  // Transformation section state
+  const [showMobileVersion, setShowMobileVersion] = useState(false);
+  const [selectedTimeframe, setSelectedTimeframe] = useState('Day 90');
+  const [hoveredMetric, setHoveredMetric] = useState(null);
+  const [expandedDetails, setExpandedDetails] = useState({});
+  const [sliderPosition, setSliderPosition] = useState(100); // 0 = before, 100 = after
+  const [selectedIndustry, setSelectedIndustry] = useState('Healthcare');
+  const [animatedCounters, setAnimatedCounters] = useState({});
+  const [metricsVisible, setMetricsVisible] = useState(false);
+  
+  const transformationRef = useRef(null);
 
   const scroll = (ref, direction) => {
     if (ref.current) {
@@ -13,6 +25,79 @@ export default function WebAgencyLanding() {
         behavior: 'smooth'
       });
     }
+  };
+
+  // Animation helpers
+  const animateCounter = useCallback((start, end, duration, key) => {
+    const startTime = Date.now();
+    const timer = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const currentValue = Math.floor(start + (end - start) * progress);
+      
+      setAnimatedCounters(prev => ({ ...prev, [key]: currentValue }));
+      
+      if (progress === 1) {
+        clearInterval(timer);
+      }
+    }, 16);
+  }, []);
+
+  // Intersection Observer for animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !metricsVisible) {
+            setMetricsVisible(true);
+            // Animate counters when metrics come into view
+            animateCounter(0, 425, 2000, 'speed');
+            animateCounter(0, 67, 2000, 'conversions');
+            animateCounter(0, 89, 2000, 'seo');
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (transformationRef.current) {
+      observer.observe(transformationRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [metricsVisible, animateCounter]);
+
+  // Industry-specific data
+  const industryData = {
+    Healthcare: {
+      metrics: { loadTime: '0.8s', mobile: '98/100', security: 'HIPAA A+', position: '#1' },
+      specifics: 'HIPAA compliance, patient data security, accessibility standards'
+    },
+    Legal: {
+      metrics: { loadTime: '0.7s', mobile: '99/100', security: 'A+ Grade', position: '#1' },
+      specifics: 'Client confidentiality, SSL encryption, professional credibility'
+    },
+    'E-commerce': {
+      metrics: { loadTime: '0.6s', mobile: '99/100', security: 'PCI DSS A+', position: '#1' },
+      specifics: 'Payment security, checkout optimization, inventory management'
+    },
+    'Real Estate': {
+      metrics: { loadTime: '0.9s', mobile: '97/100', security: 'A+ Grade', position: '#1' },
+      specifics: 'MLS integration, lead capture, mobile-first design'
+    }
+  };
+
+  const timeframeData = {
+    'Day 30': { loadTime: '2.1s', mobile: '78/100', security: 'B+ Grade', position: '#4' },
+    'Day 60': { loadTime: '1.2s', mobile: '89/100', security: 'A- Grade', position: '#2' },
+    'Day 90': { loadTime: '0.8s', mobile: '98/100', security: 'A+ Grade', position: '#1' }
+  };
+
+  const toggleDetails = (section) => {
+    setExpandedDetails(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
   };
 
   return (
@@ -146,24 +231,100 @@ export default function WebAgencyLanding() {
             </div>
           </div>
 
-          {/* How We Keep You Ahead */}
-          <div>
+          {/* The Transformation */}
+          <div ref={transformationRef}>
             <div className="text-center mb-16">
               <h3 className="text-2xl font-light mb-3 tracking-tight">The Transformation</h3>
               <p className="text-slate-600 font-light">Before and after continuous optimization</p>
+              
+              {/* Industry Selector */}
+              <div className="mt-8 flex justify-center">
+                <div className="inline-flex bg-slate-100 rounded-lg p-1">
+                  {Object.keys(industryData).map((industry) => (
+                    <button
+                      key={industry}
+                      onClick={() => setSelectedIndustry(industry)}
+                      className={`px-4 py-2 text-xs font-medium rounded-md transition-all ${
+                        selectedIndustry === industry
+                          ? 'bg-white text-slate-900 shadow-sm'
+                          : 'text-slate-600 hover:text-slate-900'
+                      }`}
+                    >
+                      {industry}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Toggle Controls */}
+              <div className="mt-6 flex justify-center gap-4">
+                <button
+                  onClick={() => setShowMobileVersion(!showMobileVersion)}
+                  className="flex items-center gap-2 px-3 py-2 text-xs text-slate-600 hover:text-slate-900 border border-slate-200 rounded-md hover:bg-slate-50 transition-colors"
+                >
+                  {showMobileVersion ? <Monitor className="w-3 h-3" /> : <Smartphone className="w-3 h-3" />}
+                  Show {showMobileVersion ? 'Desktop' : 'Mobile'} Version
+                </button>
+                
+                <div className="flex items-center gap-2">
+                  <Clock className="w-3 h-3 text-slate-400" />
+                  <select
+                    value={selectedTimeframe}
+                    onChange={(e) => setSelectedTimeframe(e.target.value)}
+                    className="text-xs bg-white border border-slate-200 rounded-md px-2 py-1 text-slate-600 focus:outline-none focus:ring-1 focus:ring-slate-300"
+                  >
+                    {Object.keys(timeframeData).map((timeframe) => (
+                      <option key={timeframe} value={timeframe}>{timeframe}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Before/After Slider */}
+            <div className="mb-8">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <span className="text-xs text-slate-500">Before</span>
+                <div className="relative w-48 h-1 bg-slate-200 rounded-full">
+                  <div 
+                    className="absolute top-0 left-0 h-full bg-slate-900 rounded-full transition-all duration-300"
+                    style={{ width: `${sliderPosition}%` }}
+                  ></div>
+                  <button
+                    className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-slate-900 rounded-full transition-all duration-300 hover:scale-110"
+                    style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%) translateY(-50%)' }}
+                    onMouseDown={(e) => {
+                      const slider = e.currentTarget.parentElement;
+                      const rect = slider.getBoundingClientRect();
+                      const handleMouseMove = (e) => {
+                        const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+                        const percentage = (x / rect.width) * 100;
+                        setSliderPosition(percentage);
+                      };
+                      const handleMouseUp = () => {
+                        document.removeEventListener('mousemove', handleMouseMove);
+                        document.removeEventListener('mouseup', handleMouseUp);
+                      };
+                      document.addEventListener('mousemove', handleMouseMove);
+                      document.addEventListener('mouseup', handleMouseUp);
+                    }}
+                  />
+                </div>
+                <span className="text-xs text-slate-500">After</span>
+              </div>
             </div>
 
             {/* Before/After Comparison */}
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               {/* BEFORE */}
-              <div className="space-y-6">
+              <div className="space-y-6" style={{ opacity: sliderPosition > 50 ? 0.3 : 1, transition: 'opacity 0.3s' }}>
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-medium tracking-wider text-slate-400">BEFORE</span>
                   <span className="text-xs text-slate-400 font-light">Typical Website</span>
                 </div>
 
                 {/* Browser Preview */}
-                <div className="border border-slate-200 rounded-lg overflow-hidden">
+                <div className={`border border-slate-200 rounded-lg overflow-hidden ${showMobileVersion ? 'w-64 mx-auto' : ''}`}>
                   {/* Chrome Bar */}
                   <div className="bg-slate-100 px-4 py-2 flex items-center gap-2 border-b border-slate-200">
                     <div className="flex gap-1.5">
@@ -213,33 +374,99 @@ export default function WebAgencyLanding() {
                 {/* Metrics */}
                 <div className="space-y-4">
                   {[
-                    { label: 'Load Time', value: '4.2s', bar: 42 },
-                    { label: 'Mobile Score', value: '62/100', bar: 62 },
-                    { label: 'Security', value: 'C Grade', bar: 60 },
-                    { label: 'Market Position', value: '#7', bar: 30 }
+                    { 
+                      label: 'Load Time', 
+                      value: '4.2s', 
+                      bar: 42, 
+                      icon: Clock,
+                      tooltip: 'Slow loading affects user experience and search rankings'
+                    },
+                    { 
+                      label: 'Mobile Score', 
+                      value: '62/100', 
+                      bar: 62, 
+                      icon: Smartphone,
+                      tooltip: 'Poor mobile optimization loses mobile-first indexing benefits'
+                    },
+                    { 
+                      label: 'Security', 
+                      value: 'C Grade', 
+                      bar: 60, 
+                      icon: Lock,
+                      tooltip: 'Weak security protocols expose vulnerabilities'
+                    },
+                    { 
+                      label: 'Market Position', 
+                      value: '#7', 
+                      bar: 30, 
+                      icon: TrendingUp,
+                      tooltip: 'Low search rankings reduce organic traffic significantly'
+                    }
                   ].map((metric, idx) => (
-                    <div key={idx}>
-                      <div className="flex justify-between mb-2 text-xs">
-                        <span className="text-slate-500 font-light">{metric.label}</span>
+                    <div 
+                      key={idx}
+                      className="relative"
+                      onMouseEnter={() => setHoveredMetric(`before-${idx}`)}
+                      onMouseLeave={() => setHoveredMetric(null)}
+                    >
+                      <div className="flex justify-between items-center mb-2 text-xs">
+                        <div className="flex items-center gap-2">
+                          <metric.icon className="w-3 h-3 text-slate-400" />
+                          <span className="text-slate-500 font-light">{metric.label}</span>
+                          <Info className="w-3 h-3 text-slate-300 cursor-help" />
+                        </div>
                         <span className="text-slate-900">{metric.value}</span>
                       </div>
-                      <div className="w-full h-px bg-slate-100">
-                        <div className="h-full bg-slate-300" style={{ width: `${metric.bar}%` }}></div>
+                      <div className="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-slate-300 rounded-full transition-all duration-1000 ease-out"
+                          style={{ 
+                            width: metricsVisible ? `${metric.bar}%` : '0%',
+                            transitionDelay: `${idx * 200}ms`
+                          }}
+                        ></div>
                       </div>
+                      
+                      {/* Tooltip */}
+                      {hoveredMetric === `before-${idx}` && (
+                        <div className="absolute bottom-full left-0 mb-2 p-2 bg-slate-800 text-white text-xs rounded shadow-lg z-10 w-48">
+                          {metric.tooltip}
+                          <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* AFTER */}
-              <div className="space-y-6">
+              <div className="space-y-6" style={{ opacity: sliderPosition < 50 ? 0.3 : 1, transition: 'opacity 0.3s' }}>
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-medium tracking-wider text-slate-900">AFTER 9LINE</span>
-                  <span className="text-xs text-slate-500 font-light">Optimized & Maintained</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs text-slate-500 font-light">{selectedIndustry} • {selectedTimeframe}</span>
+                    <button
+                      onClick={() => toggleDetails('technical')}
+                      className="text-xs text-slate-600 hover:text-slate-900 underline"
+                    >
+                      Technical Details
+                    </button>
+                  </div>
                 </div>
 
+                {/* Technical Details Expandable */}
+                {expandedDetails.technical && (
+                  <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 mb-4">
+                    <div className="text-xs text-slate-600 space-y-2">
+                      <div><strong>Industry Specifics:</strong> {industryData[selectedIndustry].specifics}</div>
+                      <div><strong>Optimization Stack:</strong> CDN, Image compression, Database optimization, SSL/TLS 1.3</div>
+                      <div><strong>Monitoring:</strong> 24/7 uptime monitoring, performance tracking, security scans</div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Browser Preview */}
-                <div className="border-2 border-slate-900 rounded-lg overflow-hidden shadow-lg">
+                <div className={`border-2 border-slate-900 rounded-lg overflow-hidden shadow-lg ${showMobileVersion ? 'w-64 mx-auto' : ''}`}>
                   {/* Chrome Bar */}
                   <div className="bg-white px-4 py-2 flex items-center gap-2 border-b border-slate-200">
                     <div className="flex gap-1.5">
@@ -296,22 +523,73 @@ export default function WebAgencyLanding() {
                 {/* Metrics */}
                 <div className="space-y-4">
                   {[
-                    { label: 'Load Time', value: '0.8s', bar: 92, change: '+425%' },
-                    { label: 'Mobile Score', value: '98/100', bar: 98, change: '+58%' },
-                    { label: 'Security', value: 'A+ Grade', bar: 100, change: 'Perfect' },
-                    { label: 'Market Position', value: '#1', bar: 100, change: '★' }
+                    { 
+                      label: 'Load Time', 
+                      value: timeframeData[selectedTimeframe].loadTime,
+                      bar: selectedTimeframe === 'Day 90' ? 92 : selectedTimeframe === 'Day 60' ? 78 : 52, 
+                      change: '+425%',
+                      icon: Zap,
+                      tooltip: 'Optimized with CDN, image compression, and code splitting'
+                    },
+                    { 
+                      label: 'Mobile Score', 
+                      value: timeframeData[selectedTimeframe].mobile,
+                      bar: selectedTimeframe === 'Day 90' ? 98 : selectedTimeframe === 'Day 60' ? 89 : 78, 
+                      change: '+58%',
+                      icon: Smartphone,
+                      tooltip: 'Mobile-first design with progressive enhancement'
+                    },
+                    { 
+                      label: 'Security', 
+                      value: industryData[selectedIndustry].metrics.security,
+                      bar: selectedTimeframe === 'Day 90' ? 100 : selectedTimeframe === 'Day 60' ? 85 : 70, 
+                      change: 'Perfect',
+                      icon: Shield,
+                      tooltip: `Industry-specific security: ${industryData[selectedIndustry].specifics.split(',')[0]}`
+                    },
+                    { 
+                      label: 'Market Position', 
+                      value: timeframeData[selectedTimeframe].position,
+                      bar: selectedTimeframe === 'Day 90' ? 100 : selectedTimeframe === 'Day 60' ? 85 : 70, 
+                      change: '★',
+                      icon: Trophy,
+                      tooltip: 'SEO optimization and competitive analysis drive rankings'
+                    }
                   ].map((metric, idx) => (
-                    <div key={idx}>
-                      <div className="flex justify-between mb-2 text-xs">
-                        <span className="text-slate-600 font-light">{metric.label}</span>
+                    <div 
+                      key={idx}
+                      className="relative"
+                      onMouseEnter={() => setHoveredMetric(`after-${idx}`)}
+                      onMouseLeave={() => setHoveredMetric(null)}
+                    >
+                      <div className="flex justify-between items-center mb-2 text-xs">
+                        <div className="flex items-center gap-2">
+                          <metric.icon className="w-3 h-3 text-slate-600" />
+                          <span className="text-slate-600 font-light">{metric.label}</span>
+                          <Info className="w-3 h-3 text-slate-400 cursor-help" />
+                        </div>
                         <div className="flex items-center gap-2">
                           <span className="text-slate-900 font-medium">{metric.value}</span>
                           <span className="text-green-600 text-[10px]">{metric.change}</span>
                         </div>
                       </div>
-                      <div className="w-full h-px bg-slate-100">
-                        <div className="h-full bg-slate-900" style={{ width: `${metric.bar}%` }}></div>
+                      <div className="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-slate-900 rounded-full transition-all duration-1000 ease-out"
+                          style={{ 
+                            width: metricsVisible ? `${metric.bar}%` : '0%',
+                            transitionDelay: `${idx * 200 + 400}ms`
+                          }}
+                        ></div>
                       </div>
+                      
+                      {/* Tooltip */}
+                      {hoveredMetric === `after-${idx}` && (
+                        <div className="absolute bottom-full left-0 mb-2 p-2 bg-slate-800 text-white text-xs rounded shadow-lg z-10 w-48">
+                          {metric.tooltip}
+                          <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-800"></div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -320,16 +598,87 @@ export default function WebAgencyLanding() {
 
             {/* Impact Summary */}
             <div className="border-t border-slate-200 pt-12">
+              <div className="flex items-center justify-between mb-8">
+                <h4 className="text-lg font-light text-slate-900">Overall Impact</h4>
+                <button
+                  onClick={() => toggleDetails('impact')}
+                  className="text-xs text-slate-600 hover:text-slate-900 underline"
+                >
+                  View Breakdown
+                </button>
+              </div>
+
+              {/* Impact Details */}
+              {expandedDetails.impact && (
+                <div className="bg-slate-50 border border-slate-200 rounded-lg p-6 mb-8">
+                  <div className="grid md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                      <h5 className="font-medium mb-3">Performance Gains</h5>
+                      <ul className="space-y-2 text-slate-600">
+                        <li>• Core Web Vitals optimization</li>
+                        <li>• Image and asset compression</li>
+                        <li>• Database query optimization</li>
+                        <li>• CDN implementation</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-medium mb-3">Business Impact</h5>
+                      <ul className="space-y-2 text-slate-600">
+                        <li>• Reduced bounce rates</li>
+                        <li>• Improved conversion funnels</li>
+                        <li>• Higher search rankings</li>
+                        <li>• Enhanced user experience</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 {[
-                  { value: '425%', label: 'Faster' },
-                  { value: '67%', label: 'More Conversions' },
-                  { value: '89%', label: 'Better SEO' },
-                  { value: '∞', label: 'Staying Power' }
+                  { 
+                    value: animatedCounters.speed || 0, 
+                    suffix: '%', 
+                    label: 'Faster',
+                    description: 'Page load time improvement'
+                  },
+                  { 
+                    value: animatedCounters.conversions || 0, 
+                    suffix: '%', 
+                    label: 'More Conversions',
+                    description: 'Conversion rate increase'
+                  },
+                  { 
+                    value: animatedCounters.seo || 0, 
+                    suffix: '%', 
+                    label: 'Better SEO',
+                    description: 'Search ranking improvement'
+                  },
+                  { 
+                    value: '∞', 
+                    suffix: '', 
+                    label: 'Staying Power',
+                    description: 'Continuous optimization'
+                  }
                 ].map((stat, idx) => (
-                  <div key={idx}>
-                    <div className="text-4xl font-light text-slate-900 mb-2">{stat.value}</div>
+                  <div 
+                    key={idx}
+                    className="group cursor-help"
+                    onMouseEnter={() => setHoveredMetric(`summary-${idx}`)}
+                    onMouseLeave={() => setHoveredMetric(null)}
+                  >
+                    <div className="text-4xl font-light text-slate-900 mb-2 transition-colors group-hover:text-slate-700">
+                      {stat.value}{stat.suffix}
+                    </div>
                     <div className="text-xs text-slate-500 font-light tracking-wide">{stat.label}</div>
+                    
+                    {/* Hover description */}
+                    {hoveredMetric === `summary-${idx}` && (
+                      <div className="absolute bg-slate-800 text-white text-xs rounded shadow-lg z-10 p-2 mt-2 left-1/2 transform -translate-x-1/2">
+                        {stat.description}
+                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-slate-800"></div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
