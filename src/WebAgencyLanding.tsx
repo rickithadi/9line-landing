@@ -1,12 +1,12 @@
-import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Shield, TrendingUp } from 'lucide-react';
-import React, { useRef, useState } from 'react';
+import { ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Shield, TrendingUp } from 'lucide-react';
+import { useRef, useState } from 'react';
 
 function WebAgencyLanding() {
-  const testimonialsRef = useRef(null);
-  const pricingRef = useRef(null);
-  const [openFaq, setOpenFaq] = useState(null);
+  const testimonialsRef = useRef<HTMLDivElement>(null);
+  const pricingRef = useRef<HTMLDivElement>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const scroll = (ref, direction) => {
+  const scroll = (ref: React.RefObject<HTMLDivElement>, direction: 'left' | 'right') => {
     if (ref.current) {
       const scrollAmount = ref.current.offsetWidth * 0.8;
       ref.current.scrollBy({
@@ -595,11 +595,13 @@ function WebAgencyLanding() {
         </div>
       </footer>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
-      `}</style>
+        `
+      }} />
     </div>
   );
 }
