@@ -1,0 +1,17 @@
+{
+  "name": "9line.dev - Website Monitoring & Optimization",
+  "short_name": "9line.dev",
+  "description": "We monitor, audit, and evolve your website continuously. Professional website monitoring and optimization services.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#0f172a",
+  "background_color": "#ffffff",
+  "display": "minimal-ui",
+  "start_url": "/",
+  "scope": "/"
+}

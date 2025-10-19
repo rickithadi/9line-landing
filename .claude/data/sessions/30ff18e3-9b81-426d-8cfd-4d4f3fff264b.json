@@ -8,6 +8,7 @@
     "update hero to use the following copy\n\nYour website,\nAlways Ready.\nWe monitor, audit, and evolve your website continuously\u2014keeping your digital presence secure, fast, and perfectly aligned with your goals.",
     "add a CTA for a site audit. collect email contact and website URL",
     "remove all logs from git tree. add the dir to gitignore",
-    "configure vercel for this codebase"
+    "configure vercel for this codebase",
+    "ensure seo tags and meta tags are all up to date. ensure responsiveness"
   ]
 }
