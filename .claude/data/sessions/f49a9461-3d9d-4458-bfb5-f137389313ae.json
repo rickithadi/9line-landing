@@ -1,0 +1,7 @@
+{
+  "session_id": "f49a9461-3d9d-4458-bfb5-f137389313ae",
+  "prompts": [
+    "build a modal with form component, it shouldMaintain consistent styling with the rest of the site and trigger when CTAs are clicked. The form should include their domain as an optional parameter and their email address. ",
+    "remove join waitlist buttons"
+  ]
+}

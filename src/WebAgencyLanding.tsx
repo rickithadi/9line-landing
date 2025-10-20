@@ -1,10 +1,13 @@
 import { ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Shield, TrendingUp } from 'lucide-react';
 import { useRef, useState } from 'react';
+import { Modal } from './components/Modal';
+import { ContactForm } from './components/ContactForm';
 
 function WebAgencyLanding() {
   const testimonialsRef = useRef<HTMLDivElement>(null);
   const pricingRef = useRef<HTMLDivElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const scroll = (ref: React.RefObject<HTMLDivElement>, direction: 'left' | 'right') => {
     if (ref.current) {
@@ -16,6 +19,12 @@ function WebAgencyLanding() {
     }
   };
 
+  const handleFormSubmit = async (data: { email: string; domain?: string }) => {
+    console.log('Form submitted:', data);
+    // TODO: Handle form submission (e.g., send to API)
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
@@ -24,7 +33,10 @@ function WebAgencyLanding() {
             <span className="font-semibold text-slate-900">9line</span>
             <span className="text-slate-400">.dev</span>
           </div>
-          <button className="px-6 py-2 text-sm font-medium text-slate-900 hover:text-blue-600 transition-colors">
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="px-6 py-2 text-sm font-medium text-slate-900 hover:text-blue-600 transition-colors"
+          >
             See Where You Rank →
           </button>
         </div>
@@ -46,12 +58,12 @@ function WebAgencyLanding() {
             We make your website rank higher in Google, load faster, and convert better than your competitors. Every single month. Automatically.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <button className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide">
+          <div className="flex justify-center mb-6">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+            >
               SEE WHERE YOU RANK
-            </button>
-            <button className="px-8 py-4 border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white transition-colors text-sm font-medium tracking-wide">
-              JOIN WAITLIST
             </button>
           </div>
 
@@ -204,7 +216,10 @@ function WebAgencyLanding() {
             </div>
 
             <div className="text-center mt-12">
-              <button className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+              >
                 SEE YOUR POTENTIAL
               </button>
             </div>
@@ -278,7 +293,10 @@ function WebAgencyLanding() {
           </div>
 
           <div className="text-center mt-12">
-            <button className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+            >
               SEE YOUR DASHBOARD
             </button>
           </div>
@@ -387,7 +405,10 @@ function WebAgencyLanding() {
                     <li className="text-sm text-slate-600 font-light">Email support</li>
                   </ul>
 
-                  <button className="w-full py-3 text-sm font-medium tracking-wide transition-colors border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white">
+                  <button 
+                    onClick={() => setIsModalOpen(true)}
+                    className="w-full py-3 text-sm font-medium tracking-wide transition-colors border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white"
+                  >
                     GET STARTED
                   </button>
                 </div>
@@ -414,7 +435,10 @@ function WebAgencyLanding() {
                     <li className="text-sm font-medium">Monthly strategy call</li>
                   </ul>
 
-                  <button className="w-full py-3 text-sm font-medium tracking-wide transition-colors bg-slate-900 text-white hover:bg-slate-800">
+                  <button 
+                    onClick={() => setIsModalOpen(true)}
+                    className="w-full py-3 text-sm font-medium tracking-wide transition-colors bg-slate-900 text-white hover:bg-slate-800"
+                  >
                     GET STARTED
                   </button>
                 </div>
@@ -438,7 +462,10 @@ function WebAgencyLanding() {
                     <li className="text-sm text-slate-600 font-light">Same-day support</li>
                   </ul>
 
-                  <button className="w-full py-3 text-sm font-medium tracking-wide transition-colors border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white">
+                  <button 
+                    onClick={() => setIsModalOpen(true)}
+                    className="w-full py-3 text-sm font-medium tracking-wide transition-colors border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white"
+                  >
                     GET STARTED
                   </button>
                 </div>
@@ -568,12 +595,12 @@ function WebAgencyLanding() {
           <p className="text-lg text-slate-400 mb-12 font-light leading-relaxed">
             Free competitive analysis. See exactly where you rank vs. competitors and what it takes to be #1 in your market.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <button className="px-10 py-4 bg-white text-slate-900 hover:bg-slate-100 transition-colors text-sm font-medium tracking-wide">
+          <div className="flex justify-center mb-6">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="px-10 py-4 bg-white text-slate-900 hover:bg-slate-100 transition-colors text-sm font-medium tracking-wide"
+            >
               SEE WHERE YOU RANK
-            </button>
-            <button className="px-10 py-4 border border-white text-white hover:bg-white hover:text-slate-900 transition-colors text-sm font-medium tracking-wide">
-              JOIN WAITLIST
             </button>
           </div>
           <p className="text-sm text-slate-500 font-light">
@@ -602,6 +629,13 @@ function WebAgencyLanding() {
         }
         `
       }} />
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <ContactForm 
+          onSubmit={handleFormSubmit}
+          onCancel={() => setIsModalOpen(false)}
+        />
+      </Modal>
     </div>
   );
 }
