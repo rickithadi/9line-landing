@@ -431,21 +431,45 @@ function WebAgencyLanding() {
               <div className="flex md:grid md:grid-cols-3 gap-8 pb-4">
                 <div className="flex-shrink-0 w-80 md:w-auto snap-start p-10 border border-slate-200">
                   <div className="mb-12">
-                    <h3 className="text-sm font-medium tracking-wider mb-2">STARTER</h3>
-                    <p className="text-xs text-slate-500 font-light mb-4">5-10 pages · Basic intelligence</p>
+                    <h3 className="text-sm font-medium tracking-wider mb-2">COMPETITIVE EDGE</h3>
+                    <p className="text-xs text-slate-500 font-light mb-4">Single location · Real-time intelligence</p>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-5xl font-light">$1,495</span>
+                      <span className="text-5xl font-light">$1,995</span>
                       <span className="text-slate-500 font-light">/mo</span>
+                    </div>
+                    <div className="text-xs text-slate-500 font-light mt-2">
+                      Save $2,400/year when paid annually
                     </div>
                   </div>
 
-                  <ul className="space-y-4 mb-12">
-                    <li className="text-sm text-slate-600 font-light">Bi-weekly competitive audits</li>
-                    <li className="text-sm text-slate-600 font-light">Industry-specific monitoring</li>
-                    <li className="text-sm text-slate-600 font-light">Performance optimization</li>
-                    <li className="text-sm text-slate-600 font-light">Speed & mobile improvements</li>
-                    <li className="text-sm text-slate-600 font-light">Monthly intelligence reports</li>
+                  <ul className="space-y-3 mb-12">
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Track 3 competitors + 25 keywords</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>2 website improvements per week</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>City-wide ranking heatmap</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Performance dashboard + weekly reports</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Website hosting + security</span>
+                    </li>
                   </ul>
+
+                  <div className="mb-4 p-3 bg-slate-50 border border-slate-200 rounded">
+                    <p className="text-xs text-slate-600 font-light italic">
+                      "Just 1 new client every 2 months to break even"
+                    </p>
+                  </div>
 
                   <button 
                     onClick={() => setIsModalOpen(true)}
@@ -460,22 +484,49 @@ function WebAgencyLanding() {
                     MOST POPULAR
                   </div>
                   <div className="mb-12">
-                    <h3 className="text-sm font-medium tracking-wider mb-2">GROWTH</h3>
-                    <p className="text-xs text-slate-900 font-medium mb-4">Unlimited pages · Advanced intelligence</p>
+                    <h3 className="text-sm font-medium tracking-wider mb-2">MARKET DOMINATOR</h3>
+                    <p className="text-xs text-slate-900 font-medium mb-4">Multi-location · Enhanced intelligence</p>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-5xl font-light">$2,495</span>
+                      <span className="text-5xl font-light">$2,995</span>
                       <span className="text-slate-500 font-light">/mo</span>
+                    </div>
+                    <div className="text-xs text-slate-500 font-light mt-2">
+                      Save $3,600/year when paid annually
                     </div>
                   </div>
 
-                  <ul className="space-y-4 mb-12">
-                    <li className="text-sm font-medium">Weekly intelligence audits & implementation</li>
-                    <li className="text-sm font-medium">Advanced SEO optimization</li>
-                    <li className="text-sm font-medium">Content & conversion strategy</li>
-                    <li className="text-sm font-medium">Technical performance fixes</li>
-                    <li className="text-sm font-medium">Priority support & strategy calls</li>
-                    <li className="text-sm font-medium">Competitive intelligence reports</li>
+                  <ul className="space-y-3 mb-12">
+                    <li className="text-sm font-medium flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Track 5 competitors + 50 keywords</span>
+                    </li>
+                    <li className="text-sm font-medium flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>4 website improvements per week</span>
+                    </li>
+                    <li className="text-sm font-medium flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Hourly ranking updates + alerts</span>
+                    </li>
+                    <li className="text-sm font-medium flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Content creation (1 blog post/month)</span>
+                    </li>
+                    <li className="text-sm font-medium flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Bi-weekly strategy calls</span>
+                    </li>
+                    <li className="text-sm font-medium flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>24-hour response time</span>
+                    </li>
                   </ul>
+
+                  <div className="mb-4 p-3 bg-slate-50 border border-slate-200 rounded">
+                    <p className="text-xs text-slate-600 font-light italic">
+                      "A single case/patient pays for 3-6 months of service"
+                    </p>
+                  </div>
 
                   <button 
                     onClick={() => setIsModalOpen(true)}
@@ -487,22 +538,49 @@ function WebAgencyLanding() {
 
                 <div className="flex-shrink-0 w-80 md:w-auto snap-start p-10 border border-slate-200">
                   <div className="mb-12">
-                    <h3 className="text-sm font-medium tracking-wider mb-2">ENTERPRISE</h3>
-                    <p className="text-xs text-slate-500 font-light mb-4">Multiple sites · Dedicated account manager</p>
+                    <h3 className="text-sm font-medium tracking-wider mb-2">REGIONAL LEADER</h3>
+                    <p className="text-xs text-slate-500 font-light mb-4">4-10 locations · Enterprise intelligence</p>
                     <div className="flex items-baseline gap-2">
                       <span className="text-5xl font-light">$4,995</span>
                       <span className="text-slate-500 font-light">/mo</span>
                     </div>
+                    <div className="text-xs text-slate-500 font-light mt-2">
+                      Save $6,000/year when paid annually
+                    </div>
                   </div>
 
-                  <ul className="space-y-4 mb-12">
-                    <li className="text-sm text-slate-600 font-light">Daily intelligence monitoring</li>
-                    <li className="text-sm text-slate-600 font-light">Multiple website optimization</li>
-                    <li className="text-sm text-slate-600 font-light">Custom content & design strategy</li>
-                    <li className="text-sm text-slate-600 font-light">Advanced competitive intelligence</li>
-                    <li className="text-sm text-slate-600 font-light">Dedicated intelligence manager</li>
-                    <li className="text-sm text-slate-600 font-light">Same-day implementation</li>
+                  <ul className="space-y-3 mb-12">
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Unlimited competitors + 100+ keywords</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Daily website improvements</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Multi-location management (4-10 sites)</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Dedicated account manager</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Monthly strategy sessions</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Same-day response + VIP support</span>
+                    </li>
                   </ul>
+
+                  <div className="mb-4 p-3 bg-slate-50 border border-slate-200 rounded">
+                    <p className="text-xs text-slate-600 font-light italic">
+                      "Cost per location is just $500-$1,250/month"
+                    </p>
+                  </div>
 
                   <button 
                     onClick={() => setIsModalOpen(true)}
@@ -525,6 +603,43 @@ function WebAgencyLanding() {
           <p className="text-center text-xs text-slate-500 font-light mt-8">
             All plans include continuous improvements · Cancel anytime
           </p>
+
+          {/* Competitive Comparison */}
+          <div className="mt-24 pt-16 border-t border-slate-200">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-light mb-4 tracking-tight">Intelligence + Implementation</h3>
+              <p className="text-slate-600 font-light">What you actually get for your money</p>
+            </div>
+
+            <div className="max-w-2xl mx-auto">
+              <table className="w-full border border-slate-200 bg-white">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <th className="text-left py-3 px-4 text-sm font-medium">Service</th>
+                    <th className="py-3 px-4 text-sm font-medium">Cost</th>
+                    <th className="py-3 px-4 text-sm font-medium">You Get</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-100">
+                    <td className="py-3 px-4 text-sm">SEO Agency</td>
+                    <td className="py-3 px-4 text-sm text-center">$1,500-$3,000</td>
+                    <td className="py-3 px-4 text-sm">Reports only</td>
+                  </tr>
+                  <tr className="border-b border-slate-100">
+                    <td className="py-3 px-4 text-sm">Design Subscription</td>
+                    <td className="py-3 px-4 text-sm text-center">$4,995</td>
+                    <td className="py-3 px-4 text-sm">Pretty sites that don't rank</td>
+                  </tr>
+                  <tr className="bg-blue-50">
+                    <td className="py-3 px-4 text-sm font-medium">9line.dev</td>
+                    <td className="py-3 px-4 text-sm text-center font-medium">$1,995-$4,995</td>
+                    <td className="py-3 px-4 text-sm font-medium">Intelligence + action</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
 
