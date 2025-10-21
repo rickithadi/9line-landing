@@ -100,8 +100,8 @@ export function CityHeatmap() {
           <div className="flex-1">
             <svg 
               viewBox="0 0 400 500" 
-              className="w-full h-auto max-w-md mx-auto"
-              style={{ maxHeight: '400px' }}
+              className="w-full h-auto max-w-sm sm:max-w-md mx-auto"
+              style={{ maxHeight: '350px', minHeight: '250px' }}
             >
               {mockData.map((area) => (
                 <g key={area.id}>

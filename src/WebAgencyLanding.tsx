@@ -76,7 +76,7 @@ function WebAgencyLanding() {
 
       <section className="py-16 px-8 border-y border-slate-200">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl font-light text-slate-900 mb-1">+167%</div>
               <div className="text-sm text-slate-500 font-light">Avg. Google Traffic Increase</div>
@@ -291,7 +291,7 @@ function WebAgencyLanding() {
             </div>
 
             <div className="p-8">
-              <div className="grid grid-cols-4 gap-4 mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div className="border border-slate-200 p-4 text-center">
                   <div className="text-xs text-slate-500 mb-2">Google Rank</div>
                   <div className="text-2xl font-light mb-1">#1</div>
@@ -611,8 +611,8 @@ function WebAgencyLanding() {
               <p className="text-slate-600 font-light">What you actually get for your money</p>
             </div>
 
-            <div className="max-w-2xl mx-auto">
-              <table className="w-full border border-slate-200 bg-white">
+            <div className="max-w-2xl mx-auto overflow-x-auto">
+              <table className="w-full border border-slate-200 bg-white min-w-96">
                 <thead>
                   <tr className="border-b border-slate-200 bg-slate-50">
                     <th className="text-left py-3 px-4 text-sm font-medium">Service</th>
@@ -746,7 +746,7 @@ function WebAgencyLanding() {
 
       <section className="py-32 px-8 bg-slate-900 text-white">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-light mb-8 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-8 tracking-tight">
             Get Your Intelligence Advantage
           </h2>
           <p className="text-lg text-slate-400 mb-12 font-light leading-relaxed">
