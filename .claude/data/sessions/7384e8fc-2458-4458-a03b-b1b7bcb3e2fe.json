@@ -1,0 +1,9 @@
+{
+  "session_id": "7384e8fc-2458-4458-a03b-b1b7bcb3e2fe",
+  "prompts": [
+    "Create another page. This page will only be viewable by me. It is a pitch deck. Create a randomized URL on the back of the domain. It will just be a TypeScript file that I will be pasting in. ",
+    "modify this pitch deck so each slide is a page ",
+    "I want to be able to convert this or print this out to PDF. So each slide just needs to be one page, but it still needs to be vertical. ",
+    "its not responsive, styling is broken when trying to print"
+  ]
+}

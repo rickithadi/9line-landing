@@ -1,0 +1,8 @@
+{
+  "session_id": "7d9c9ecc-1da0-44b7-844d-0724bb14eeb1",
+  "prompts": [
+    "integrate\n\n{\n  \"mcpServers\": {\n    \"firecrawl-mcp\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"firecrawl-mcp\"],\n      \"env\": {\n        \"FIRECRAWL_API_KEY\": \"fc-866246bd67bf42fea45528e30cf105c9\"\n      }\n    }\n  }\n}",
+    "do i have access via claude code as well",
+    "change the voice for the elevenlabs mcp integration. i want a woman"
+  ]
+}
