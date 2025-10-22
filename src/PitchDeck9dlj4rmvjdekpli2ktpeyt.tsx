@@ -1,4 +1,3 @@
-import React from 'react';
 import './print-styles.css';
 
 const PitchDeck9dlj4rmvjdekpli2ktpeyt = () => {
