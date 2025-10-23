@@ -1,0 +1,15 @@
+{
+  "session_id": "a1ab8171-ad83-4e96-84c9-0614099736a9",
+  "prompts": [
+    "integrate this copy into the landing site",
+    "Our Philosophy:\n\n- We want to deliver cutting edge insights that fortune 500 companies get for affordable prices.\n- We want to establish a long term relationship with our clients.\n- We want to deliver continuous improvement to stay on top of developments in technology automatically so you don't have to.\n- You are busy running your business and don't have time to figure out the tech yourself, what is the best option to pick, and spending the time and energy implementing it yourself without assistance.\n- Develop affordable technologies that we can deploy for you that just work.\n- 9Line Philosophy related to 9 Line Medevac. What it is, basic inputs for fast rescue (synonym).\n\nBio\n\n- Experience largest technology consulting firm in the world. worked for fortune 500 companies and fast growing startups. Developed cutting edge technologies for the largest corporations and realized that everyone ignores SME businesses so they get left behind",
+    "in the From Losing to Winning\n\nAdd figures relating to:\n- Bounce rate\n- Percentage of mobile users\n- Time to first paint\n\nWe want to really drive home how much better we can make your website and make it clear to non-technical business owners as well. ",
+    "remove Intelligence + Implementation section",
+    "@agent-agency-swarm-coordinator perform messaging audit, Provide a plan to streamline the message and remove any unnecessary copy. Provide recommendations on restructuring if needed. ",
+    "yes",
+    "provide recommendations on the order of the sections, who we are should not be all the way at the bottom. ",
+    "From Losing to Winning\n\niterate on this section, use iconography and different layout",
+    "propose a suggestions section in the dashboard visualisation for website improvements. Also put back the previous dahboard visualisation under your dashboard section. remove Intelligence + Implementation",
+    "update From Losing to Winning\n\nto match design direction of the site"
+  ]
+}

@@ -1,8 +1,9 @@
-import { ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Shield, TrendingUp } from 'lucide-react';
+import { AlertTriangle, ArrowRight, CheckCircle, ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Lightbulb, MousePointerClick, Search, Shield, Smartphone, TrendingUp, Users, Zap } from 'lucide-react';
 import { useRef, useState } from 'react';
-import { Modal } from './components/Modal';
-import { ContactForm } from './components/ContactForm';
+
 import { CityHeatmap } from './components/CityHeatmap';
+import { ContactForm } from './components/ContactForm';
+import { Modal } from './components/Modal';
 
 function WebAgencyLanding() {
   const testimonialsRef = useRef<HTMLDivElement>(null);
@@ -34,7 +35,7 @@ function WebAgencyLanding() {
             <span className="font-semibold text-slate-900">9line</span>
             <span className="text-slate-400">.dev</span>
           </div>
-          <button 
+          <button
             onClick={() => setIsModalOpen(true)}
             className="px-6 py-2 text-sm font-medium text-slate-900 hover:text-blue-600 transition-colors"
           >
@@ -46,21 +47,21 @@ function WebAgencyLanding() {
       <section className="pt-40 pb-32 px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 border border-slate-200 rounded-full px-4 py-1.5 mb-8 text-xs text-slate-600 font-light">
-            Trusted by 250+ business owners · Enterprise-level intelligence for 1/5th the cost
+            Fortune 500 insights at affordable prices · Trusted by 250+ SME business owners
           </div>
 
           <h1 className="text-6xl md:text-7xl font-light mb-8 leading-tight tracking-tight">
-            Intelligence-driven
+            Fast digital rescue
             <span className="block font-normal text-blue-600 mt-2">
-              Website Optimization.
+              for busy business owners.
             </span>
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-            The only business intelligence platform that continuously audits, optimizes, and improves your website based on real performance data and your industry's best practices.
+            Enterprise-level website intelligence and continuous optimization. No guesswork. No tech headaches. Just results.
           </p>
 
           <div className="flex justify-center mb-6">
-            <button 
+            <button
               onClick={() => setIsModalOpen(true)}
               className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
             >
@@ -69,7 +70,7 @@ function WebAgencyLanding() {
           </div>
 
           <p className="text-xs text-slate-500 font-light">
-            Free competitive intelligence report · Industry-specific insights · No commitment
+            Free intelligence report · No commitment
           </p>
         </div>
       </section>
@@ -88,6 +89,27 @@ function WebAgencyLanding() {
             <div>
               <div className="text-4xl font-light text-slate-900 mb-1">#1</div>
               <div className="text-sm text-slate-500 font-light">Average Market Position</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light mb-4 tracking-tight">Who We Are</h2>
+            <p className="text-slate-600 font-light">Born from Fortune 500 consulting experience, focused on SME success.</p>
+          </div>
+
+          <div className="bg-white border border-slate-200 p-12">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-lg text-slate-600 font-light leading-relaxed mb-8">
+                We have extensive experience from the world's largest technology consulting firms working with Fortune 500 companies and fast-growing startups. But we realized: everyone ignores SME businesses, leaving them with generic solutions that don't move the needle.
+              </p>
+
+              <p className="text-lg text-slate-600 font-light leading-relaxed">
+                Your business deserves the same strategic intelligence that Fortune 500 companies receive. We bridge that gap—bringing enterprise-level insights at prices that make sense for your business.
+              </p>
             </div>
           </div>
         </div>
@@ -123,9 +145,265 @@ function WebAgencyLanding() {
             </div>
           </div>
 
-          <div className="mb-24">
+          <div className="mt-32 pt-24 border-t border-slate-200">
+            <div className="text-center mb-16">
+              <h3 className="text-3xl font-light mb-4 tracking-tight">From Losing to Winning</h3>
+              <p className="text-slate-600 font-light">Real client transformations that drive business growth</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white border border-slate-200 p-8">
+                <div className="flex items-center gap-3 mb-8">
+                  <Users className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                  <h4 className="text-lg font-light text-slate-900">Customer Growth</h4>
+                </div>
+                <div className="space-y-4">
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                    <div className="text-slate-700 font-light">Losing visitors</div>
+                  </div>
+                  <div className="text-center">
+                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                  </div>
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                    <div className="text-3xl font-light text-slate-900 mb-1">+67%</div>
+                    <div className="text-xs text-slate-500 font-light">more customers</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-slate-200 p-8">
+                <div className="flex items-center gap-3 mb-8">
+                  <MousePointerClick className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                  <h4 className="text-lg font-light text-slate-900">Visitor Retention</h4>
+                </div>
+                <div className="space-y-4">
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                    <div className="text-slate-700 font-light">72% leaving</div>
+                  </div>
+                  <div className="text-center">
+                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                  </div>
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                    <div className="text-3xl font-light text-slate-900 mb-1">15%</div>
+                    <div className="text-xs text-slate-500 font-light">bounce rate</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-slate-200 p-8">
+                <div className="flex items-center gap-3 mb-8">
+                  <Smartphone className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                  <h4 className="text-lg font-light text-slate-900">Mobile Experience</h4>
+                </div>
+                <div className="space-y-4">
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                    <div className="text-slate-700 font-light">43% mobile</div>
+                  </div>
+                  <div className="text-center">
+                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                  </div>
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                    <div className="text-3xl font-light text-slate-900 mb-1">78%</div>
+                    <div className="text-xs text-slate-500 font-light">mobile optimized</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-slate-200 p-8">
+                <div className="flex items-center gap-3 mb-8">
+                  <Zap className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                  <h4 className="text-lg font-light text-slate-900">Loading Speed</h4>
+                </div>
+                <div className="space-y-4">
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                    <div className="text-slate-700 font-light">4.8s slow</div>
+                  </div>
+                  <div className="text-center">
+                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                  </div>
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                    <div className="text-3xl font-light text-slate-900 mb-1">0.9s</div>
+                    <div className="text-xs text-slate-500 font-light">lightning fast</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-slate-200 p-8">
+                <div className="flex items-center gap-3 mb-8">
+                  <Search className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                  <h4 className="text-lg font-light text-slate-900">Search Visibility</h4>
+                </div>
+                <div className="space-y-4">
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                    <div className="text-slate-700 font-light">Hidden online</div>
+                  </div>
+                  <div className="text-center">
+                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                  </div>
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                    <div className="text-3xl font-light text-slate-900 mb-1">+89%</div>
+                    <div className="text-xs text-slate-500 font-light">search traffic</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white border border-slate-200 p-8">
+                <div className="flex items-center gap-3 mb-8">
+                  <TrendingUp className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                  <h4 className="text-lg font-light text-slate-900">Google Rankings</h4>
+                </div>
+                <div className="space-y-4">
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                    <div className="text-slate-700 font-light">Page 7</div>
+                  </div>
+                  <div className="text-center">
+                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                  </div>
+                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                    <div className="text-3xl font-light text-slate-900 mb-1">Page 1</div>
+                    <div className="text-xs text-slate-500 font-light">top rankings</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+              >
+                SEE YOUR POTENTIAL
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section className="py-32 px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light mb-4 tracking-tight">Your Dashboard</h2>
+            <p className="text-slate-600 font-light">Track your competitive position in real-time</p>
+          </div>
+
+          <div className="border-2 border-slate-300 bg-white">
+            <div className="border-b border-slate-200 px-8 py-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-sm font-medium mb-1">Competitive Intelligence</div>
+                  <div className="text-xs text-slate-500 font-light">See exactly where you stand vs. competitors</div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <TrendingUp className="w-4 h-4 text-green-600" />
+                  <span className="text-xs font-light text-green-600">Improving</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="border border-slate-200 p-4 text-center">
+                  <div className="text-xs text-slate-500 mb-2">Google Rank</div>
+                  <div className="text-2xl font-light mb-1">#1</div>
+                  <div className="text-xs text-slate-400">Page 1, Pos 1</div>
+                </div>
+                <div className="border border-slate-200 p-4 text-center">
+                  <div className="text-xs text-slate-500 mb-2">Organic Traffic</div>
+                  <div className="text-2xl font-light mb-1">+187%</div>
+                  <div className="text-xs text-slate-400">This month</div>
+                </div>
+                <div className="border border-slate-200 p-4 text-center">
+                  <div className="text-xs text-slate-500 mb-2">Keywords Ranked</div>
+                  <div className="text-2xl font-light mb-1">47</div>
+                  <div className="text-xs text-slate-400">Page 1</div>
+                </div>
+                <div className="border border-slate-200 p-4 text-center">
+                  <div className="text-xs text-slate-500 mb-2">Domain Authority</div>
+                  <div className="text-2xl font-light mb-1">64</div>
+                  <div className="text-xs text-slate-400">Growing</div>
+                </div>
+              </div>
+
+              <div className="border-t border-slate-200 pt-6 mb-6">
+                <div className="text-xs font-medium text-slate-400 mb-4 tracking-wider">THIS MONTH'S SEO WINS</div>
+                <div className="space-y-2 text-sm font-light text-slate-600">
+                  <div className="flex items-center justify-between">
+                    <span>Ranked #1 for "roofing contractor [city]"</span>
+                    <span className="text-green-600">✓</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span>12 new keywords on page 1</span>
+                    <span className="text-green-600">✓</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span>Domain authority increased to 64</span>
+                    <span className="text-green-600">✓</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-t border-slate-200 pt-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <Lightbulb className="w-4 h-4 text-blue-600" strokeWidth={1.5} />
+                  <div className="text-xs font-medium text-slate-400 tracking-wider">AI-POWERED SUGGESTIONS</div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                    <AlertTriangle className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <div className="text-sm font-medium text-slate-700 mb-1">High Priority</div>
+                      <div className="text-xs text-slate-600">Add missing meta descriptions to 8 pages. Expected +15% organic traffic.</div>
+                      <button className="text-xs text-blue-600 hover:text-blue-700 mt-1 font-medium">Implement →</button>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-3 bg-green-50 border border-green-200 rounded-lg">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <div className="text-sm font-medium text-slate-700 mb-1">Quick Win</div>
+                      <div className="text-xs text-slate-600">Optimize 3 images for faster loading. 0.4s speed improvement.</div>
+                      <button className="text-xs text-blue-600 hover:text-blue-700 mt-1 font-medium">Auto-fix →</button>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg">
+                    <TrendingUp className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <div className="text-sm font-medium text-slate-700 mb-1">Growth Opportunity</div>
+                      <div className="text-xs text-slate-600">Target 5 new keywords competitors are ranking for. Est. +25% traffic.</div>
+                      <button className="text-xs text-blue-600 hover:text-blue-700 mt-1 font-medium">Plan campaign →</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+            >
+              SEE YOUR DASHBOARD
+            </button>
+          </div>
+
+          <div className="mt-24">
             <div className="text-center mb-12">
-              <h3 className="text-2xl font-light mb-3 tracking-tight">How You Rank</h3>
+              <h3 className="text-2xl font-light mb-3 tracking-tight">Competitive Intelligence</h3>
               <p className="text-slate-600 font-light">Your position vs. competitors across key metrics</p>
             </div>
 
@@ -187,160 +465,6 @@ function WebAgencyLanding() {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="mt-32 pt-24 border-t border-slate-200">
-            <div className="text-center mb-16">
-              <h3 className="text-3xl font-light mb-4 tracking-tight">Geographic Intelligence</h3>
-              <p className="text-slate-600 font-light">Where you win and lose across your market</p>
-            </div>
-            <CityHeatmap />
-          </div>
-
-          <div className="mt-32 pt-24 border-t border-slate-200">
-            <div className="text-center mb-12">
-              <h3 className="text-2xl font-light mb-3 tracking-tight">From Losing to Winning</h3>
-              <p className="text-slate-600 font-light">Real transformation from continuous monthly improvements</p>
-            </div>
-
-            <div className="border border-slate-200 bg-white p-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div>
-                  <div className="text-3xl font-light text-slate-900 mb-1">+67%</div>
-                  <div className="text-xs text-slate-500 font-light">More Customers</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-light text-slate-900 mb-1">3.2x</div>
-                  <div className="text-xs text-slate-500 font-light">Faster Loading</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-light text-slate-900 mb-1">+89%</div>
-                  <div className="text-xs text-slate-500 font-light">Search Traffic</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-light text-slate-900 mb-1">7→1</div>
-                  <div className="text-xs text-slate-500 font-light">Rank Jump</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center mt-12">
-              <button 
-                onClick={() => setIsModalOpen(true)}
-                className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
-              >
-                SEE YOUR POTENTIAL
-              </button>
-            </div>
-          </div>
-
-          <div className="mt-32 pt-24 border-t border-slate-200">
-            <div className="text-center mb-16">
-              <h3 className="text-3xl font-light mb-4 tracking-tight">Why We're Different</h3>
-              <p className="text-slate-600 font-light">Unlike everyone else in the market</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="bg-white border border-slate-200 p-8">
-                <h4 className="text-lg font-medium mb-3">vs. Premium Design Services</h4>
-                <p className="text-slate-600 font-light mb-4">Beautiful design is worthless if no one finds your site.</p>
-                <p className="text-sm text-slate-500 font-light">We optimize for both aesthetics AND discovery. Your $5K+ design investment becomes profitable through intelligence-driven optimization.</p>
-              </div>
-
-              <div className="bg-white border border-slate-200 p-8">
-                <h4 className="text-lg font-medium mb-3">vs. Budget WaaS Providers</h4>
-                <p className="text-slate-600 font-light mb-4">Most WaaS just keeps your site running.</p>
-                <p className="text-sm text-slate-500 font-light">We make it better every single week. While they maintain, we optimize. While they keep lights on, we drive business growth.</p>
-              </div>
-
-              <div className="bg-white border border-slate-200 p-8">
-                <h4 className="text-lg font-medium mb-3">vs. SEO Tools & Analytics</h4>
-                <p className="text-slate-600 font-light mb-4">Stop paying for tools you don't know how to use.</p>
-                <p className="text-sm text-slate-500 font-light">We audit AND implement. You get actionable intelligence plus the execution. No more reports you can't act on.</p>
-              </div>
-
-              <div className="bg-white border border-slate-200 p-8">
-                <h4 className="text-lg font-medium mb-3">vs. Traditional Agencies</h4>
-                <p className="text-slate-600 font-light mb-4">We don't build and leave.</p>
-                <p className="text-sm text-slate-500 font-light">Your website becomes a living, improving asset. Continuous optimization based on real performance data, not one-time projects.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light mb-4 tracking-tight">Your Dashboard</h2>
-            <p className="text-slate-600 font-light">Track your competitive position in real-time</p>
-          </div>
-
-          <div className="border-2 border-slate-300 bg-white">
-            <div className="border-b border-slate-200 px-8 py-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-sm font-medium mb-1">Competitive Intelligence</div>
-                  <div className="text-xs text-slate-500 font-light">See exactly where you stand vs. competitors</div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-green-600" />
-                  <span className="text-xs font-light text-green-600">Improving</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div className="border border-slate-200 p-4 text-center">
-                  <div className="text-xs text-slate-500 mb-2">Google Rank</div>
-                  <div className="text-2xl font-light mb-1">#1</div>
-                  <div className="text-xs text-slate-400">Page 1, Pos 1</div>
-                </div>
-                <div className="border border-slate-200 p-4 text-center">
-                  <div className="text-xs text-slate-500 mb-2">Organic Traffic</div>
-                  <div className="text-2xl font-light mb-1">+187%</div>
-                  <div className="text-xs text-slate-400">This month</div>
-                </div>
-                <div className="border border-slate-200 p-4 text-center">
-                  <div className="text-xs text-slate-500 mb-2">Keywords Ranked</div>
-                  <div className="text-2xl font-light mb-1">47</div>
-                  <div className="text-xs text-slate-400">Page 1</div>
-                </div>
-                <div className="border border-slate-200 p-4 text-center">
-                  <div className="text-xs text-slate-500 mb-2">Domain Authority</div>
-                  <div className="text-2xl font-light mb-1">64</div>
-                  <div className="text-xs text-slate-400">Growing</div>
-                </div>
-              </div>
-
-              <div className="border-t border-slate-200 pt-6">
-                <div className="text-xs font-medium text-slate-400 mb-4 tracking-wider">THIS MONTH'S SEO WINS</div>
-                <div className="space-y-2 text-sm font-light text-slate-600">
-                  <div className="flex items-center justify-between">
-                    <span>Ranked #1 for "roofing contractor [city]"</span>
-                    <span className="text-green-600">✓</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span>12 new keywords on page 1</span>
-                    <span className="text-green-600">✓</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span>Domain authority increased to 64</span>
-                    <span className="text-green-600">✓</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
-            >
-              SEE YOUR DASHBOARD
-            </button>
           </div>
         </div>
       </section>
@@ -471,7 +595,7 @@ function WebAgencyLanding() {
                     </p>
                   </div>
 
-                  <button 
+                  <button
                     onClick={() => setIsModalOpen(true)}
                     className="w-full py-3 text-sm font-medium tracking-wide transition-colors border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white"
                   >
@@ -528,7 +652,7 @@ function WebAgencyLanding() {
                     </p>
                   </div>
 
-                  <button 
+                  <button
                     onClick={() => setIsModalOpen(true)}
                     className="w-full py-3 text-sm font-medium tracking-wide transition-colors bg-slate-900 text-white hover:bg-slate-800"
                   >
@@ -582,7 +706,7 @@ function WebAgencyLanding() {
                     </p>
                   </div>
 
-                  <button 
+                  <button
                     onClick={() => setIsModalOpen(true)}
                     className="w-full py-3 text-sm font-medium tracking-wide transition-colors border border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white"
                   >
@@ -604,42 +728,6 @@ function WebAgencyLanding() {
             All plans include continuous improvements · Cancel anytime
           </p>
 
-          {/* Competitive Comparison */}
-          <div className="mt-24 pt-16 border-t border-slate-200">
-            <div className="text-center mb-12">
-              <h3 className="text-2xl font-light mb-4 tracking-tight">Intelligence + Implementation</h3>
-              <p className="text-slate-600 font-light">What you actually get for your money</p>
-            </div>
-
-            <div className="max-w-2xl mx-auto overflow-x-auto">
-              <table className="w-full border border-slate-200 bg-white min-w-96">
-                <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50">
-                    <th className="text-left py-3 px-4 text-sm font-medium">Service</th>
-                    <th className="py-3 px-4 text-sm font-medium">Cost</th>
-                    <th className="py-3 px-4 text-sm font-medium">You Get</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-slate-100">
-                    <td className="py-3 px-4 text-sm">SEO Agency</td>
-                    <td className="py-3 px-4 text-sm text-center">$1,500-$3,000</td>
-                    <td className="py-3 px-4 text-sm">Reports only</td>
-                  </tr>
-                  <tr className="border-b border-slate-100">
-                    <td className="py-3 px-4 text-sm">Design Subscription</td>
-                    <td className="py-3 px-4 text-sm text-center">$4,995</td>
-                    <td className="py-3 px-4 text-sm">Pretty sites that don't rank</td>
-                  </tr>
-                  <tr className="bg-blue-50">
-                    <td className="py-3 px-4 text-sm font-medium">9line.dev</td>
-                    <td className="py-3 px-4 text-sm text-center font-medium">$1,995-$4,995</td>
-                    <td className="py-3 px-4 text-sm font-medium">Intelligence + action</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -744,16 +832,17 @@ function WebAgencyLanding() {
         </div>
       </section>
 
+
       <section className="py-32 px-8 bg-slate-900 text-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-8 tracking-tight">
             Get Your Intelligence Advantage
           </h2>
           <p className="text-lg text-slate-400 mb-12 font-light leading-relaxed">
-            Free competitive intelligence report. See exactly where you rank vs. competitors and get industry-specific insights to dominate your market.
+            Free competitive intelligence report. See exactly where you rank vs. competitors.
           </p>
           <div className="flex justify-center mb-6">
-            <button 
+            <button
               onClick={() => setIsModalOpen(true)}
               className="px-10 py-4 bg-white text-slate-900 hover:bg-slate-100 transition-colors text-sm font-medium tracking-wide"
             >
@@ -761,7 +850,7 @@ function WebAgencyLanding() {
             </button>
           </div>
           <p className="text-sm text-slate-500 font-light">
-            Free intelligence report · Industry-specific insights · Know your competitive position in 24 hours
+            Results in 24 hours · No commitment
           </p>
         </div>
       </section>
@@ -788,7 +877,7 @@ function WebAgencyLanding() {
       }} />
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <ContactForm 
+        <ContactForm
           onSubmit={handleFormSubmit}
           onCancel={() => setIsModalOpen(false)}
         />
