@@ -1,7 +1,6 @@
 import { AlertTriangle, ArrowRight, CheckCircle, ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Lightbulb, MousePointerClick, Search, Shield, Smartphone, TrendingUp, Users, Zap } from 'lucide-react';
 import { useRef, useState } from 'react';
 
-import { CityHeatmap } from './components/CityHeatmap';
 import { ContactForm } from './components/ContactForm';
 import { Modal } from './components/Modal';
 
