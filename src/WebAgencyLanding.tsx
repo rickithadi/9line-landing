@@ -145,149 +145,6 @@ function WebAgencyLanding() {
             </div>
           </div>
 
-          <div className="mt-32 pt-24 border-t border-slate-200">
-            <div className="text-center mb-16">
-              <h3 className="text-3xl font-light mb-4 tracking-tight">From Losing to Winning</h3>
-              <p className="text-slate-600 font-light">Real client transformations that drive business growth</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white border border-slate-200 p-8">
-                <div className="flex items-center gap-3 mb-8">
-                  <Users className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                  <h4 className="text-lg font-light text-slate-900">Customer Growth</h4>
-                </div>
-                <div className="space-y-4">
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                    <div className="text-slate-700 font-light">Losing visitors</div>
-                  </div>
-                  <div className="text-center">
-                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                  </div>
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                    <div className="text-3xl font-light text-slate-900 mb-1">+67%</div>
-                    <div className="text-xs text-slate-500 font-light">more customers</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white border border-slate-200 p-8">
-                <div className="flex items-center gap-3 mb-8">
-                  <MousePointerClick className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                  <h4 className="text-lg font-light text-slate-900">Visitor Retention</h4>
-                </div>
-                <div className="space-y-4">
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                    <div className="text-slate-700 font-light">72% leaving</div>
-                  </div>
-                  <div className="text-center">
-                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                  </div>
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                    <div className="text-3xl font-light text-slate-900 mb-1">15%</div>
-                    <div className="text-xs text-slate-500 font-light">bounce rate</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white border border-slate-200 p-8">
-                <div className="flex items-center gap-3 mb-8">
-                  <Smartphone className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                  <h4 className="text-lg font-light text-slate-900">Mobile Experience</h4>
-                </div>
-                <div className="space-y-4">
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                    <div className="text-slate-700 font-light">43% mobile</div>
-                  </div>
-                  <div className="text-center">
-                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                  </div>
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                    <div className="text-3xl font-light text-slate-900 mb-1">78%</div>
-                    <div className="text-xs text-slate-500 font-light">mobile optimized</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white border border-slate-200 p-8">
-                <div className="flex items-center gap-3 mb-8">
-                  <Zap className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                  <h4 className="text-lg font-light text-slate-900">Loading Speed</h4>
-                </div>
-                <div className="space-y-4">
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                    <div className="text-slate-700 font-light">4.8s slow</div>
-                  </div>
-                  <div className="text-center">
-                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                  </div>
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                    <div className="text-3xl font-light text-slate-900 mb-1">0.9s</div>
-                    <div className="text-xs text-slate-500 font-light">lightning fast</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white border border-slate-200 p-8">
-                <div className="flex items-center gap-3 mb-8">
-                  <Search className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                  <h4 className="text-lg font-light text-slate-900">Search Visibility</h4>
-                </div>
-                <div className="space-y-4">
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                    <div className="text-slate-700 font-light">Hidden online</div>
-                  </div>
-                  <div className="text-center">
-                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                  </div>
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                    <div className="text-3xl font-light text-slate-900 mb-1">+89%</div>
-                    <div className="text-xs text-slate-500 font-light">search traffic</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white border border-slate-200 p-8">
-                <div className="flex items-center gap-3 mb-8">
-                  <TrendingUp className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                  <h4 className="text-lg font-light text-slate-900">Google Rankings</h4>
-                </div>
-                <div className="space-y-4">
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                    <div className="text-slate-700 font-light">Page 7</div>
-                  </div>
-                  <div className="text-center">
-                    <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                  </div>
-                  <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                    <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                    <div className="text-3xl font-light text-slate-900 mb-1">Page 1</div>
-                    <div className="text-xs text-slate-500 font-light">top rankings</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
-              >
-                SEE YOUR POTENTIAL
-              </button>
-            </div>
-          </div>
 
         </div>
       </section>
@@ -392,15 +249,6 @@ function WebAgencyLanding() {
             </div>
           </div>
 
-          <div className="text-center mt-12">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
-            >
-              SEE YOUR DASHBOARD
-            </button>
-          </div>
-
           <div className="mt-24">
             <div className="text-center mb-12">
               <h3 className="text-2xl font-light mb-3 tracking-tight">Competitive Intelligence</h3>
@@ -465,6 +313,161 @@ function WebAgencyLanding() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+            >
+              SEE YOUR DASHBOARD
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl font-light mb-4 tracking-tight">From Losing to Winning</h3>
+            <p className="text-slate-600 font-light">Real client transformations that drive business growth</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="bg-white border border-slate-200 p-8">
+              <div className="flex items-center gap-3 mb-8">
+                <Users className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                <h4 className="text-lg font-light text-slate-900">Customer Growth</h4>
+              </div>
+              <div className="space-y-4">
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                  <div className="text-slate-700 font-light">Losing visitors</div>
+                </div>
+                <div className="text-center">
+                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                </div>
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                  <div className="text-3xl font-light text-slate-900 mb-1">+67%</div>
+                  <div className="text-xs text-slate-500 font-light">more customers</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200 p-8">
+              <div className="flex items-center gap-3 mb-8">
+                <MousePointerClick className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                <h4 className="text-lg font-light text-slate-900">Visitor Retention</h4>
+              </div>
+              <div className="space-y-4">
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                  <div className="text-slate-700 font-light">72% leaving</div>
+                </div>
+                <div className="text-center">
+                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                </div>
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                  <div className="text-3xl font-light text-slate-900 mb-1">15%</div>
+                  <div className="text-xs text-slate-500 font-light">bounce rate</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200 p-8">
+              <div className="flex items-center gap-3 mb-8">
+                <Smartphone className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                <h4 className="text-lg font-light text-slate-900">Mobile Experience</h4>
+              </div>
+              <div className="space-y-4">
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                  <div className="text-slate-700 font-light">43% mobile</div>
+                </div>
+                <div className="text-center">
+                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                </div>
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                  <div className="text-3xl font-light text-slate-900 mb-1">78%</div>
+                  <div className="text-xs text-slate-500 font-light">mobile optimized</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200 p-8">
+              <div className="flex items-center gap-3 mb-8">
+                <Zap className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                <h4 className="text-lg font-light text-slate-900">Loading Speed</h4>
+              </div>
+              <div className="space-y-4">
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                  <div className="text-slate-700 font-light">4.8s slow</div>
+                </div>
+                <div className="text-center">
+                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                </div>
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                  <div className="text-3xl font-light text-slate-900 mb-1">0.9s</div>
+                  <div className="text-xs text-slate-500 font-light">lightning fast</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200 p-8">
+              <div className="flex items-center gap-3 mb-8">
+                <Search className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                <h4 className="text-lg font-light text-slate-900">Search Visibility</h4>
+              </div>
+              <div className="space-y-4">
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                  <div className="text-slate-700 font-light">Hidden online</div>
+                </div>
+                <div className="text-center">
+                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                </div>
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                  <div className="text-3xl font-light text-slate-900 mb-1">+89%</div>
+                  <div className="text-xs text-slate-500 font-light">search traffic</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200 p-8">
+              <div className="flex items-center gap-3 mb-8">
+                <TrendingUp className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
+                <h4 className="text-lg font-light text-slate-900">Google Rankings</h4>
+              </div>
+              <div className="space-y-4">
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
+                  <div className="text-slate-700 font-light">Page 7</div>
+                </div>
+                <div className="text-center">
+                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
+                </div>
+                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
+                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
+                  <div className="text-3xl font-light text-slate-900 mb-1">Page 1</div>
+                  <div className="text-xs text-slate-500 font-light">top rankings</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+            >
+              SEE YOUR POTENTIAL
+            </button>
           </div>
         </div>
       </section>
