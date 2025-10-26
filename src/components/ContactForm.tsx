@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { trackFormSubmission, trackCompetitiveAnalysisRequest } from '../utils/analytics';
 
 interface ContactFormProps {
   onSubmit: (data: { email: string; domain?: string }) => void;
@@ -36,6 +37,11 @@ export function ContactForm({ onSubmit, onCancel }: ContactFormProps) {
 
       if (response.ok) {
         setSubmitStatus('success');
+        
+        // Track successful form submission
+        trackFormSubmission('free_analysis_form', true);
+        trackCompetitiveAnalysisRequest(email.trim(), domain.trim() || undefined);
+        
         // Also call the parent onSubmit for modal closure
         await onSubmit({
           email: email.trim(),
@@ -47,6 +53,9 @@ export function ContactForm({ onSubmit, onCancel }: ContactFormProps) {
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
+      
+      // Track failed form submission
+      trackFormSubmission('free_analysis_form', false);
     } finally {
       setIsSubmitting(false);
     }

@@ -1,5 +1,6 @@
 import { AlertTriangle, ArrowRight, CheckCircle, ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Lightbulb, MousePointerClick, Search, Shield, Smartphone, TrendingUp, Users, Zap, Lock, Gauge, Settings, Brain } from 'lucide-react';
 import { useRef, useState } from 'react';
+import { trackCTAClick } from './utils/analytics';
 
 import { ContactForm } from './components/ContactForm';
 import { Modal } from './components/Modal';
@@ -26,6 +27,11 @@ function WebAgencyLanding() {
     setIsModalOpen(false);
   };
 
+  const handleCTAClick = (ctaName: string, location: string) => {
+    trackCTAClick(ctaName, location);
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
@@ -35,7 +41,7 @@ function WebAgencyLanding() {
             <span className="text-slate-400">.dev</span>
           </div>
           <button
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => handleCTAClick('See Where You Rank', 'navigation')}
             className="px-6 py-2 text-sm font-medium text-slate-900 hover:text-blue-600 transition-colors"
           >
             See Where You Rank →
@@ -61,7 +67,7 @@ function WebAgencyLanding() {
 
           <div className="flex justify-center mb-6">
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => handleCTAClick('SEE WHERE YOU RANK', 'hero')}
               className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
             >
               SEE WHERE YOU RANK
@@ -207,7 +213,7 @@ function WebAgencyLanding() {
               Stop wasting time on platforms that make you do the work. Get AI-powered business intelligence that works while you focus on what matters.
             </p>
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => handleCTAClick('SEE YOUR COMPETITIVE ADVANTAGE', 'competitive_comparison')}
               className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
             >
               SEE YOUR COMPETITIVE ADVANTAGE
@@ -962,7 +968,7 @@ function WebAgencyLanding() {
           </p>
           <div className="flex justify-center mb-6">
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => handleCTAClick('SEE WHERE YOU RANK', 'footer_cta')}
               className="px-10 py-4 bg-white text-slate-900 hover:bg-slate-100 transition-colors text-sm font-medium tracking-wide"
             >
               SEE WHERE YOU RANK
