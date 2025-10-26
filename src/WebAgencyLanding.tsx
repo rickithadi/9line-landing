@@ -1,4 +1,4 @@
-import { AlertTriangle, ArrowRight, CheckCircle, ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Lightbulb, MousePointerClick, Search, Shield, Smartphone, TrendingUp, Users, Zap } from 'lucide-react';
+import { AlertTriangle, ArrowRight, CheckCircle, ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Lightbulb, MousePointerClick, Search, Shield, Smartphone, TrendingUp, Users, Zap, Lock, Gauge, Settings, Brain } from 'lucide-react';
 import { useRef, useState } from 'react';
 
 import { ContactForm } from './components/ContactForm';
@@ -46,7 +46,7 @@ function WebAgencyLanding() {
       <section className="pt-40 pb-32 px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 border border-slate-200 rounded-full px-4 py-1.5 mb-8 text-xs text-slate-600 font-light">
-            Fortune 500 insights at affordable prices · Trusted by 250+ SME business owners
+            AI-powered Fortune 500 insights · Trusted by 250+ SME business owners
           </div>
 
           <h1 className="text-6xl md:text-7xl font-light mb-8 leading-tight tracking-tight">
@@ -56,7 +56,7 @@ function WebAgencyLanding() {
             </span>
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-            Enterprise-level website intelligence and continuous optimization. No guesswork. No tech headaches. Just results.
+            AI-powered business intelligence and smart automation. No guesswork. No tech headaches. Just results that compound.
           </p>
 
           <div className="flex justify-center mb-6">
@@ -117,30 +117,132 @@ function WebAgencyLanding() {
       <section className="py-32 px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-light mb-4 tracking-tight">Intelligence Platform</h2>
-            <p className="text-slate-600 font-light">We don't build and leave. We don't just report. We continuously improve based on data.</p>
+            <h2 className="text-4xl font-light mb-4 tracking-tight">
+              Why Not WordPress, Wix, or Squarespace?
+            </h2>
+            <p className="text-slate-600 font-light max-w-2xl mx-auto">
+              Smart business owners need AI-powered solutions, not DIY headaches that drain time and money.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12 mb-24">
+              {/* WordPress Problems Card */}
+              <div className="border border-slate-200 bg-white p-8">
+                <Shield className="w-8 h-8 text-orange-600 mb-6" strokeWidth={1.5} />
+                <h3 className="text-2xl font-light mb-3">WordPress Problems</h3>
+                <p className="text-slate-600 font-light leading-relaxed mb-4">Platform maintenance issues.</p>
+                <ul className="space-y-3 text-sm text-slate-500 font-light leading-relaxed">
+                  <li className="flex items-start gap-2">
+                    <Lock className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Constant security vulnerabilities and updates</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Settings className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Technical complexity requires expert maintenance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <AlertTriangle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Plugin conflicts and compatibility issues</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Eye className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>No built-in competitive intelligence</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Wix & Squarespace Problems Card */}
+              <div className="border border-slate-200 bg-white p-8">
+                <Gauge className="w-8 h-8 text-red-600 mb-6" strokeWidth={1.5} />
+                <h3 className="text-2xl font-light mb-3">Wix & Squarespace Limits</h3>
+                <p className="text-slate-600 font-light leading-relaxed mb-4">DIY platform limitations.</p>
+                <ul className="space-y-3 text-sm text-slate-500 font-light leading-relaxed">
+                  <li className="flex items-start gap-2">
+                    <Gauge className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Slow loading speeds hurt search rankings</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Users className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>You build it yourself—no expert guidance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Smartphone className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Generic templates don't convert visitors</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Search className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>No market intelligence or optimization</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* 9line.dev Solution Card */}
+              <div className="bg-slate-900 text-white p-8">
+                <Brain className="w-8 h-8 text-blue-400 mb-6" strokeWidth={1.5} />
+                <h3 className="text-2xl font-light mb-3">9line.dev AI Solution</h3>
+                <p className="text-slate-300 font-light leading-relaxed mb-4">AI-powered professional solution.</p>
+                <ul className="space-y-3 text-sm text-slate-300 font-light">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>AI-powered competitive monitoring</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Smart automation handles technical complexity</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Enterprise-speed performance optimization</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Continuous intelligent improvements</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          <div className="text-center">
+            <p className="text-lg text-slate-600 font-light mb-6">
+              Stop wasting time on platforms that make you do the work. Get AI-powered business intelligence that works while you focus on what matters.
+            </p>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+            >
+              SEE YOUR COMPETITIVE ADVANTAGE
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light mb-4 tracking-tight">AI Intelligence Platform</h2>
+            <p className="text-slate-600 font-light">We don't build and leave. We don't just report. We use machine learning to continuously improve based on real performance data.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-12 mb-24">
             <div className="border border-slate-200 bg-white p-8">
               <Eye className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
-              <h3 className="text-2xl font-light mb-3">Monitor</h3>
-              <p className="text-slate-600 font-light leading-relaxed mb-4">Industry-specific competitive intelligence.</p>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">Unlike generic tools, we track performance data specific to your industry. Know exactly where you stand and when competitors make moves. Intelligence, not just reports.</p>
+              <h3 className="text-2xl font-light mb-3">AI Monitor</h3>
+              <p className="text-slate-600 font-light leading-relaxed mb-4">Smart competitive intelligence powered by machine learning.</p>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">AI analyzes performance data specific to your industry patterns. Know exactly where you stand and when competitors make moves. Intelligent automation, not just reports.</p>
             </div>
 
             <div className="border border-slate-200 bg-white p-8">
               <Shield className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
-              <h3 className="text-2xl font-light mb-3">Audit</h3>
-              <p className="text-slate-600 font-light leading-relaxed mb-4">Data-driven optimization opportunities.</p>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">Stop paying for tools you don't know how to use. We identify exactly what needs fixing based on real performance data and your industry's best practices. Technical SEO, design, speed—everything.</p>
+              <h3 className="text-2xl font-light mb-3">Smart Audit</h3>
+              <p className="text-slate-600 font-light leading-relaxed mb-4">AI-driven optimization opportunities discovery.</p>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">Stop paying for tools you don't know how to use. AI identifies exactly what needs fixing based on real performance data and predictive industry analysis. Technical SEO, design, speed—everything automated.</p>
             </div>
 
             <div className="border border-slate-200 bg-white p-8">
               <Code className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
-              <h3 className="text-2xl font-light mb-3">Evolve</h3>
-              <p className="text-slate-600 font-light leading-relaxed mb-4">Continuous implementation based on real data.</p>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">Unlike static WaaS providers who just keep sites running, we make them better every month. Design improvements, speed optimization, search ranking—always improving based on performance data.</p>
+              <h3 className="text-2xl font-light mb-3">AI Evolve</h3>
+              <p className="text-slate-600 font-light leading-relaxed mb-4">Continuous intelligent implementation based on machine learning.</p>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">Unlike static providers who just keep sites running, AI makes them smarter every month. Design improvements, speed optimization, search ranking—always learning and improving automatically.</p>
             </div>
           </div>
 
@@ -494,7 +596,7 @@ function WebAgencyLanding() {
               <div className="flex gap-8 pb-4">
                 <div className="flex-shrink-0 w-96 snap-start border border-slate-200 bg-white p-10">
                   <p className="text-slate-600 font-light mb-8 leading-relaxed italic">
-                    "Their competitive intelligence showed exactly where we were losing to competitors. Now we know what works in our market before we invest. 80% of our leads come from our optimized site."
+                    "Their AI-powered competitive intelligence showed exactly where we were losing to competitors. The smart automation handles everything while I focus on my business. 80% of our leads come from our AI-optimized site."
                   </p>
                   <div>
                     <div className="font-medium text-sm">Tom Richardson</div>
@@ -504,7 +606,7 @@ function WebAgencyLanding() {
 
                 <div className="flex-shrink-0 w-96 snap-start border border-slate-200 bg-white p-10">
                   <p className="text-slate-600 font-light mb-8 leading-relaxed italic">
-                    "The monthly intelligence reports show exactly how we stack against big dental chains. We now outrank them consistently and Google sends us 15-20 qualified patients weekly. Best business investment ever."
+                    "The AI-driven monthly intelligence reports show exactly how we stack against big dental chains. Machine learning optimization helped us outrank them consistently. Google sends us 15-20 qualified patients weekly. Best business investment ever."
                   </p>
                   <div>
                     <div className="font-medium text-sm">Dr. Sarah Kim</div>
@@ -514,7 +616,7 @@ function WebAgencyLanding() {
 
                 <div className="flex-shrink-0 w-96 snap-start border border-slate-200 bg-white p-10">
                   <p className="text-slate-600 font-light mb-8 leading-relaxed italic">
-                    "While competitors waste money on generic agencies, I get enterprise-level intelligence at a fraction of the cost. Data shows I consistently outrank companies spending 10x more. It's not even close."
+                    "While competitors waste money on WordPress agencies and Wix consultants, I get AI-powered enterprise intelligence at a fraction of the cost. Smart automation consistently outranks companies spending 10x more. It's not even close."
                   </p>
                   <div>
                     <div className="font-medium text-sm">Mike Chen</div>
@@ -751,7 +853,7 @@ function WebAgencyLanding() {
               </button>
               {openFaq === 0 && (
                 <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
-                  Agencies charge $5K-15K/month and often disappear after delivering a report. We provide enterprise-level intelligence for 1/5th the cost, plus we implement everything. You get the strategy AND the execution, continuously.
+                  Agencies charge $5K-15K/month and often disappear after delivering a report. We provide AI-powered enterprise intelligence for 1/5th the cost, plus smart automation implements everything. You get the strategy AND the execution, continuously optimized by machine learning.
                 </div>
               )}
             </div>
@@ -781,7 +883,7 @@ function WebAgencyLanding() {
               </button>
               {openFaq === 2 && (
                 <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
-                  Industry-specific intelligence, not generic reports. We monitor what actually works in YOUR market, implement based on real performance data, and continuously optimize. No one else combines deep industry intelligence with hands-on implementation.
+                  AI-powered industry-specific intelligence, not generic reports. Machine learning monitors what actually works in YOUR market, implements based on real performance data, and continuously optimizes. No one else combines deep AI intelligence with smart automated implementation.
                 </div>
               )}
             </div>
@@ -826,7 +928,22 @@ function WebAgencyLanding() {
               </button>
               {openFaq === 5 && (
                 <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
-                  Markets change constantly. Google updates algorithms, competitors launch new strategies, customer behavior shifts. One-time projects become outdated quickly. Continuous intelligence ensures you stay ahead of every market change and competitor move.
+                  Markets change constantly. Google updates algorithms, competitors launch new strategies, customer behavior shifts. One-time projects become outdated quickly. AI-powered continuous intelligence ensures you stay ahead of every market change and competitor move.
+                </div>
+              )}
+            </div>
+
+            <div className="border-b border-slate-200">
+              <button
+                onClick={() => setOpenFaq(openFaq === 6 ? null : 6)}
+                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
+              >
+                <span className="font-light pr-4">Why not just use WordPress, Wix, or Squarespace?</span>
+                <ChevronDown className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${openFaq === 6 ? 'rotate-180' : ''}`} />
+              </button>
+              {openFaq === 6 && (
+                <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
+                  WordPress requires constant security updates and technical maintenance. Wix and Squarespace are slow and make YOU do all the optimization work. Our AI-powered platform handles all technical complexity while continuously monitoring and improving your market position. You get enterprise-level intelligence without the DIY headaches.
                 </div>
               )}
             </div>

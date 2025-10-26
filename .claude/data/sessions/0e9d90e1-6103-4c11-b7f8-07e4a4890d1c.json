@@ -1,0 +1,11 @@
+{
+  "session_id": "0e9d90e1-6103-4c11-b7f8-07e4a4890d1c",
+  "prompts": [
+    "integrate the following points into the messaging\n\nCompare Against other options:\nproblems:\n\n- wordpress: needs updating, security vulnerabilities, old tech etc\n- wix\n- squarespace- slow, build yourself and update\n\n\nwe are also applying for vertex ai credit grants. suggest how we can tweak the copy to enhance AI messaging without turning off SMB owners. here is the link https://cloud.google.com/startup/apply?utm_source=google_start_up&utm_medium=display&utm_campaign=FY21-Q1-global-demandgen-website-cs-startup_program_mc&utm_content=google-startup-page&utm_term=-&hl=en",
+    "integrate formspree for the free analysis form https://formspree.io/f/movpqyyp",
+    "provide design improvement suggestions for Why Not WordPress, Wix, or Squarespace?",
+    "tone down the design on the section. it should be professional, understated and align with the overall site design direction",
+    "provide improvements for the cards and icons ",
+    "Also ensure design cohesiveness across the rest of the site. "
+  ]
+}
