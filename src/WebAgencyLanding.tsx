@@ -10,6 +10,7 @@ function WebAgencyLanding() {
   const pricingRef = useRef<HTMLDivElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isYearly, setIsYearly] = useState(false);
 
   const scroll = (ref: React.RefObject<HTMLDivElement>, direction: 'left' | 'right') => {
     if (ref.current) {
@@ -167,23 +168,23 @@ function WebAgencyLanding() {
               <ul className="space-y-4 text-sm text-green-800 font-light">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span>Predictable monthly investment vs. massive rebuilds</span>
+                  <span>Save 70-85% vs. traditional rebuilds ($200-700/mo vs. $15K-50K)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span>Always current with latest capabilities</span>
+                  <span>Always current with latest capabilities (monthly updates)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span>Continuous improvements, no business disruption</span>
+                  <span>67% average conversion increase, no business disruption</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span>AI-powered competitive intelligence included</span>
+                  <span>Track 3-5 competitors + 25-50 keywords with AI analysis</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span>Long-term partnership, always evolving</span>
+                  <span>Typical ROI payback within 30-60 days</span>
                 </li>
               </ul>
             </div>
@@ -740,7 +741,7 @@ function WebAgencyLanding() {
           <div className="relative">
             <button
               onClick={() => scroll(testimonialsRef, 'left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors"
             >
               <ChevronLeft className="w-5 h-5 text-slate-600" />
             </button>
@@ -785,7 +786,7 @@ function WebAgencyLanding() {
 
             <button
               onClick={() => scroll(testimonialsRef, 'right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors"
             >
               <ChevronRight className="w-5 h-5 text-slate-600" />
             </button>
@@ -797,34 +798,243 @@ function WebAgencyLanding() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light mb-4 tracking-tight">Pricing</h2>
-            <p className="text-slate-600 font-light">Enterprise-level intelligence at a fraction of the cost</p>
+            <p className="text-slate-600 font-light mb-4">Starting at $199/month · Enterprise-level intelligence at a fraction of the cost</p>
+            <p className="text-center text-xs text-slate-500 font-light mb-8">
+              Trusted by 500+ businesses · No setup fees · Cancel anytime
+            </p>
+            
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <span className={`text-sm font-medium ${!isYearly ? 'text-slate-900' : 'text-slate-500'}`}>
+                Monthly
+              </span>
+              <button
+                onClick={() => setIsYearly(!isYearly)}
+                className={`relative inline-flex h-6 w-12 items-center rounded-full transition-colors ${
+                  !isYearly ? 'bg-slate-900' : 'bg-slate-300'
+                }`}
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                    isYearly ? 'translate-x-7' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+              <span className={`text-sm font-medium ${isYearly ? 'text-slate-900' : 'text-slate-500'}`}>
+                Yearly
+              </span>
+              {isYearly && (
+                <span className="ml-2 px-2 py-1 bg-slate-100 text-slate-600 text-xs font-light rounded-full">
+                  Save up to $840
+                </span>
+              )}
+            </div>
           </div>
 
-          <div className="relative">
-            <button
-              onClick={() => scroll(pricingRef, 'left')}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors md:hidden"
-            >
-              <ChevronLeft className="w-5 h-5 text-slate-600" />
-            </button>
+          {/* Mobile Layout - Stacked Cards */}
+          <div className="lg:hidden space-y-6 mt-4">
+            <div className="mx-auto max-w-sm">
+              <div className="p-8 border border-slate-200 rounded-lg">
+                <div className="mb-8">
+                  <h3 className="text-sm font-medium tracking-wider mb-2">WEBSITE ESSENTIALS</h3>
+                  <p className="text-xs text-slate-500 font-light mb-4">Starting at · Professional website · Mobile-first design</p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-light">
+                      {isYearly ? '$1,910' : '$199'}
+                    </span>
+                    <span className="text-slate-500 font-light">
+                      {isYearly ? '/year' : '/month'}
+                    </span>
+                  </div>
+                  {isYearly && (
+                    <div className="text-xs text-slate-500 font-light mt-2">
+                      $199/month billed annually · Save $278
+                    </div>
+                  )}
+                </div>
 
+                <ul className="space-y-3 mb-8">
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Professional website design and development</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Mobile-first responsive architecture</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Website hosting + security</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Monthly performance optimization</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Technical maintenance and updates</span>
+                  </li>
+                </ul>
+
+                <div className="mb-4 p-3 bg-slate-50 border border-slate-200 rounded">
+                  <p className="text-xs text-slate-600 font-light italic">
+                    "Professional website without the agency overhead"
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full py-3 text-sm font-medium tracking-wide transition-colors bg-slate-900 text-white hover:bg-slate-800 rounded"
+                >
+                  GET STARTED
+                </button>
+              </div>
+            </div>
+
+            <div className="mx-auto max-w-sm mt-4">
+              <div className="p-8 border-2 border-slate-900 rounded-lg relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-4 py-1 text-xs font-medium tracking-wider">
+                  MOST POPULAR
+                </div>
+                <div className="mb-8">
+                  <h3 className="text-sm font-medium tracking-wider mb-2">GROWTH INTELLIGENCE</h3>
+                  <p className="text-xs text-slate-900 font-medium mb-4">Website + SEO · Competitive insights</p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-light">
+                      {isYearly ? '$5,364' : '$497'}
+                    </span>
+                    <span className="text-slate-500 font-light">
+                      {isYearly ? '/year' : '/month'}
+                    </span>
+                  </div>
+                  {isYearly && (
+                    <div className="text-xs text-slate-500 font-light mt-2">
+                      $497/month billed annually · Save $600
+                    </div>
+                  )}
+                </div>
+
+                <ul className="space-y-3 mb-8">
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Everything in Website Essentials</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Track 3 competitors + 25 keywords</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Up to 2 website changes</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Performance dashboard + reports</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>AI-powered competitive insights</span>
+                  </li>
+                </ul>
+
+                <div className="mb-4 p-3 bg-slate-50 border border-slate-200 rounded">
+                  <p className="text-xs text-slate-600 font-light italic">
+                    "Complete growth platform for expanding businesses"
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full py-3 text-sm font-medium tracking-wide transition-colors bg-slate-900 text-white hover:bg-slate-800 rounded"
+                >
+                  GET STARTED
+                </button>
+              </div>
+            </div>
+
+            <div className="mx-auto max-w-sm">
+              <div className="p-8 border border-slate-200 rounded-lg">
+                <div className="mb-8">
+                  <h3 className="text-sm font-medium tracking-wider mb-2">MARKET DOMINATOR</h3>
+                  <p className="text-xs text-slate-500 font-light mb-4">Full intelligence · Advanced optimization</p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-light">
+                      {isYearly ? '$7,524' : '$697'}
+                    </span>
+                    <span className="text-slate-500 font-light">
+                      {isYearly ? '/year' : '/month'}
+                    </span>
+                  </div>
+                  {isYearly && (
+                    <div className="text-xs text-slate-500 font-light mt-2">
+                      $697/month billed annually · Save $840
+                    </div>
+                  )}
+                </div>
+
+                <ul className="space-y-3 mb-8">
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Everything in Growth Intelligence</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Track 5 competitors + 50 keywords</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Up to 4 website changes</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Advanced competitive analysis</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Priority support + same-day response</span>
+                  </li>
+                </ul>
+
+                <div className="mb-4 p-3 bg-slate-50 border border-slate-200 rounded">
+                  <p className="text-xs text-slate-600 font-light italic">
+                    "Full competitive intelligence for market leaders"
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full py-3 text-sm font-medium tracking-wide transition-colors bg-slate-900 text-white hover:bg-slate-800 rounded"
+                >
+                  GET STARTED
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Layout - Original horizontal scroll preserved for large screens */}
+          <div className="relative hidden lg:block mt-4">
             <div
               ref={pricingRef}
-              className="overflow-x-auto scrollbar-hide snap-x snap-mandatory md:overflow-visible"
+              className="overflow-x-auto scrollbar-hide snap-x snap-mandatory"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-              <div className="flex md:grid md:grid-cols-3 gap-8 pb-4">
-                <div className="flex-shrink-0 w-80 md:w-auto snap-start p-10 border border-slate-200">
+              <div className="flex gap-8 pb-4">
+                <div className="flex-shrink-0 w-80 snap-start p-10 border border-slate-200">
                   <div className="mb-12">
                     <h3 className="text-sm font-medium tracking-wider mb-2">WEBSITE ESSENTIALS</h3>
-                    <p className="text-xs text-slate-500 font-light mb-4">Professional website · Mobile-first design</p>
+                    <p className="text-xs text-slate-500 font-light mb-4">Starting at · Professional website · Mobile-first design</p>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-5xl font-light">$200</span>
-                      <span className="text-slate-500 font-light">/mo</span>
+                      <span className="text-5xl font-light">
+                        {isYearly ? '$1,910' : '$199'}
+                      </span>
+                      <span className="text-slate-500 font-light">
+                        {isYearly ? '/year' : '/month'}
+                      </span>
                     </div>
-                    <div className="text-xs text-slate-500 font-light mt-2">
-                      Save $240/year when paid annually
-                    </div>
+                    {isYearly && (
+                      <div className="text-xs text-slate-500 font-light mt-2">
+                        $199/month billed annually · Save $278
+                      </div>
+                    )}
                   </div>
 
                   <ul className="space-y-3 mb-12">
@@ -848,10 +1058,6 @@ function WebAgencyLanding() {
                       <span className="text-green-500 mt-1">✓</span>
                       <span>Technical maintenance and updates</span>
                     </li>
-                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Email support</span>
-                    </li>
                   </ul>
 
                   <div className="mb-4 p-3 bg-slate-50 border border-slate-200 rounded">
@@ -868,7 +1074,7 @@ function WebAgencyLanding() {
                   </button>
                 </div>
 
-                <div className="flex-shrink-0 w-80 md:w-auto snap-start p-10 border-2 border-slate-900 relative">
+                <div className="flex-shrink-0 w-80 md:w-auto snap-start p-10 border-2 border-slate-900 relative mt-4">
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-4 py-1 text-xs font-medium tracking-wider">
                     MOST POPULAR
                   </div>
@@ -876,38 +1082,40 @@ function WebAgencyLanding() {
                     <h3 className="text-sm font-medium tracking-wider mb-2">GROWTH INTELLIGENCE</h3>
                     <p className="text-xs text-slate-900 font-medium mb-4">Website + SEO · Competitive insights</p>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-5xl font-light">$500</span>
-                      <span className="text-slate-500 font-light">/mo</span>
+                      <span className="text-5xl font-light">
+                        {isYearly ? '$5,364' : '$497'}
+                      </span>
+                      <span className="text-slate-500 font-light">
+                        {isYearly ? '/year' : '/month'}
+                      </span>
                     </div>
-                    <div className="text-xs text-slate-500 font-light mt-2">
-                      Save $600/year when paid annually
-                    </div>
+                    {isYearly && (
+                      <div className="text-xs text-slate-500 font-light mt-2">
+                        $497/month billed annually · Save $600
+                      </div>
+                    )}
                   </div>
 
                   <ul className="space-y-3 mb-12">
-                    <li className="text-sm font-medium flex items-start gap-2">
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
                       <span>Everything in Website Essentials</span>
                     </li>
-                    <li className="text-sm font-medium flex items-start gap-2">
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
                       <span>Track 3 competitors + 25 keywords</span>
                     </li>
-                    <li className="text-sm font-medium flex items-start gap-2">
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>2 website improvements per week</span>
+                      <span>Up to 2 website changes</span>
                     </li>
-                    <li className="text-sm font-medium flex items-start gap-2">
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
                       <span>Performance dashboard + reports</span>
                     </li>
-                    <li className="text-sm font-medium flex items-start gap-2">
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
                       <span>AI-powered competitive insights</span>
-                    </li>
-                    <li className="text-sm font-medium flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Phone support</span>
                     </li>
                   </ul>
 
@@ -930,12 +1138,18 @@ function WebAgencyLanding() {
                     <h3 className="text-sm font-medium tracking-wider mb-2">MARKET DOMINATOR</h3>
                     <p className="text-xs text-slate-500 font-light mb-4">Full intelligence · Advanced optimization</p>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-5xl font-light">$700</span>
-                      <span className="text-slate-500 font-light">/mo</span>
+                      <span className="text-5xl font-light">
+                        {isYearly ? '$7,524' : '$697'}
+                      </span>
+                      <span className="text-slate-500 font-light">
+                        {isYearly ? '/year' : '/month'}
+                      </span>
                     </div>
-                    <div className="text-xs text-slate-500 font-light mt-2">
-                      Save $840/year when paid annually
-                    </div>
+                    {isYearly && (
+                      <div className="text-xs text-slate-500 font-light mt-2">
+                        $697/month billed annually · Save $840
+                      </div>
+                    )}
                   </div>
 
                   <ul className="space-y-3 mb-12">
@@ -949,15 +1163,11 @@ function WebAgencyLanding() {
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>4 website improvements per week</span>
+                      <span>Up to 4 website changes</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
                       <span>Advanced competitive analysis</span>
-                    </li>
-                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Bi-weekly strategy calls</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
@@ -983,7 +1193,7 @@ function WebAgencyLanding() {
 
             <button
               onClick={() => scroll(pricingRef, 'right')}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors md:hidden"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors lg:hidden"
             >
               <ChevronRight className="w-5 h-5 text-slate-600" />
             </button>
@@ -1014,7 +1224,7 @@ function WebAgencyLanding() {
               </button>
               {openFaq === 0 && (
                 <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
-                  Agencies charge $5K-15K/month and often disappear after delivering a report. We provide AI-powered enterprise intelligence for 1/5th the cost, plus smart automation implements everything. You get the strategy AND the execution, continuously optimized by machine learning.
+                  Agencies charge $5K-15K/month and often disappear after delivering a report. We provide AI-powered competitive intelligence starting at $500/month, plus smart automation implements everything. You get the strategy AND the execution, continuously optimized by machine learning.
                 </div>
               )}
             </div>
@@ -1029,7 +1239,7 @@ function WebAgencyLanding() {
               </button>
               {openFaq === 1 && (
                 <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
-                  One new customer per month pays for the entire service. Our average client sees 67% increase in conversions. If your average customer value is $2,000+, the math works from day one. Plus you get continuous optimization vs. one-time projects.
+                  For our Growth Intelligence plan ($500/month), just one new customer covers the service. Our average client sees 67% increase in conversions. Even with smaller customer values of $500-1,000, the ROI is clear within months. Plus you get continuous optimization vs. one-time projects.
                 </div>
               )}
             </div>
@@ -1104,7 +1314,7 @@ function WebAgencyLanding() {
               </button>
               {openFaq === 7 && (
                 <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
-                  Traditional agencies charge $15K-50K+ for complete rebuilds every 2-3 years. Our monthly subscription costs a fraction of that while keeping your site continuously updated with the latest technology. Instead of expensive disruptions, you get predictable monthly investment with ongoing improvements and no surprise rebuild costs.
+                  Traditional agencies charge $15K-50K+ for complete rebuilds every 2-3 years. Our subscription starts at just $200/month for professional websites, with SEO and competitive intelligence available from $500/month. Instead of expensive disruptions, you get predictable monthly investment with ongoing improvements and no surprise rebuild costs.
                 </div>
               )}
             </div>
@@ -1134,7 +1344,7 @@ function WebAgencyLanding() {
               </button>
               {openFaq === 9 && (
                 <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
-                  Dynamic SEO and keyword optimization are included—no extra fees. Our AI continuously monitors search rankings and automatically adjusts meta tags, content structure, and technical SEO based on what's working in your market. You get ongoing SEO optimization without paying separate agencies or monthly SEO fees.
+                  SEO and competitive intelligence are included in our Growth Intelligence ($500/month) and Market Dominator ($700/month) plans. Our AI continuously monitors search rankings and automatically adjusts meta tags, content structure, and technical SEO based on what's working in your market. You get ongoing SEO optimization without paying separate agencies or monthly SEO fees.
                 </div>
               )}
             </div>
