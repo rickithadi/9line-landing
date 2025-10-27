@@ -62,7 +62,7 @@ function WebAgencyLanding() {
             </span>
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-            AI-powered business intelligence and smart automation. No guesswork. No tech headaches. Just results that compound.
+            AI-powered competitive intelligence and smart automation that continuously evolves your digital presence. No guesswork. No tech headaches. Just results that compound.
           </p>
 
           <div className="flex justify-center mb-6">
@@ -120,6 +120,89 @@ function WebAgencyLanding() {
         </div>
       </section>
 
+      <section className="py-32 px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light mb-4 tracking-tight">Long-term Partnership, Not One-off Projects</h2>
+            <p className="text-slate-600 font-light">Why smart business owners choose continuous improvement over expensive rebuilds</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-16 mb-24">
+            <div className="border border-red-200 bg-red-50 p-8">
+              <div className="text-center mb-8">
+                <AlertTriangle className="w-12 h-12 text-red-600 mx-auto mb-4" strokeWidth={1.5} />
+                <h3 className="text-2xl font-light text-red-900 mb-2">Traditional Agencies</h3>
+                <p className="text-red-700 font-light">Expensive rebuild cycle every 2-3 years</p>
+              </div>
+              <ul className="space-y-4 text-sm text-red-800 font-light">
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 mt-1">×</span>
+                  <span>$15K-50K+ for complete rebuilds</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 mt-1">×</span>
+                  <span>Technology becomes outdated quickly</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 mt-1">×</span>
+                  <span>Long project timelines, business disruption</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 mt-1">×</span>
+                  <span>No ongoing optimization or intelligence</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 mt-1">×</span>
+                  <span>You're on your own after launch</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="border border-green-200 bg-green-50 p-8">
+              <div className="text-center mb-8">
+                <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" strokeWidth={1.5} />
+                <h3 className="text-2xl font-light text-green-900 mb-2">9line.dev Partnership</h3>
+                <p className="text-green-700 font-light">Manageable monthly subscription with continuous evolution</p>
+              </div>
+              <ul className="space-y-4 text-sm text-green-800 font-light">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span>Predictable monthly investment vs. massive rebuilds</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span>Always current with latest capabilities</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span>Continuous improvements, no business disruption</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span>AI-powered competitive intelligence included</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span>Long-term partnership, always evolving</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-slate-600 font-light mb-6 max-w-3xl mx-auto">
+              Stop the expensive rebuild cycle. Establish a long-term relationship where we continuously improve your digital presence while you focus on running your business.
+            </p>
+            <button
+              onClick={() => handleCTAClick('START YOUR PARTNERSHIP', 'partnership_value')}
+              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+            >
+              START YOUR PARTNERSHIP
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section className="py-32 px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -161,23 +244,27 @@ function WebAgencyLanding() {
               <div className="border border-slate-200 bg-white p-8">
                 <Gauge className="w-8 h-8 text-red-600 mb-6" strokeWidth={1.5} />
                 <h3 className="text-2xl font-light mb-3">Wix & Squarespace Limits</h3>
-                <p className="text-slate-600 font-light leading-relaxed mb-4">DIY platform limitations.</p>
+                <p className="text-slate-600 font-light leading-relaxed mb-4">DIY platform limitations that hurt your business.</p>
                 <ul className="space-y-3 text-sm text-slate-500 font-light leading-relaxed">
                   <li className="flex items-start gap-2">
                     <Gauge className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Slow loading speeds hurt search rankings</span>
+                    <span>3-6 second load times (Google recommends under 2s)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Users className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>You build it yourself—no expert guidance</span>
+                    <span>DIY design—no professional guidance or strategy</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Smartphone className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Generic templates don't convert visitors</span>
+                    <span>Generic templates (74% bounce rate typical)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Search className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>No market intelligence or optimization</span>
+                    <span>No competitive analysis or market intelligence</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <TrendingUp className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Limited SEO capabilities hurt search rankings</span>
                   </li>
                 </ul>
               </div>
@@ -185,24 +272,28 @@ function WebAgencyLanding() {
               {/* 9line.dev Solution Card */}
               <div className="bg-slate-900 text-white p-8">
                 <Brain className="w-8 h-8 text-blue-400 mb-6" strokeWidth={1.5} />
-                <h3 className="text-2xl font-light mb-3">9line.dev AI Solution</h3>
-                <p className="text-slate-300 font-light leading-relaxed mb-4">AI-powered professional solution.</p>
+                <h3 className="text-2xl font-light mb-3">9line.dev Professional Solution</h3>
+                <p className="text-slate-300 font-light leading-relaxed mb-4">Expert-managed service that delivers real results.</p>
                 <ul className="space-y-3 text-sm text-slate-300 font-light">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>AI-powered competitive monitoring</span>
+                    <span>Under 1-second load times (3x faster than DIY platforms)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Smart automation handles technical complexity</span>
+                    <span>Professional strategy and competitive intelligence</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Enterprise-speed performance optimization</span>
+                    <span>Custom design optimized for your market (15% bounce rate avg)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Continuous intelligent improvements</span>
+                    <span>AI-powered SEO that actually ranks on page 1</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Continuous optimization vs set-and-forget platforms</span>
                   </li>
                 </ul>
               </div>
@@ -210,13 +301,13 @@ function WebAgencyLanding() {
 
           <div className="text-center">
             <p className="text-lg text-slate-600 font-light mb-6">
-              Stop wasting time on platforms that make you do the work. Get AI-powered business intelligence that works while you focus on what matters.
+              Stop wasting time and money on DIY platforms that don't deliver results. Get professional intelligence and optimization that actually moves the needle.
             </p>
             <button
-              onClick={() => handleCTAClick('SEE YOUR COMPETITIVE ADVANTAGE', 'competitive_comparison')}
+              onClick={() => handleCTAClick('SEE WHERE YOU RANK', 'competitive_comparison')}
               className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
             >
-              SEE YOUR COMPETITIVE ADVANTAGE
+              SEE WHERE YOU RANK
             </button>
           </div>
         </div>
@@ -229,7 +320,7 @@ function WebAgencyLanding() {
             <p className="text-slate-600 font-light">We don't build and leave. We don't just report. We use machine learning to continuously improve based on real performance data.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 mb-24">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
             <div className="border border-slate-200 bg-white p-8">
               <Eye className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
               <h3 className="text-2xl font-light mb-3">AI Monitor</h3>
@@ -249,6 +340,13 @@ function WebAgencyLanding() {
               <h3 className="text-2xl font-light mb-3">AI Evolve</h3>
               <p className="text-slate-600 font-light leading-relaxed mb-4">Continuous intelligent implementation based on machine learning.</p>
               <p className="text-sm text-slate-500 font-light leading-relaxed">Unlike static providers who just keep sites running, AI makes them smarter every month. Design improvements, speed optimization, search ranking—always learning and improving automatically.</p>
+            </div>
+
+            <div className="border border-slate-200 bg-white p-8">
+              <Smartphone className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
+              <h3 className="text-2xl font-light mb-3">AI Build & Deploy</h3>
+              <p className="text-slate-600 font-light leading-relaxed mb-4">Automatically rebuild with the latest technology stack.</p>
+              <p className="text-sm text-slate-500 font-light leading-relaxed">Mobile-first responsive architecture that automatically updates with cutting-edge frameworks. Your site evolves with technology seamlessly through intelligent automation.</p>
             </div>
           </div>
 
@@ -579,6 +677,59 @@ function WebAgencyLanding() {
         </div>
       </section>
 
+      <section className="py-32 px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light mb-4 tracking-tight">Your Website Is Your Digital Gateway</h2>
+            <p className="text-slate-600 font-light">The professional representation that shows your commitment to excellence</p>
+          </div>
+
+          <div className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 p-12 mb-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <TrendingUp className="w-16 h-16 text-slate-900 mx-auto mb-8" strokeWidth={1.5} />
+              <p className="text-2xl text-slate-700 font-light mb-8 leading-relaxed">
+                "You are a hard-working professional that delivers best-in-class work to your clients. Your website is the gateway and digital representation—it should show that."
+              </p>
+              <p className="text-lg text-slate-600 font-light leading-relaxed">
+                Your website is the digital representation of your business online. When potential clients find you, they're not just evaluating your services—they're evaluating your professionalism, attention to detail, and commitment to excellence.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="text-center p-6">
+              <Eye className="w-12 h-12 text-slate-900 mx-auto mb-4" strokeWidth={1.5} />
+              <h3 className="text-xl font-light mb-3">First Impressions Matter</h3>
+              <p className="text-slate-600 font-light leading-relaxed">
+                Within seconds, visitors judge your credibility. A professional, fast-loading site instantly communicates competence and trustworthiness.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <Shield className="w-12 h-12 text-slate-900 mx-auto mb-4" strokeWidth={1.5} />
+              <h3 className="text-xl font-light mb-3">Trust & Authority</h3>
+              <p className="text-slate-600 font-light leading-relaxed">
+                Your digital presence reflects your work standards. A cutting-edge, well-maintained site shows you stay current with best practices.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <Users className="w-12 h-12 text-slate-900 mx-auto mb-4" strokeWidth={1.5} />
+              <h3 className="text-xl font-light mb-3">Client Confidence</h3>
+              <p className="text-slate-600 font-light leading-relaxed">
+                When clients see your website performs flawlessly across all devices, they gain confidence in your ability to deliver excellence.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-slate-600 font-light mb-6 max-w-3xl mx-auto">
+              Don't let an outdated or slow website undermine the quality work you deliver. Your digital gateway should reflect the same excellence your clients experience working with you.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-32 px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -665,43 +816,47 @@ function WebAgencyLanding() {
               <div className="flex md:grid md:grid-cols-3 gap-8 pb-4">
                 <div className="flex-shrink-0 w-80 md:w-auto snap-start p-10 border border-slate-200">
                   <div className="mb-12">
-                    <h3 className="text-sm font-medium tracking-wider mb-2">COMPETITIVE EDGE</h3>
-                    <p className="text-xs text-slate-500 font-light mb-4">Single location · Real-time intelligence</p>
+                    <h3 className="text-sm font-medium tracking-wider mb-2">WEBSITE ESSENTIALS</h3>
+                    <p className="text-xs text-slate-500 font-light mb-4">Professional website · Mobile-first design</p>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-5xl font-light">$1,995</span>
+                      <span className="text-5xl font-light">$200</span>
                       <span className="text-slate-500 font-light">/mo</span>
                     </div>
                     <div className="text-xs text-slate-500 font-light mt-2">
-                      Save $2,400/year when paid annually
+                      Save $240/year when paid annually
                     </div>
                   </div>
 
                   <ul className="space-y-3 mb-12">
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Track 3 competitors + 25 keywords</span>
+                      <span>Professional website design and development</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>2 website improvements per week</span>
-                    </li>
-                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>City-wide ranking heatmap</span>
-                    </li>
-                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
-                      <span className="text-green-500 mt-1">✓</span>
-                      <span>Performance dashboard + weekly reports</span>
+                      <span>Mobile-first responsive architecture</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
                       <span>Website hosting + security</span>
                     </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Monthly performance optimization</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Technical maintenance and updates</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Email support</span>
+                    </li>
                   </ul>
 
                   <div className="mb-4 p-3 bg-slate-50 border border-slate-200 rounded">
                     <p className="text-xs text-slate-600 font-light italic">
-                      "Just 1 new client every 2 months to break even"
+                      "Professional website without the agency overhead"
                     </p>
                   </div>
 
@@ -718,47 +873,47 @@ function WebAgencyLanding() {
                     MOST POPULAR
                   </div>
                   <div className="mb-12">
-                    <h3 className="text-sm font-medium tracking-wider mb-2">MARKET DOMINATOR</h3>
-                    <p className="text-xs text-slate-900 font-medium mb-4">Multi-location · Enhanced intelligence</p>
+                    <h3 className="text-sm font-medium tracking-wider mb-2">GROWTH INTELLIGENCE</h3>
+                    <p className="text-xs text-slate-900 font-medium mb-4">Website + SEO · Competitive insights</p>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-5xl font-light">$2,995</span>
+                      <span className="text-5xl font-light">$500</span>
                       <span className="text-slate-500 font-light">/mo</span>
                     </div>
                     <div className="text-xs text-slate-500 font-light mt-2">
-                      Save $3,600/year when paid annually
+                      Save $600/year when paid annually
                     </div>
                   </div>
 
                   <ul className="space-y-3 mb-12">
                     <li className="text-sm font-medium flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Track 5 competitors + 50 keywords</span>
+                      <span>Everything in Website Essentials</span>
                     </li>
                     <li className="text-sm font-medium flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>4 website improvements per week</span>
+                      <span>Track 3 competitors + 25 keywords</span>
                     </li>
                     <li className="text-sm font-medium flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Hourly ranking updates + alerts</span>
+                      <span>2 website improvements per week</span>
                     </li>
                     <li className="text-sm font-medium flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Content creation (1 blog post/month)</span>
+                      <span>Performance dashboard + reports</span>
                     </li>
                     <li className="text-sm font-medium flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Bi-weekly strategy calls</span>
+                      <span>AI-powered competitive insights</span>
                     </li>
                     <li className="text-sm font-medium flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>24-hour response time</span>
+                      <span>Phone support</span>
                     </li>
                   </ul>
 
                   <div className="mb-4 p-3 bg-slate-50 border border-slate-200 rounded">
                     <p className="text-xs text-slate-600 font-light italic">
-                      "A single case/patient pays for 3-6 months of service"
+                      "Complete growth platform for expanding businesses"
                     </p>
                   </div>
 
@@ -772,47 +927,47 @@ function WebAgencyLanding() {
 
                 <div className="flex-shrink-0 w-80 md:w-auto snap-start p-10 border border-slate-200">
                   <div className="mb-12">
-                    <h3 className="text-sm font-medium tracking-wider mb-2">REGIONAL LEADER</h3>
-                    <p className="text-xs text-slate-500 font-light mb-4">4-10 locations · Enterprise intelligence</p>
+                    <h3 className="text-sm font-medium tracking-wider mb-2">MARKET DOMINATOR</h3>
+                    <p className="text-xs text-slate-500 font-light mb-4">Full intelligence · Advanced optimization</p>
                     <div className="flex items-baseline gap-2">
-                      <span className="text-5xl font-light">$4,995</span>
+                      <span className="text-5xl font-light">$700</span>
                       <span className="text-slate-500 font-light">/mo</span>
                     </div>
                     <div className="text-xs text-slate-500 font-light mt-2">
-                      Save $6,000/year when paid annually
+                      Save $840/year when paid annually
                     </div>
                   </div>
 
                   <ul className="space-y-3 mb-12">
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Unlimited competitors + 100+ keywords</span>
+                      <span>Everything in Growth Intelligence</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Daily website improvements</span>
+                      <span>Track 5 competitors + 50 keywords</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Multi-location management (4-10 sites)</span>
+                      <span>4 website improvements per week</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Dedicated account manager</span>
+                      <span>Advanced competitive analysis</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Monthly strategy sessions</span>
+                      <span>Bi-weekly strategy calls</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Same-day response + VIP support</span>
+                      <span>Priority support + same-day response</span>
                     </li>
                   </ul>
 
                   <div className="mb-4 p-3 bg-slate-50 border border-slate-200 rounded">
                     <p className="text-xs text-slate-600 font-light italic">
-                      "Cost per location is just $500-$1,250/month"
+                      "Full competitive intelligence for market leaders"
                     </p>
                   </div>
 
@@ -835,7 +990,7 @@ function WebAgencyLanding() {
           </div>
 
           <p className="text-center text-xs text-slate-500 font-light mt-8">
-            All plans include continuous improvements · Cancel anytime
+            All plans include continuous improvements and optimization · No rebuild fees · Cancel anytime
           </p>
 
         </div>
@@ -939,15 +1094,60 @@ function WebAgencyLanding() {
               )}
             </div>
 
+            <div className="border border-slate-200 bg-white overflow-hidden">
+              <button
+                onClick={() => setOpenFaq(openFaq === 7 ? null : 7)}
+                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
+              >
+                <span className="font-light pr-4">How does the subscription model save money vs. traditional rebuilds?</span>
+                <ChevronDown className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${openFaq === 7 ? 'rotate-180' : ''}`} />
+              </button>
+              {openFaq === 7 && (
+                <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
+                  Traditional agencies charge $15K-50K+ for complete rebuilds every 2-3 years. Our monthly subscription costs a fraction of that while keeping your site continuously updated with the latest technology. Instead of expensive disruptions, you get predictable monthly investment with ongoing improvements and no surprise rebuild costs.
+                </div>
+              )}
+            </div>
+
+            <div className="border border-slate-200 bg-white overflow-hidden">
+              <button
+                onClick={() => setOpenFaq(openFaq === 8 ? null : 8)}
+                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
+              >
+                <span className="font-light pr-4">How do you keep websites updated with the latest technology?</span>
+                <ChevronDown className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${openFaq === 8 ? 'rotate-180' : ''}`} />
+              </button>
+              {openFaq === 8 && (
+                <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
+                  Our AI automatically monitors and implements the latest frameworks, security updates, and performance optimizations. We rebuild your site's foundation with cutting-edge technology without business disruption. Your site always uses mobile-first responsive design and the fastest available tech stack—no expensive migration projects needed.
+                </div>
+              )}
+            </div>
+
+            <div className="border border-slate-200 bg-white overflow-hidden">
+              <button
+                onClick={() => setOpenFaq(openFaq === 9 ? null : 9)}
+                className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
+              >
+                <span className="font-light pr-4">Is SEO optimization included, or do I need to pay extra?</span>
+                <ChevronDown className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${openFaq === 9 ? 'rotate-180' : ''}`} />
+              </button>
+              {openFaq === 9 && (
+                <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
+                  Dynamic SEO and keyword optimization are included—no extra fees. Our AI continuously monitors search rankings and automatically adjusts meta tags, content structure, and technical SEO based on what's working in your market. You get ongoing SEO optimization without paying separate agencies or monthly SEO fees.
+                </div>
+              )}
+            </div>
+
             <div className="border-b border-slate-200">
               <button
-                onClick={() => setOpenFaq(openFaq === 6 ? null : 6)}
+                onClick={() => setOpenFaq(openFaq === 10 ? null : 10)}
                 className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
               >
                 <span className="font-light pr-4">Why not just use WordPress, Wix, or Squarespace?</span>
-                <ChevronDown className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${openFaq === 6 ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform ${openFaq === 10 ? 'rotate-180' : ''}`} />
               </button>
-              {openFaq === 6 && (
+              {openFaq === 10 && (
                 <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
                   WordPress requires constant security updates and technical maintenance. Wix and Squarespace are slow and make YOU do all the optimization work. Our AI-powered platform handles all technical complexity while continuously monitoring and improving your market position. You get enterprise-level intelligence without the DIY headaches.
                 </div>
