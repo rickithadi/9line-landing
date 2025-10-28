@@ -17,7 +17,7 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
         onClick={onClose}
       />
       
-      <div className="relative bg-white border border-slate-200 max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
+      <div className="relative bg-white border border-slate-200 max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 hover:bg-slate-50 transition-colors"

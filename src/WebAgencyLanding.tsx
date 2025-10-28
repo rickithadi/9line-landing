@@ -1,6 +1,7 @@
-import { AlertTriangle, ArrowRight, CheckCircle, ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Lightbulb, MousePointerClick, Search, Shield, Smartphone, TrendingUp, Users, Zap, Lock, Gauge, Settings, Brain, Menu, X } from 'lucide-react';
+import { AlertTriangle, CheckCircle, ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Lightbulb, Search, Shield, Smartphone, TrendingUp, Users, Gauge, Brain, Menu, X } from 'lucide-react';
 import { useRef, useState } from 'react';
 import { trackCTAClick } from './utils/analytics';
+import { useTypewriter } from './hooks/useTypewriter';
 
 import { ContactForm } from './components/ContactForm';
 import { Modal } from './components/Modal';
@@ -17,6 +18,13 @@ function WebAgencyLanding() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isYearly, setIsYearly] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const { displayText: heroText, isComplete: heroComplete } = useTypewriter('Fast digital rescue', { speed: 80 });
+  const { displayText: subtitleText, isComplete: subtitleComplete } = useTypewriter('for busy business owners.', { 
+    speed: 60, 
+    delay: heroComplete ? 500 : 0 
+  });
+
 
   const scroll = (ref: React.RefObject<HTMLDivElement>, direction: 'left' | 'right') => {
     if (ref.current) {
@@ -86,11 +94,11 @@ function WebAgencyLanding() {
               Contact
             </button>
             <button
-              onClick={() => handleCTAClick('See Where You Rank', 'navigation')}
+              onClick={() => handleCTAClick('Get Free Analysis', 'navigation')}
               className="px-6 py-2 text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 transition-colors"
-              aria-label="Get free website ranking analysis"
+              aria-label="Get free website analysis and intelligence report"
             >
-              See Where You Rank →
+              Get Free Analysis →
             </button>
           </div>
 
@@ -133,12 +141,12 @@ function WebAgencyLanding() {
               </button>
               <button
                 onClick={() => {
-                  handleCTAClick('See Where You Rank', 'navigation');
+                  handleCTAClick('Get Free Analysis', 'navigation');
                   setIsMobileMenuOpen(false);
                 }}
                 className="block w-full text-left px-6 py-2 text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 transition-colors mt-4"
               >
-                See Where You Rank →
+                Get Free Analysis →
               </button>
             </div>
           </div>
@@ -152,26 +160,36 @@ function WebAgencyLanding() {
           </div>
 
           <h1 id="hero-heading" className="text-6xl md:text-7xl font-light mb-8 leading-tight tracking-tight">
-            Fast digital rescue
+            <span className="inline-block">
+              {heroText}
+              {!heroComplete && <span className="animate-pulse">|</span>}
+            </span>
             <span className="block font-normal text-blue-600 mt-2">
-              for busy business owners.
+              {subtitleText}
+              {heroComplete && subtitleText.length < 'for busy business owners.'.length && <span className="animate-pulse">|</span>}
             </span>
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+          <p className={`text-xl text-slate-600 max-w-2xl mx-auto mb-12 leading-relaxed font-light transition-all duration-1000 ${
+            subtitleComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             AI-powered competitive intelligence and smart automation that continuously evolves your digital presence. No guesswork. No tech headaches. Just results that compound.
           </p>
 
-          <div className="flex justify-center mb-6">
+          <div className={`flex justify-center mb-6 transition-all duration-1000 delay-500 ${
+            subtitleComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             <button
-              onClick={() => handleCTAClick('SEE WHERE YOU RANK', 'hero')}
+              onClick={() => handleCTAClick('GET FREE ANALYSIS', 'hero')}
               className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
-              aria-label="Get free website ranking analysis and intelligence report"
+              aria-label="Get free website analysis and intelligence report"
             >
-              SEE WHERE YOU RANK
+              GET FREE ANALYSIS
             </button>
           </div>
 
-          <p className="text-xs text-slate-500 font-light">
+          <p className={`text-xs text-slate-500 font-light transition-all duration-1000 delay-700 ${
+            subtitleComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}>
             Free intelligence report · No commitment
           </p>
         </div>
@@ -196,215 +214,58 @@ function WebAgencyLanding() {
         </div>
       </section>
 
-      <section ref={aboutRef} className="py-32 px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light mb-4 tracking-tight">Who We Are</h2>
-            <p className="text-slate-600 font-light">Born from Fortune 500 consulting experience, focused on SME success.</p>
-          </div>
-
-          <div className="bg-white border border-slate-200 p-12">
-            <div className="max-w-3xl mx-auto">
-              <p className="text-lg text-slate-600 font-light leading-relaxed mb-8">
-                We have extensive experience from the world's largest technology consulting firms working with Fortune 500 companies and fast-growing startups. But we realized: everyone ignores SME businesses, leaving them with generic solutions that don't move the needle.
-              </p>
-
-              <p className="text-lg text-slate-600 font-light leading-relaxed">
-                Your business deserves the same strategic intelligence that Fortune 500 companies receive. We bridge that gap—bringing enterprise-level insights at prices that make sense for your business.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 px-8 bg-white">
+      <section className="py-32 px-8 bg-slate-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-light mb-4 tracking-tight">Long-term Partnership, Not One-off Projects</h2>
-            <p className="text-slate-600 font-light">Why smart business owners choose continuous improvement over expensive rebuilds</p>
+            <h3 className="text-3xl font-light mb-4 tracking-tight text-white">Why Websites Fail & How We Fix It</h3>
+            <p className="text-slate-400 font-light">The hidden problems killing your online success</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-16 mb-24">
-            <div className="border border-red-200 bg-red-50 p-8">
-              <div className="text-center mb-8">
-                <AlertTriangle className="w-12 h-12 text-red-600 mx-auto mb-4" strokeWidth={1.5} />
-                <h3 className="text-2xl font-light text-red-900 mb-2">Traditional Agencies</h3>
-                <p className="text-red-700 font-light">Expensive rebuild cycle every 2-3 years</p>
+          {/* Educational Cards - Oak Harbor Style */}
+          <div className="grid md:grid-cols-3 gap-12 mb-16">
+            {/* Speed Card */}
+            <div className="bg-slate-800 border border-slate-700 p-12 rounded-lg">
+              <div className="text-center">
+                <Gauge className="w-12 h-12 text-red-400 mx-auto mb-8" strokeWidth={1.5} />
+                <h4 className="text-2xl font-light text-white mb-4">Speed Kills Conversions</h4>
+                <p className="text-lg text-slate-300 mb-6">3+ seconds = 53% visitors leave</p>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Slow sites lose customers. We build sites that load in under 1 second.
+                </p>
               </div>
-              <ul className="space-y-4 text-sm text-red-800 font-light">
-                <li className="flex items-start gap-3">
-                  <span className="text-red-600 mt-1">×</span>
-                  <span>$15K-50K+ for complete rebuilds</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-600 mt-1">×</span>
-                  <span>Technology becomes outdated quickly</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-600 mt-1">×</span>
-                  <span>Long project timelines, business disruption</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-600 mt-1">×</span>
-                  <span>No ongoing optimization or intelligence</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-600 mt-1">×</span>
-                  <span>You're on your own after launch</span>
-                </li>
-              </ul>
             </div>
 
-            <div className="border border-green-200 bg-green-50 p-8">
-              <div className="text-center mb-8">
-                <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" strokeWidth={1.5} />
-                <h3 className="text-2xl font-light text-green-900 mb-2">9line.dev Partnership</h3>
-                <p className="text-green-700 font-light">Manageable monthly subscription with continuous evolution</p>
+            {/* Mobile Card */}
+            <div className="bg-slate-800 border border-slate-700 p-12 rounded-lg">
+              <div className="text-center">
+                <Smartphone className="w-12 h-12 text-blue-400 mx-auto mb-8" strokeWidth={1.5} />
+                <h4 className="text-2xl font-light text-white mb-4">Mobile-Broken = Business-Broken</h4>
+                <p className="text-lg text-slate-300 mb-6">60% mobile traffic, 3% conversions</p>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  60% of visitors use mobile. Poor mobile design kills conversions. We build mobile-first.
+                </p>
               </div>
-              <ul className="space-y-4 text-sm text-green-800 font-light">
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span>Save 70-85% vs. traditional rebuilds ($200-700/mo vs. $15K-50K)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span>Always current with latest capabilities (monthly updates)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span>67% average conversion increase, no business disruption</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span>Track 3-5 competitors + 25-50 keywords with AI analysis</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                  <span>Typical ROI payback within 30-60 days</span>
-                </li>
-              </ul>
+            </div>
+
+            {/* Search Card */}
+            <div className="bg-slate-800 border border-slate-700 p-12 rounded-lg">
+              <div className="text-center">
+                <Eye className="w-12 h-12 text-orange-400 mx-auto mb-8" strokeWidth={1.5} />
+                <h4 className="text-2xl font-light text-white mb-4">Invisible Online = Invisible Business</h4>
+                <p className="text-lg text-slate-300 mb-6">Page 2+ = 0.78% click rate</p>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Page 1 gets 91% of clicks. Page 2 gets nothing. We use AI to beat your competition.
+                </p>
+              </div>
             </div>
           </div>
 
           <div className="text-center">
-            <p className="text-lg text-slate-600 font-light mb-6 max-w-3xl mx-auto">
-              Stop the expensive rebuild cycle. Establish a long-term relationship where we continuously improve your digital presence while you focus on running your business.
-            </p>
             <button
-              onClick={() => handleCTAClick('START YOUR PARTNERSHIP', 'partnership_value')}
-              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+              onClick={() => handleCTAClick('GET FREE ANALYSIS', 'why_websites_fail')}
+              className="px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 transition-colors text-sm font-medium tracking-wide"
             >
-              START YOUR PARTNERSHIP
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 px-8 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light mb-4 tracking-tight">
-              Why Not WordPress, Wix, or Squarespace?
-            </h2>
-            <p className="text-slate-600 font-light max-w-2xl mx-auto">
-              Smart business owners need AI-powered solutions, not DIY headaches that drain time and money.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12 mb-24">
-              {/* WordPress Problems Card */}
-              <div className="border border-slate-200 bg-white p-8">
-                <Shield className="w-8 h-8 text-orange-600 mb-6" strokeWidth={1.5} />
-                <h3 className="text-2xl font-light mb-3">WordPress Problems</h3>
-                <p className="text-slate-600 font-light leading-relaxed mb-4">Platform maintenance issues.</p>
-                <ul className="space-y-3 text-sm text-slate-500 font-light leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <Lock className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Constant security vulnerabilities and updates</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Settings className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Technical complexity requires expert maintenance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <AlertTriangle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Plugin conflicts and compatibility issues</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Eye className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>No built-in competitive intelligence</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Wix & Squarespace Problems Card */}
-              <div className="border border-slate-200 bg-white p-8">
-                <Gauge className="w-8 h-8 text-red-600 mb-6" strokeWidth={1.5} />
-                <h3 className="text-2xl font-light mb-3">Wix & Squarespace Limits</h3>
-                <p className="text-slate-600 font-light leading-relaxed mb-4">DIY platform limitations that hurt your business.</p>
-                <ul className="space-y-3 text-sm text-slate-500 font-light leading-relaxed">
-                  <li className="flex items-start gap-2">
-                    <Gauge className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>3-6 second load times (Google recommends under 2s)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Users className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>DIY design—no professional guidance or strategy</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Smartphone className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Generic templates (74% bounce rate typical)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Search className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>No competitive analysis or market intelligence</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <TrendingUp className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Limited SEO capabilities hurt search rankings</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* 9line.dev Solution Card */}
-              <div className="bg-slate-900 text-white p-8">
-                <Brain className="w-8 h-8 text-blue-400 mb-6" strokeWidth={1.5} />
-                <h3 className="text-2xl font-light mb-3">9line.dev Professional Solution</h3>
-                <p className="text-slate-300 font-light leading-relaxed mb-4">Expert-managed service that delivers real results.</p>
-                <ul className="space-y-3 text-sm text-slate-300 font-light">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Optimized load times for better user experience</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Professional strategy and competitive intelligence</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Custom design optimized for your market</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>AI-powered SEO optimization for higher rankings</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Continuous optimization vs set-and-forget platforms</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          <div className="text-center">
-            <p className="text-lg text-slate-600 font-light mb-6">
-              Stop wasting time and money on DIY platforms that don't deliver results. Get professional intelligence and optimization that actually moves the needle.
-            </p>
-            <button
-              onClick={() => handleCTAClick('SEE WHERE YOU RANK', 'competitive_comparison')}
-              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
-            >
-              SEE WHERE YOU RANK
+              GET FREE ANALYSIS
             </button>
           </div>
         </div>
@@ -421,37 +282,31 @@ function WebAgencyLanding() {
             <div className="border border-slate-200 bg-white p-8">
               <Eye className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
               <h3 className="text-2xl font-light mb-3">AI Monitor</h3>
-              <p className="text-slate-600 font-light leading-relaxed mb-4">Smart competitive intelligence powered by AI.</p>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">AI analyzes performance data specific to your industry patterns. Know exactly where you stand and when competitors make moves. Intelligent automation, not just reports.</p>
+              <p className="text-slate-600 font-light leading-relaxed">Track competitors and market shifts automatically.</p>
             </div>
 
             <div className="border border-slate-200 bg-white p-8">
               <Shield className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
               <h3 className="text-2xl font-light mb-3">Smart Audit</h3>
-              <p className="text-slate-600 font-light leading-relaxed mb-4">AI-driven optimization opportunities discovery.</p>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">Stop paying for tools you don't know how to use. AI identifies exactly what needs fixing based on real performance data and predictive industry analysis. Technical SEO, design, speed—everything automated.</p>
+              <p className="text-slate-600 font-light leading-relaxed">AI identifies what needs fixing for better performance.</p>
             </div>
 
             <div className="border border-slate-200 bg-white p-8">
               <Code className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
               <h3 className="text-2xl font-light mb-3">AI Evolve</h3>
-              <p className="text-slate-600 font-light leading-relaxed mb-4">Continuous intelligent implementation based on AI.</p>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">Unlike static providers who just keep sites running, AI makes them smarter every month. Design improvements, speed optimization, search ranking—always learning and improving automatically.</p>
+              <p className="text-slate-600 font-light leading-relaxed">Continuous improvements that compound results.</p>
             </div>
 
             <div className="border border-slate-200 bg-white p-8">
               <Smartphone className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
-              <h3 className="text-2xl font-light mb-3">AI Build & Deploy</h3>
-              <p className="text-slate-600 font-light leading-relaxed mb-4">Automatically rebuild with the latest technology stack.</p>
-              <p className="text-sm text-slate-500 font-light leading-relaxed">Mobile-first responsive architecture that automatically updates with cutting-edge frameworks. Your site evolves with technology seamlessly through intelligent automation.</p>
+              <h3 className="text-2xl font-light mb-3">AI Deploy</h3>
+              <p className="text-slate-600 font-light leading-relaxed">Always current with latest technology.</p>
             </div>
           </div>
-
-
         </div>
       </section>
 
-      <section className="py-32 px-8">
+      <section className="py-32 px-8 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light mb-4 tracking-tight">Your Dashboard</h2>
@@ -628,206 +483,7 @@ function WebAgencyLanding() {
         </div>
       </section>
 
-      <section className="py-32 px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl font-light mb-4 tracking-tight">From Losing to Winning</h3>
-            <p className="text-slate-600 font-light">Real client transformations that drive business growth</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white border border-slate-200 p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <Users className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                <h4 className="text-lg font-light text-slate-900">Customer Growth</h4>
-              </div>
-              <div className="space-y-4">
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                  <div className="text-slate-700 font-light">Losing visitors</div>
-                </div>
-                <div className="text-center">
-                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                </div>
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                  <div className="text-3xl font-light text-slate-900 mb-1">+67%</div>
-                  <div className="text-xs text-slate-500 font-light">more customers</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <MousePointerClick className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                <h4 className="text-lg font-light text-slate-900">Visitor Retention</h4>
-              </div>
-              <div className="space-y-4">
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                  <div className="text-slate-700 font-light">72% leaving</div>
-                </div>
-                <div className="text-center">
-                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                </div>
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                  <div className="text-3xl font-light text-slate-900 mb-1">15%</div>
-                  <div className="text-xs text-slate-500 font-light">bounce rate</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <Smartphone className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                <h4 className="text-lg font-light text-slate-900">Mobile Experience</h4>
-              </div>
-              <div className="space-y-4">
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                  <div className="text-slate-700 font-light">43% mobile</div>
-                </div>
-                <div className="text-center">
-                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                </div>
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                  <div className="text-3xl font-light text-slate-900 mb-1">78%</div>
-                  <div className="text-xs text-slate-500 font-light">mobile optimized</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <Zap className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                <h4 className="text-lg font-light text-slate-900">Loading Speed</h4>
-              </div>
-              <div className="space-y-4">
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                  <div className="text-slate-700 font-light">4.8s slow</div>
-                </div>
-                <div className="text-center">
-                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                </div>
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                  <div className="text-3xl font-light text-slate-900 mb-1">0.9s</div>
-                  <div className="text-xs text-slate-500 font-light">lightning fast</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <Search className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                <h4 className="text-lg font-light text-slate-900">Search Visibility</h4>
-              </div>
-              <div className="space-y-4">
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                  <div className="text-slate-700 font-light">Hidden online</div>
-                </div>
-                <div className="text-center">
-                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                </div>
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                  <div className="text-3xl font-light text-slate-900 mb-1">+89%</div>
-                  <div className="text-xs text-slate-500 font-light">search traffic</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white border border-slate-200 p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <TrendingUp className="w-8 h-8 text-slate-900" strokeWidth={1.5} />
-                <h4 className="text-lg font-light text-slate-900">Google Rankings</h4>
-              </div>
-              <div className="space-y-4">
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">BEFORE</div>
-                  <div className="text-slate-700 font-light">Page 7</div>
-                </div>
-                <div className="text-center">
-                  <ArrowRight className="w-5 h-5 text-slate-400 mx-auto" strokeWidth={1.5} />
-                </div>
-                <div className="text-center py-3 px-4 bg-slate-50 border border-slate-200">
-                  <div className="text-xs text-slate-500 font-light mb-1">AFTER</div>
-                  <div className="text-3xl font-light text-slate-900 mb-1">Page 1</div>
-                  <div className="text-xs text-slate-500 font-light">top rankings</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
-            >
-              SEE YOUR POTENTIAL
-            </button>
-          </div>
-        </div>
-      </section>
-
       <section className="py-32 px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light mb-4 tracking-tight">Your Website Is Your Digital Gateway</h2>
-            <p className="text-slate-600 font-light">The professional representation that shows your commitment to excellence</p>
-          </div>
-
-          <div className="bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 p-12 mb-16">
-            <div className="max-w-3xl mx-auto text-center">
-              <TrendingUp className="w-16 h-16 text-slate-900 mx-auto mb-8" strokeWidth={1.5} />
-              <p className="text-2xl text-slate-700 font-light mb-8 leading-relaxed">
-                "You are a hard-working professional that delivers best-in-class work to your clients. Your website is the gateway and digital representation—it should show that."
-              </p>
-              <p className="text-lg text-slate-600 font-light leading-relaxed">
-                Your website is the digital representation of your business online. When potential clients find you, they're not just evaluating your services—they're evaluating your professionalism, attention to detail, and commitment to excellence.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center p-6">
-              <Eye className="w-12 h-12 text-slate-900 mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="text-xl font-light mb-3">First Impressions Matter</h3>
-              <p className="text-slate-600 font-light leading-relaxed">
-                Within seconds, visitors judge your credibility. A professional, fast-loading site instantly communicates competence and trustworthiness.
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <Shield className="w-12 h-12 text-slate-900 mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="text-xl font-light mb-3">Trust & Authority</h3>
-              <p className="text-slate-600 font-light leading-relaxed">
-                Your digital presence reflects your work standards. A cutting-edge, well-maintained site shows you stay current with best practices.
-              </p>
-            </div>
-
-            <div className="text-center p-6">
-              <Users className="w-12 h-12 text-slate-900 mx-auto mb-4" strokeWidth={1.5} />
-              <h3 className="text-xl font-light mb-3">Client Confidence</h3>
-              <p className="text-slate-600 font-light leading-relaxed">
-                When clients see your website performs flawlessly across all devices, they gain confidence in your ability to deliver excellence.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <p className="text-lg text-slate-600 font-light mb-6 max-w-3xl mx-auto">
-              Don't let an outdated or slow website undermine the quality work you deliver. Your digital gateway should reflect the same excellence your clients experience working with you.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light mb-4 tracking-tight">Business Intelligence Results</h2>
@@ -889,6 +545,152 @@ function WebAgencyLanding() {
           </div>
         </div>
       </section>
+
+      <section ref={aboutRef} className="py-32 px-8 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light mb-4 tracking-tight">How We Work</h2>
+            <p className="text-slate-600 font-light">Fortune 500 intelligence meets SME partnership approach</p>
+          </div>
+
+          <div className="bg-white border border-slate-200 p-12 mb-24">
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-lg text-slate-600 font-light leading-relaxed">
+                <strong>Fortune 500 experience, SME focus.</strong> We bring enterprise-level strategic intelligence at prices that make sense for your business. No generic solutions—just continuous improvement that compounds results.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-16 mb-24">
+            <div className="border border-red-200 bg-red-50 p-8">
+              <div className="text-center mb-8">
+                <AlertTriangle className="w-12 h-12 text-red-600 mx-auto mb-4" strokeWidth={1.5} />
+                <h3 className="text-2xl font-light text-red-900 mb-2">Traditional Agencies</h3>
+                <p className="text-red-700 font-light">Expensive rebuild cycle</p>
+              </div>
+              <ul className="space-y-4 text-sm text-red-800 font-light">
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 mt-1">×</span>
+                  <span>$15K-50K+ rebuilds every 2-3 years</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 mt-1">×</span>
+                  <span>You're on your own after launch</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-red-600 mt-1">×</span>
+                  <span>No ongoing optimization</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="border border-green-200 bg-green-50 p-8">
+              <div className="text-center mb-8">
+                <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-4" strokeWidth={1.5} />
+                <h3 className="text-2xl font-light text-green-900 mb-2">9line.dev Partnership</h3>
+                <p className="text-green-700 font-light">Continuous evolution</p>
+              </div>
+              <ul className="space-y-4 text-sm text-green-800 font-light">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span>Save 70-85% ($200-700/mo vs. $15K-50K)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span>AI-powered competitive intelligence</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span>Continuous optimization & growth</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-slate-600 font-light mb-6 max-w-3xl mx-auto">
+              Stop the expensive rebuild cycle. Establish a long-term relationship where we continuously improve your digital presence while you focus on running your business.
+            </p>
+            <button
+              onClick={() => handleCTAClick('START PARTNERSHIP', 'partnership_value')}
+              className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+            >
+              START PARTNERSHIP
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-32 px-8 bg-slate-900 text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light mb-4 tracking-tight text-white">
+              Why Not WordPress, Wix, or Squarespace?
+            </h2>
+            <p className="text-slate-300 font-light max-w-2xl mx-auto">
+              Smart business owners need AI-powered solutions, not DIY headaches that drain time and money.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-16 mb-24">
+              {/* DIY Platform Problems Card */}
+              <div className="border border-slate-700 bg-slate-800 p-8">
+                <Gauge className="w-8 h-8 text-red-400 mb-6" strokeWidth={1.5} />
+                <h3 className="text-2xl font-light mb-3 text-white">DIY Platform Problems</h3>
+                <p className="text-slate-300 font-light leading-relaxed mb-4">Why Wix, Squarespace & WordPress fail busy business owners</p>
+                <ul className="space-y-3 text-sm text-slate-400 font-light leading-relaxed">
+                  <li className="flex items-start gap-2">
+                    <Gauge className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>3-6 second load times lose customers</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Users className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Generic templates, no strategy</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Search className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>No competitive intelligence</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* 9line.dev Solution Card */}
+              <div className="border border-slate-600 bg-slate-700 p-8">
+                <Brain className="w-8 h-8 text-blue-400 mb-6" strokeWidth={1.5} />
+                <h3 className="text-2xl font-light mb-3 text-white">9line.dev Solution</h3>
+                <p className="text-slate-300 font-light leading-relaxed mb-4">AI-powered growth partner</p>
+                <ul className="space-y-3 text-sm text-slate-300 font-light">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Sub-2s load times & 15% bounce rates</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>AI competitive intelligence & strategy</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                    <span>Continuous optimization & growth</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          <div className="text-center">
+            <p className="text-lg text-slate-300 font-light mb-6">
+              Stop wasting time and money on DIY platforms that don't deliver results. Get professional intelligence and optimization that actually moves the needle.
+            </p>
+            <button
+              onClick={() => handleCTAClick('GET FREE ANALYSIS', 'competitive_comparison')}
+              className="px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 transition-colors text-sm font-medium tracking-wide"
+            >
+              GET FREE ANALYSIS
+            </button>
+          </div>
+        </div>
+      </section>
+
+
 
       <section ref={pricingRef} className="py-32 px-8">
         <div className="max-w-6xl mx-auto">
@@ -1496,14 +1298,14 @@ function WebAgencyLanding() {
       </section>
 
 
-      <section ref={contactRef} className="py-32 px-8 bg-white">
+      <section ref={contactRef} className="py-32 px-4 md:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light mb-4 tracking-tight">Get Started Today</h2>
             <p className="text-slate-600 font-light">Ready to see how you rank against competitors? Let's get your intelligence report started.</p>
           </div>
           
-          <div className="bg-slate-50 border border-slate-200 p-12 max-w-2xl mx-auto">
+          <div className="bg-slate-50 border border-slate-200 p-4 md:p-8 lg:p-12 max-w-2xl mx-auto">
             <ContactForm
               onSubmit={handleFormSubmit}
               onCancel={() => {}}
@@ -1522,10 +1324,10 @@ function WebAgencyLanding() {
           </p>
           <div className="flex justify-center mb-6">
             <button
-              onClick={() => handleCTAClick('SEE WHERE YOU RANK', 'footer_cta')}
+              onClick={() => handleCTAClick('GET FREE ANALYSIS', 'footer_cta')}
               className="px-10 py-4 bg-white text-slate-900 hover:bg-slate-100 transition-colors text-sm font-medium tracking-wide"
             >
-              SEE WHERE YOU RANK
+              GET FREE ANALYSIS
             </button>
           </div>
           <p className="text-sm text-slate-500 font-light">
