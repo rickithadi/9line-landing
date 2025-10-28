@@ -1,4 +1,4 @@
-import { AlertTriangle, ArrowRight, CheckCircle, ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Lightbulb, MousePointerClick, Search, Shield, Smartphone, TrendingUp, Users, Zap, Lock, Gauge, Settings, Brain } from 'lucide-react';
+import { AlertTriangle, ArrowRight, CheckCircle, ChevronDown, ChevronLeft, ChevronRight, Code, Eye, Lightbulb, MousePointerClick, Search, Shield, Smartphone, TrendingUp, Users, Zap, Lock, Gauge, Settings, Brain, Menu, X } from 'lucide-react';
 import { useRef, useState } from 'react';
 import { trackCTAClick } from './utils/analytics';
 
@@ -8,9 +8,14 @@ import { Modal } from './components/Modal';
 function WebAgencyLanding() {
   const testimonialsRef = useRef<HTMLDivElement>(null);
   const pricingRef = useRef<HTMLDivElement>(null);
+  const pricingScrollRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isYearly, setIsYearly] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scroll = (ref: React.RefObject<HTMLDivElement>, direction: 'left' | 'right') => {
     if (ref.current) {
@@ -19,6 +24,13 @@ function WebAgencyLanding() {
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
       });
+    }
+  };
+
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -41,13 +53,90 @@ function WebAgencyLanding() {
             <span className="font-semibold text-slate-900">9line</span>
             <span className="text-slate-400">.dev</span>
           </div>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <button
+              onClick={() => scrollToSection(aboutRef)}
+              className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection(servicesRef)}
+              className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection(pricingRef)}
+              className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              Pricing
+            </button>
+            <button
+              onClick={() => scrollToSection(contactRef)}
+              className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              Contact
+            </button>
+            <button
+              onClick={() => handleCTAClick('See Where You Rank', 'navigation')}
+              className="px-6 py-2 text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 transition-colors"
+            >
+              See Where You Rank →
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
           <button
-            onClick={() => handleCTAClick('See Where You Rank', 'navigation')}
-            className="px-6 py-2 text-sm font-medium text-slate-900 hover:text-blue-600 transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden p-2 text-slate-600 hover:text-slate-900 transition-colors"
           >
-            See Where You Rank →
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white border-b border-slate-200">
+            <div className="px-8 py-4 space-y-4">
+              <button
+                onClick={() => scrollToSection(aboutRef)}
+                className="block w-full text-left text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-2"
+              >
+                About
+              </button>
+              <button
+                onClick={() => scrollToSection(servicesRef)}
+                className="block w-full text-left text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-2"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => scrollToSection(pricingRef)}
+                className="block w-full text-left text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-2"
+              >
+                Pricing
+              </button>
+              <button
+                onClick={() => scrollToSection(contactRef)}
+                className="block w-full text-left text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors py-2"
+              >
+                Contact
+              </button>
+              <button
+                onClick={() => {
+                  handleCTAClick('See Where You Rank', 'navigation');
+                  setIsMobileMenuOpen(false);
+                }}
+                className="block w-full text-left px-6 py-2 text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 transition-colors mt-4"
+              >
+                See Where You Rank →
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section className="pt-40 pb-32 px-8">
@@ -100,7 +189,7 @@ function WebAgencyLanding() {
         </div>
       </section>
 
-      <section className="py-32 px-8">
+      <section ref={aboutRef} className="py-32 px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light mb-4 tracking-tight">Who We Are</h2>
@@ -278,7 +367,7 @@ function WebAgencyLanding() {
                 <ul className="space-y-3 text-sm text-slate-300 font-light">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Under 1-second load times (3x faster than DIY platforms)</span>
+                    <span>Optimized load times for better user experience</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
@@ -286,11 +375,11 @@ function WebAgencyLanding() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>Custom design optimized for your market (15% bounce rate avg)</span>
+                    <span>Custom design optimized for your market</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
-                    <span>AI-powered SEO that actually ranks on page 1</span>
+                    <span>AI-powered SEO optimization for higher rankings</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" strokeWidth={1.5} />
@@ -314,18 +403,18 @@ function WebAgencyLanding() {
         </div>
       </section>
 
-      <section className="py-32 px-8 bg-white">
+      <section ref={servicesRef} className="py-32 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light mb-4 tracking-tight">AI Intelligence Platform</h2>
-            <p className="text-slate-600 font-light">We don't build and leave. We don't just report. We use machine learning to continuously improve based on real performance data.</p>
+            <p className="text-slate-600 font-light">We don't build and leave. We don't just report. We use AI to continuously improve based on real performance data.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
             <div className="border border-slate-200 bg-white p-8">
               <Eye className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
               <h3 className="text-2xl font-light mb-3">AI Monitor</h3>
-              <p className="text-slate-600 font-light leading-relaxed mb-4">Smart competitive intelligence powered by machine learning.</p>
+              <p className="text-slate-600 font-light leading-relaxed mb-4">Smart competitive intelligence powered by AI.</p>
               <p className="text-sm text-slate-500 font-light leading-relaxed">AI analyzes performance data specific to your industry patterns. Know exactly where you stand and when competitors make moves. Intelligent automation, not just reports.</p>
             </div>
 
@@ -339,7 +428,7 @@ function WebAgencyLanding() {
             <div className="border border-slate-200 bg-white p-8">
               <Code className="w-8 h-8 text-slate-900 mb-6" strokeWidth={1.5} />
               <h3 className="text-2xl font-light mb-3">AI Evolve</h3>
-              <p className="text-slate-600 font-light leading-relaxed mb-4">Continuous intelligent implementation based on machine learning.</p>
+              <p className="text-slate-600 font-light leading-relaxed mb-4">Continuous intelligent implementation based on AI.</p>
               <p className="text-sm text-slate-500 font-light leading-relaxed">Unlike static providers who just keep sites running, AI makes them smarter every month. Design improvements, speed optimization, search ranking—always learning and improving automatically.</p>
             </div>
 
@@ -794,7 +883,7 @@ function WebAgencyLanding() {
         </div>
       </section>
 
-      <section className="py-32 px-8">
+      <section ref={pricingRef} className="py-32 px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-light mb-4 tracking-tight">Pricing</h2>
@@ -855,7 +944,7 @@ function WebAgencyLanding() {
                 <ul className="space-y-3 mb-8">
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
-                    <span>Professional website design and development</span>
+                    <span>Design and Development</span>
                   </li>
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
@@ -863,15 +952,19 @@ function WebAgencyLanding() {
                   </li>
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
-                    <span>Website hosting + security</span>
+                    <span>Includes Hosting</span>
                   </li>
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
-                    <span>Monthly performance optimization</span>
+                    <span>Automated SEO and Meta Tag optimizations</span>
                   </li>
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
-                    <span>Technical maintenance and updates</span>
+                    <span>Unlimited minor edits</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>$100 fee per page after 5 pages</span>
                   </li>
                 </ul>
 
@@ -924,7 +1017,7 @@ function WebAgencyLanding() {
                   </li>
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
-                    <span>Up to 2 website changes</span>
+                    <span>Enhanced unlimited minor edits</span>
                   </li>
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
@@ -933,6 +1026,14 @@ function WebAgencyLanding() {
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
                     <span>AI-powered competitive insights</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>24/7 Support</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Lifetime Updates</span>
                   </li>
                 </ul>
 
@@ -982,7 +1083,7 @@ function WebAgencyLanding() {
                   </li>
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
-                    <span>Up to 4 website changes</span>
+                    <span>Unlimited minor edits (no page fees)</span>
                   </li>
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
@@ -990,7 +1091,11 @@ function WebAgencyLanding() {
                   </li>
                   <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                     <span className="text-green-500 mt-1">✓</span>
-                    <span>Priority support + same-day response</span>
+                    <span>Priority 24/7 Support + same-day response</span>
+                  </li>
+                  <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                    <span className="text-green-500 mt-1">✓</span>
+                    <span>Premium Lifetime Updates</span>
                   </li>
                 </ul>
 
@@ -1013,7 +1118,7 @@ function WebAgencyLanding() {
           {/* Desktop Layout - Original horizontal scroll preserved for large screens */}
           <div className="relative hidden lg:block mt-4">
             <div
-              ref={pricingRef}
+              ref={pricingScrollRef}
               className="overflow-x-auto scrollbar-hide snap-x snap-mandatory"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
@@ -1040,7 +1145,7 @@ function WebAgencyLanding() {
                   <ul className="space-y-3 mb-12">
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Professional website design and development</span>
+                      <span>Design and Development</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
@@ -1048,15 +1153,19 @@ function WebAgencyLanding() {
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Website hosting + security</span>
+                      <span>Includes Hosting</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Monthly performance optimization</span>
+                      <span>Automated SEO and Meta Tag optimizations</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Technical maintenance and updates</span>
+                      <span>Unlimited minor edits</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>$100 fee per page after 5 pages</span>
                     </li>
                   </ul>
 
@@ -1107,7 +1216,7 @@ function WebAgencyLanding() {
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Up to 2 website changes</span>
+                      <span>Enhanced unlimited minor edits</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
@@ -1116,6 +1225,14 @@ function WebAgencyLanding() {
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
                       <span>AI-powered competitive insights</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>24/7 Support</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Lifetime Updates</span>
                     </li>
                   </ul>
 
@@ -1163,7 +1280,7 @@ function WebAgencyLanding() {
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Up to 4 website changes</span>
+                      <span>Unlimited minor edits (no page fees)</span>
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
@@ -1171,7 +1288,11 @@ function WebAgencyLanding() {
                     </li>
                     <li className="text-sm text-slate-600 font-light flex items-start gap-2">
                       <span className="text-green-500 mt-1">✓</span>
-                      <span>Priority support + same-day response</span>
+                      <span>Priority 24/7 Support + same-day response</span>
+                    </li>
+                    <li className="text-sm text-slate-600 font-light flex items-start gap-2">
+                      <span className="text-green-500 mt-1">✓</span>
+                      <span>Premium Lifetime Updates</span>
                     </li>
                   </ul>
 
@@ -1192,7 +1313,7 @@ function WebAgencyLanding() {
             </div>
 
             <button
-              onClick={() => scroll(pricingRef, 'right')}
+              onClick={() => scroll(pricingScrollRef, 'right')}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-slate-50 transition-colors lg:hidden"
             >
               <ChevronRight className="w-5 h-5 text-slate-600" />
@@ -1224,7 +1345,7 @@ function WebAgencyLanding() {
               </button>
               {openFaq === 0 && (
                 <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
-                  Agencies charge $5K-15K/month and often disappear after delivering a report. We provide AI-powered competitive intelligence starting at $500/month, plus smart automation implements everything. You get the strategy AND the execution, continuously optimized by machine learning.
+                  Agencies charge $5K-15K/month and often disappear after delivering a report. We provide AI-powered enterprise intelligence for 1/5th the cost, plus smart automation implements everything. You get the strategy AND the execution, continuously optimized by AI with website continuous optimization.
                 </div>
               )}
             </div>
@@ -1239,7 +1360,7 @@ function WebAgencyLanding() {
               </button>
               {openFaq === 1 && (
                 <div className="px-8 pb-6 text-slate-600 font-light leading-relaxed">
-                  For our Growth Intelligence plan ($500/month), just one new customer covers the service. Our average client sees 67% increase in conversions. Even with smaller customer values of $500-1,000, the ROI is clear within months. Plus you get continuous optimization vs. one-time projects.
+                  One new customer per month pays for the entire service. Our average client sees 67% increase in conversions. If your average customer value is $2,000+, the math works from day one. Plus you get continuous website optimization vs. one-time projects.
                 </div>
               )}
             </div>
@@ -1367,6 +1488,22 @@ function WebAgencyLanding() {
         </div>
       </section>
 
+
+      <section ref={contactRef} className="py-32 px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-light mb-4 tracking-tight">Get Started Today</h2>
+            <p className="text-slate-600 font-light">Ready to see how you rank against competitors? Let's get your intelligence report started.</p>
+          </div>
+          
+          <div className="bg-slate-50 border border-slate-200 p-12 max-w-2xl mx-auto">
+            <ContactForm
+              onSubmit={handleFormSubmit}
+              onCancel={() => {}}
+            />
+          </div>
+        </div>
+      </section>
 
       <section className="py-32 px-8 bg-slate-900 text-white">
         <div className="max-w-3xl mx-auto text-center">

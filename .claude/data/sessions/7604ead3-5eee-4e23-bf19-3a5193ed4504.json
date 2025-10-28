@@ -1,0 +1,11 @@
+{
+  "session_id": "7604ead3-5eee-4e23-bf19-3a5193ed4504",
+  "prompts": [
+    "update pricing sections from this feedback\n\nPricing:\n\n- Automated SEO and Meta Tag optimizations\n- Unlimited minor edits\n- $100 fee per page after 5 pages\n- Lifetime Updates\n- Includes Hosting\n- Design And Development\n- 24/7 Support",
+    "Don't replace the bullet points. Integrate these into them. Ensure that the different tiers still provide overlapping, but different services. ",
+    "Sections to change wording:\n\n- Under 1-second load times (3x faster than DIY platforms)- green thresholds\n- Custom design optimized for your market (15% bounce rate avg)- cant promise that\n- AI-powered SEO that actually ranks on page 1- rank higher instead just by having optimized website\n- One new customer per month pays for the entire service. Our average client sees 67% increase in conversions. If your average customer value is $2,000+, the math works from day one. Plus you get continuous optimization vs. one-time projects.\n- add website continuous optimization/ change machine learning to ai: Agencies charge $5K-15K/month and often disappear after delivering a report. We provide AI-powered enterprise intelligence for 1/5th the cost, plus smart automation implements everything. You get the strategy AND the execution, continuously optimized by machine learning.\n- Promote this messaging: Our AI automatically monitors and implements the latest frameworks, security updates, and performance optimizations. We rebuild your site's foundation with cutting-edge technology without business disruption. Your site always uses mobile-first responsive design and the fastest available tech stack\u2014no expensive migration projects needed.\n- change to month: 4 website improvements per week",
+    "Sections to add:\n\n- nav bar at top\n- contact form",
+    "integrate this formspree into contact form https://formspree.io/f/mdkpegok",
+    "clear the input on submission"
+  ]
+}

@@ -581,7 +581,7 @@ const PitchDeck9dlj4rmvjdekpli2ktpeyt = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">✓</span>
-                    <span>4 website improvements per week</span>
+                    <span>4 website improvements per month</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">✓</span>
