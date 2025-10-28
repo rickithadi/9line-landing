@@ -6,6 +6,7 @@
     <!-- SEO Meta Tags -->
     <title>9line.dev - AI-Powered Fortune 500 Intelligence for SME Business Owners</title>
     <meta name="description" content="Fast digital rescue for busy business owners. AI-powered Fortune 500-level intelligence and smart automation beats WordPress, Wix, Squarespace. Long-term partnership focused." />
+    <meta name="color-scheme" content="light" />
     <meta name="keywords" content="AI-powered business intelligence, machine learning optimization, SME automation, competitive analysis, WordPress alternative, Wix alternative, Squarespace alternative, Fortune 500 intelligence, digital rescue, enterprise technology" />
     <meta name="author" content="9line.dev" />
     <meta name="robots" content="index, follow" />
@@ -51,20 +52,31 @@
     <meta name="theme-color" content="#0f172a" />
     <meta name="msapplication-TileColor" content="#0f172a" />
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PWZM3DK5MW"></script>
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    
+    <!-- Critical CSS and Performance Hints -->
+    <link rel="preload" href="/src/main.tsx" as="script" crossorigin />
+    
+    <!-- Google Analytics (Optimized) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-PWZM3DK5MW', {
         page_title: document.title,
-        page_location: window.location.href
+        page_location: window.location.href,
+        custom_map: {'custom_parameter_1': 'lighthouse_optimized'}
+      });
+      // Load GA script asynchronously after page load
+      window.addEventListener('load', function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PWZM3DK5MW';
+        document.head.appendChild(script);
       });
     </script>
-    
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     
     <!-- Structured Data -->
     <script type="application/ld+json">

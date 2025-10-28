@@ -5,6 +5,7 @@ import { trackCTAClick } from './utils/analytics';
 import { ContactForm } from './components/ContactForm';
 import { Modal } from './components/Modal';
 
+
 function WebAgencyLanding() {
   const testimonialsRef = useRef<HTMLDivElement>(null);
   const pricingRef = useRef<HTMLDivElement>(null);
@@ -47,7 +48,7 @@ function WebAgencyLanding() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200" role="navigation" aria-label="Main navigation">
         <div className="max-w-6xl mx-auto px-8 py-6 flex justify-between items-center">
           <div className="text-2xl font-light tracking-tight">
             <span className="font-semibold text-slate-900">9line</span>
@@ -59,30 +60,35 @@ function WebAgencyLanding() {
             <button
               onClick={() => scrollToSection(aboutRef)}
               className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+              aria-label="Navigate to About section"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection(servicesRef)}
               className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+              aria-label="Navigate to Services section"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection(pricingRef)}
               className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+              aria-label="Navigate to Pricing section"
             >
               Pricing
             </button>
             <button
               onClick={() => scrollToSection(contactRef)}
               className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+              aria-label="Navigate to Contact section"
             >
               Contact
             </button>
             <button
               onClick={() => handleCTAClick('See Where You Rank', 'navigation')}
               className="px-6 py-2 text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 transition-colors"
+              aria-label="Get free website ranking analysis"
             >
               See Where You Rank →
             </button>
@@ -139,13 +145,13 @@ function WebAgencyLanding() {
         )}
       </nav>
 
-      <section className="pt-40 pb-32 px-8">
+      <section className="pt-40 pb-32 px-8 hero-section" role="banner" aria-labelledby="hero-heading">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 border border-slate-200 rounded-full px-4 py-1.5 mb-8 text-xs text-slate-600 font-light">
             AI-powered Fortune 500 insights · Trusted by 250+ SME business owners
           </div>
 
-          <h1 className="text-6xl md:text-7xl font-light mb-8 leading-tight tracking-tight">
+          <h1 id="hero-heading" className="text-6xl md:text-7xl font-light mb-8 leading-tight tracking-tight">
             Fast digital rescue
             <span className="block font-normal text-blue-600 mt-2">
               for busy business owners.
@@ -159,6 +165,7 @@ function WebAgencyLanding() {
             <button
               onClick={() => handleCTAClick('SEE WHERE YOU RANK', 'hero')}
               className="px-8 py-4 bg-slate-900 text-white hover:bg-slate-800 transition-colors text-sm font-medium tracking-wide"
+              aria-label="Get free website ranking analysis and intelligence report"
             >
               SEE WHERE YOU RANK
             </button>
