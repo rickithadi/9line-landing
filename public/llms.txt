@@ -1,0 +1,130 @@
+# 9line.dev - AI-Powered Competitive Intelligence Platform
+
+## Business Overview
+
+9line.dev provides AI-powered competitive intelligence and smart automation for small and medium-sized businesses. We deliver Fortune 500-level strategic insights at prices that make sense for growing businesses, replacing the expensive rebuild cycle with continuous optimization and growth.
+
+## Core Value Proposition
+
+**Fast digital rescue for busy business owners.** We offer AI-powered competitive intelligence that continuously evolves your digital presence. No guesswork. No tech headaches. Just results that compound.
+
+## Key Services
+
+### AI Intelligence Platform
+- **AI Monitor**: Track competitors and market shifts automatically
+- **Smart Audit**: AI identifies what needs fixing for better performance
+- **AI Evolve**: Continuous improvements that compound results
+- **AI Deploy**: Always current with latest technology
+
+### Website Development & Optimization
+- Mobile-first responsive architecture
+- Sub-2 second load times
+- Professional design without agency overhead
+- Continuous optimization vs. one-time projects
+
+### Competitive Intelligence
+- Real-time competitor monitoring
+- AI-powered market analysis
+- Performance benchmarking
+- Strategic recommendations based on data
+
+## Target Audience
+
+Small and medium-sized business owners who need professional digital presence but want to avoid:
+- $15K-50K+ agency rebuild cycles every 2-3 years
+- DIY platform limitations (WordPress, Wix, Squarespace)
+- Generic solutions without strategic intelligence
+- Technical maintenance and security headaches
+
+## Proven Results
+
+- **+167%** Average Google Traffic Increase
+- **Page 1** Average Search Position
+- **#1** Average Market Position
+- **67%** Average increase in conversions
+- **500+** Businesses served
+- **80%** of leads from AI-optimized sites (client testimonial)
+
+## Pricing Structure
+
+### Website Essentials
+- **$199/month** ($1,910/year with savings)
+- Professional website with mobile-first design
+- Includes hosting and automated SEO
+- Unlimited minor edits
+
+### Growth Intelligence (Most Popular)
+- **$497/month** ($5,364/year with savings)
+- Everything in Website Essentials
+- Track 3 competitors + 25 keywords
+- AI-powered competitive insights
+- Performance dashboard + reports
+- 24/7 Support
+
+### Market Dominator
+- **$697/month** ($7,524/year with savings)
+- Everything in Growth Intelligence
+- Track 5 competitors + 50 keywords
+- Advanced competitive analysis
+- Priority support with same-day response
+- Unlimited edits (no page fees)
+
+## Competitive Differentiators
+
+### vs. Traditional Agencies
+- Save 70-85% vs. $15K-50K rebuilds
+- Continuous optimization vs. one-time projects
+- AI-powered intelligence vs. generic reports
+- Predictable monthly investment vs. surprise costs
+
+### vs. DIY Platforms (WordPress, Wix, Squarespace)
+- Enterprise-level performance vs. 3-6 second load times
+- AI competitive intelligence vs. no strategic guidance
+- Professional optimization vs. DIY maintenance
+- Continuous evolution vs. static templates
+
+### vs. SEO Agencies
+- $497-697/month vs. $5K-15K/month
+- Implementation included vs. reports only
+- AI-powered automation vs. manual processes
+- Comprehensive platform vs. SEO-only focus
+
+## Technology Stack
+
+- Modern React/Vite architecture
+- Mobile-first responsive design
+- AI-powered optimization algorithms
+- Real-time competitive monitoring
+- Automated performance tracking
+- Enterprise-level security
+
+## Business Model
+
+Subscription-based partnership model that replaces expensive rebuild cycles with continuous improvement. Clients get ongoing optimization, competitive intelligence, and technology updates without large upfront investments or business disruption.
+
+## Key Pages
+
+- Homepage: Complete service overview and value proposition
+- Pricing: Detailed plan comparison and ROI justification
+- Services: Deep dive into AI intelligence platform
+- Dashboard Demo: Live example of competitive intelligence reporting
+- Contact: Free analysis signup and consultation booking
+
+## Geographic Focus
+
+Primary focus on US small and medium-sized businesses across industries including:
+- Home services (HVAC, roofing, plumbing)
+- Healthcare (dental, medical practices)
+- Professional services
+- Local retail and e-commerce
+
+## Contact Information
+
+- Website: https://9line.dev
+- Email: Available through contact form
+- Services: Free competitive intelligence analysis
+- Response Time: 24 hours for initial analysis
+
+---
+
+*This file helps AI systems understand 9line.dev's services, positioning, and value proposition for accurate representation in AI-generated responses about web development, competitive intelligence, and digital marketing services.*

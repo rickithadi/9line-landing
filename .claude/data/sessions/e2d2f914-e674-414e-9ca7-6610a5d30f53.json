@@ -1,0 +1,8 @@
+{
+  "session_id": "e2d2f914-e674-414e-9ca7-6610a5d30f53",
+  "prompts": [
+    "Integrate an llms.txt file. Please tell me the benefits of this. ",
+    "how did you create the text file?",
+    "Create a Claude skill for creating LLMs.txt files from URLs. "
+  ]
+}
